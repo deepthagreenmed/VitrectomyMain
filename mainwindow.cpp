@@ -302,6 +302,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     hhandler->dia_off();
 
+
     connect(win2, &settingswindow::stringPassed0, this, &MainWindow::receiveString0);
     connect(win2, &settingswindow::stringPassed1, this, &MainWindow::receiveString1);
     connect(win2, &settingswindow::stringPassed2, this, &MainWindow::receiveString2);
@@ -316,6 +317,43 @@ MainWindow::MainWindow(QWidget *parent)
         surgeon1();
     }
 
+
+    if(vip==0)
+    {
+        ui->label_38->setStyleSheet("");
+        ui->label_24->setStyleSheet("font: 40pt;color: rgb(255, 255, 255);");
+        ui->pushButton_vitinc->lower();
+        ui->pushButton_vitdec->lower();
+        ui->label_vitpreset->lower();
+        ui->label_vitactual->lower();
+    }
+    if(sp==0)
+    {
+        ui->label_19->setStyleSheet("");
+        ui->label_26->setStyleSheet("font: 40pt ;color: rgb(255,255,255);");
+        ui->pushButton_siloildec->lower();
+        ui->pushButton_siloilinc->lower();
+        ui->label_siloil->lower();
+
+    }
+    if(ap==0)
+    {
+        ui->label_13->setStyleSheet("");
+        ui->label_23->setStyleSheet("font: 40pt;color: rgb(255, 255, 255);");
+        ui->pushButton_aidec->lower();
+        ui->pushButton_aiinc->lower();
+        ui->label_aiactual->lower();
+        ui->label_aipreset->lower();
+
+    }
+    if(dp==0)
+    {
+        ui->label_14->setStyleSheet("");
+        ui->label_25->setStyleSheet("font: 40pt ;color: rgb(255,255,255);");
+        ui->pushButton_diainc->lower();
+        ui->pushButton_diadec->lower();
+        ui->label_dia->lower();
+    }
 }
 
 

@@ -672,7 +672,6 @@ public:
         pushButton_diaonoff->raise();
         pushButton_aionoff->raise();
         pushButton_siloilonoff->raise();
-        label_2->raise();
         label_dia->raise();
         pushButton_diainc->raise();
         pushButton_diadec->raise();
@@ -681,6 +680,7 @@ public:
         pushButton_start->raise();
         label->raise();
         label_22->raise();
+        label_2->raise();
 
         retranslateUi(MainWindow);
 
