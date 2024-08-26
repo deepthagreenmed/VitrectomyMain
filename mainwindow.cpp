@@ -304,6 +304,12 @@ MainWindow::MainWindow(QWidget *parent)
 
     hhandler->dia_off();
 
+    ui->label_38->setStyleSheet("");
+    ui->label_19->setStyleSheet("");
+    ui->label_13->setStyleSheet("");
+    ui->label_14->setStyleSheet("");
+
+
     connect(win2, &settingswindow::stringPassed0, this, &MainWindow::receiveString0);
     connect(win2, &settingswindow::stringPassed1, this, &MainWindow::receiveString1);
     connect(win2, &settingswindow::stringPassed2, this, &MainWindow::receiveString2);
@@ -3285,7 +3291,6 @@ void MainWindow::vit_setvalue(int pin, int value)
     if(vip==0)
     {
         ui->label_38->setStyleSheet("background-color: rgb(116, 184, 222);");
-
         ui->label_24->setStyleSheet("font: 40pt ;color: rgb(0, 0, 0);");
         ui->pushButton_vitinc->raise();
         ui->pushButton_vitdec->raise();
