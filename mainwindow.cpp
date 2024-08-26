@@ -298,17 +298,9 @@ MainWindow::MainWindow(QWidget *parent)
 //    connect(timerpres, &QTimer::timeout, this, &MainWindow::pressureval);
 //    timerpres->start(100); // milliseconds
 
-
-
     hhandler->vso_off();
 
     hhandler->dia_off();
-
-    ui->label_38->setStyleSheet("");
-    ui->label_19->setStyleSheet("");
-    ui->label_13->setStyleSheet("");
-    ui->label_14->setStyleSheet("");
-
 
     connect(win2, &settingswindow::stringPassed0, this, &MainWindow::receiveString0);
     connect(win2, &settingswindow::stringPassed1, this, &MainWindow::receiveString1);
@@ -323,7 +315,6 @@ MainWindow::MainWindow(QWidget *parent)
     {
         surgeon1();
     }
-
 
 }
 

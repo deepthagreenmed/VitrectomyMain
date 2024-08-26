@@ -137,26 +137,6 @@ font: 65pt &quot;Ubuntu&quot;;</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label_dia">
-    <property name="geometry">
-     <rect>
-      <x>1520</x>
-      <y>820</y>
-      <width>281</width>
-      <height>141</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">image: url(:/new/prefix1/img/textbox2.png);
-font: 65pt &quot;Ubuntu&quot;;</string>
-    </property>
-    <property name="text">
-     <string>40</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_siloil">
     <property name="geometry">
      <rect>
@@ -202,28 +182,6 @@ font: 45pt &quot;Ubuntu&quot;;</string>
      <rect>
       <x>1760</x>
       <y>250</y>
-      <width>81</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{background-image: url(:/new/prefix1/img/down1.png);
-background-color: rgba(242, 179, 179, 0);}
-
-
-QPushButton::hover{background-color: #0085ff;
-border-radius: 20px;
-color:white;;}</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_diadec">
-    <property name="geometry">
-     <rect>
-      <x>1810</x>
-      <y>840</y>
       <width>81</width>
       <height>91</height>
      </rect>
@@ -290,32 +248,6 @@ color:white;;}</string>
      <rect>
       <x>1380</x>
       <y>250</y>
-      <width>81</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">
-QPushButton{
-	background-image: url(:/new/prefix1/img/up1.png);
-background-color: rgba(242, 179, 179, 0);
-
-}
-
-
-QPushButton::hover{background-color: #0085ff;
-border-radius: 20px;
-color:white;;}</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_diainc">
-    <property name="geometry">
-     <rect>
-      <x>1430</x>
-      <y>840</y>
       <width>81</width>
       <height>91</height>
      </rect>
@@ -1488,6 +1420,74 @@ font-weight: bold;</string>
      <string/>
     </property>
    </widget>
+   <widget class="QLabel" name="label_dia">
+    <property name="geometry">
+     <rect>
+      <x>1520</x>
+      <y>800</y>
+      <width>311</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/new/prefix1/img/textbox2.png);
+font: 65pt &quot;Ubuntu&quot;;</string>
+    </property>
+    <property name="text">
+     <string>60</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_diainc">
+    <property name="geometry">
+     <rect>
+      <x>1440</x>
+      <y>820</y>
+      <width>81</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+QPushButton{
+	background-image: url(:/new/prefix1/img/up1.png);
+background-color: rgba(242, 179, 179, 0);
+
+}
+
+
+QPushButton::hover{background-color: #0085ff;
+border-radius: 20px;
+color:white;;}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_diadec">
+    <property name="geometry">
+     <rect>
+      <x>1830</x>
+      <y>820</y>
+      <width>81</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{background-image: url(:/new/prefix1/img/down1.png);
+background-color: rgba(242, 179, 179, 0);}
+
+
+QPushButton::hover{background-color: #0085ff;
+border-radius: 20px;
+color:white;;}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
    <zorder>label_39</zorder>
    <zorder>label_20</zorder>
    <zorder>label_16</zorder>
@@ -1497,9 +1497,6 @@ font-weight: bold;</string>
    <zorder>pushButton_settingswindow</zorder>
    <zorder>label_vacpreset</zorder>
    <zorder>label_vacactual</zorder>
-   <zorder>label_dia</zorder>
-   <zorder>pushButton_diadec</zorder>
-   <zorder>pushButton_diainc</zorder>
    <zorder>label_21</zorder>
    <zorder>label_25</zorder>
    <zorder>pushButton_endcase</zorder>
@@ -1551,12 +1548,15 @@ font-weight: bold;</string>
    <zorder>pushButton_diaonoff</zorder>
    <zorder>pushButton_aionoff</zorder>
    <zorder>pushButton_siloilonoff</zorder>
-   <zorder>label_12</zorder>
-   <zorder>label</zorder>
    <zorder>label_2</zorder>
-   <zorder>label_22</zorder>
-   <zorder>pushButton_start</zorder>
+   <zorder>label_dia</zorder>
+   <zorder>pushButton_diainc</zorder>
+   <zorder>pushButton_diadec</zorder>
+   <zorder>label_12</zorder>
    <zorder>comboBox_surgeonname</zorder>
+   <zorder>pushButton_start</zorder>
+   <zorder>label</zorder>
+   <zorder>label_22</zorder>
   </widget>
  </widget>
  <resources/>
