@@ -60,7 +60,8 @@ public:
     LED *led1;
     LED *led2;
     bool eventFilter(QObject* object, QEvent* event);
-    void updateLabelValue(QLabel* label, int dig, int value, int maxValue);
+    void updateLabelValue(QLabel* label, int dig, int value, int maxValue, int limit);
+    void updateLabelValue2(QLabel *label, int limit);
     void switchled(LED *led, int choice);
     void footpedalbeep();
     int beep_0to1=0;
@@ -178,8 +179,24 @@ private:
     QTimer *clicktimer;
 
     int vacc;
+    int vitr;
+    int so;
+    int air;
+    int diat;
+    int l1;
+    int l2;
+
+    int vacc2;
+    int vitr2;
+    int so2;
+    int air2;
+    int diat2;
+    int l12;
+    int l22;
+
     double idx;
     int avgfp=0;
+    int vitc=0;
 
     int vp;
     int ap;

@@ -67,6 +67,12 @@ MainWindow::MainWindow(QWidget *parent)
     clicktimer->setSingleShot(true);
 
     vacc = ui->label_vacpreset->text().toInt();
+    vitr = ui->label_vitpreset->text().toInt();
+    so=ui->label_siloil->text().toInt();
+    air=ui->label_aipreset->text().toInt();
+    diat=ui->label_dia->text().toInt();
+    l1=ui->label_led1->text().toInt();
+    l2=ui->label_led2->text().toInt();
 
 
     for(int gpioPin=960; gpioPin<965; gpioPin++)
@@ -368,21 +374,21 @@ void MainWindow::transitionToNewScreen() {
 }
 
 // Set limits and input validation
-void MainWindow::updateLabelValue(QLabel* label, int dig, int value, int maxValue)
+void MainWindow::updateLabelValue(QLabel* label, int dig, int value, int maxValue, int limit)
 {
 
     if (value > maxValue)
     {
         label->setText(QString::number(dig));
     }
-    else
-    {
+    else {
         label->setText(QString::number(value));
+
     }
 
     if (label == ui->label_vacpreset)
     {
-        if (dig == 0 && ui->label_vacpreset->text() == "0")
+        if ((dig == 0 && ui->label_vacpreset->text() == "0"))
         {
             ui->label_vacpreset->setText(QString::number(vacc));
             return;
@@ -392,6 +398,85 @@ void MainWindow::updateLabelValue(QLabel* label, int dig, int value, int maxValu
             vacc = ui->label_vacpreset->text().toInt();
         }
     }
+
+    if (label == ui->label_vitpreset)
+    {
+        if ((dig == 0 && ui->label_vitpreset->text() == "0"))
+        {
+            ui->label_vitpreset->setText(QString::number(vitr));
+            return;
+        }
+        else
+        {
+            vitr = ui->label_vitpreset->text().toInt();
+        }
+    }
+
+    if (label == ui->label_siloil)
+    {
+        if ((dig == 0 && ui->label_siloil->text() == "0"))
+        {
+            ui->label_siloil->setText(QString::number(so));
+            return;
+        }
+        else
+        {
+            so = ui->label_siloil->text().toInt();
+        }
+    }
+
+    if (label == ui->label_aipreset)
+    {
+        if ((dig == 0 && ui->label_aipreset->text() == "0"))
+        {
+            ui->label_aipreset->setText(QString::number(air));
+            return;
+        }
+        else
+        {
+            air = ui->label_aipreset->text().toInt();
+        }
+    }
+
+    if (label == ui->label_dia)
+    {
+        if ((dig == 0 && ui->label_dia->text() == "0"))
+        {
+            ui->label_dia->setText(QString::number(diat));
+            return;
+        }
+        else
+        {
+            diat = ui->label_dia->text().toInt();
+        }
+    }
+
+    if (label == ui->label_led1)
+    {
+        if ((dig == 0 && ui->label_led1->text() == "0"))
+        {
+            ui->label_led1->setText(QString::number(l1));
+            return;
+        }
+        else
+        {
+            l1 = ui->label_led1->text().toInt();
+        }
+    }
+
+    if (label == ui->label_led2)
+    {
+        if ((dig == 0 && ui->label_led2->text() == "0"))
+        {
+            ui->label_led2->setText(QString::number(l2));
+            return;
+        }
+        else
+        {
+            l2 = ui->label_led2->text().toInt();
+        }
+    }
+
 }
 
 // keypad showing code
@@ -542,8 +627,10 @@ void MainWindow::on_clicked(const QString& digit)
       {
       ui->label_vacpreset->setFocus();
       int dig = digit.toInt();
+      vacc2 = ui->label_vacpreset->text().toInt();
       int value = (ui->label_vacpreset->text()+digit).toInt();
-      updateLabelValue(ui->label_vacpreset, dig, value, 500);
+      updateLabelValue(ui->label_vacpreset, dig, value, 500, 5);
+
    }
   }
   if(ui->label_vitpreset->focusWidget()) {
@@ -557,16 +644,20 @@ void MainWindow::on_clicked(const QString& digit)
       {
       ui->label_vitpreset->setFocus();
       int dig = digit.toInt();
+      if(vitc%2==0) {
+        vitr2 = ui->label_vitpreset->text().toInt();
+        vitc++;
+      }
       int value = (ui->label_vitpreset->text()+digit).toInt();
-
       if(madtype=="Midlabs")
       {
-          updateLabelValue(ui->label_vitpreset, dig, value, 8040);
+          updateLabelValue(ui->label_vitpreset, dig, value, 8040, 60);
       }
       if(madtype=="Alcon")
       {
-          updateLabelValue(ui->label_vitpreset, dig, value, 7500);
+          updateLabelValue(ui->label_vitpreset, dig, value, 7500, 60);
       }
+
 
    }
   }
@@ -581,8 +672,9 @@ if(ui->label_siloil->focusWidget()) {
     {
     ui->label_siloil->setFocus();
     int dig = digit.toInt();
+    so2=ui->label_siloil->text().toInt();
     int value = (ui->label_siloil->text()+digit).toInt();
-    updateLabelValue(ui->label_siloil, dig, value, 100);
+    updateLabelValue(ui->label_siloil, dig, value, 100, 5);
 
  }
 }
@@ -597,8 +689,10 @@ if(ui->label_aipreset->focusWidget()) {
     {
     ui->label_aipreset->setFocus();
     int dig = digit.toInt();
+    air2=ui->label_aipreset->text().toInt();
     int value = (ui->label_aipreset->text()+digit).toInt();
-    updateLabelValue(ui->label_aipreset, dig, value, 100);
+    updateLabelValue(ui->label_aipreset, dig, value, 100, 1);
+
 
  }
 }
@@ -613,8 +707,10 @@ if(ui->label_dia->focusWidget()) {
     {
     ui->label_dia->setFocus();
     int dig = digit.toInt();
+    diat2=ui->label_dia->text().toInt();
     int value = (ui->label_dia->text()+digit).toInt();
-    updateLabelValue(ui->label_dia, dig, value, 100);
+    updateLabelValue(ui->label_dia, dig, value, 100, 5);
+
 
  }
 }
@@ -629,8 +725,9 @@ if(ui->label_led2->focusWidget()) {
     {
     ui->label_led2->setFocus();
     int dig = digit.toInt();
+    l22=ui->label_led2->text().toInt();
     int value = (ui->label_led2->text()+digit).toInt();
-    updateLabelValue(ui->label_led2, dig, value, 100);
+    updateLabelValue(ui->label_led2, dig, value, 100, 5);
 
  }
 }
@@ -645,8 +742,9 @@ if(ui->label_led1->focusWidget()) {
     {
     ui->label_led1->setFocus();
     int dig = digit.toInt();
+    l12=ui->label_led1->text().toInt();
     int value = (ui->label_led1->text()+digit).toInt();
-    updateLabelValue(ui->label_led1, dig, value, 100);
+    updateLabelValue(ui->label_led1, dig, value, 100, 5);
 
  }
 }
@@ -671,14 +769,17 @@ void MainWindow::on_clickedenter()
         airinjectoroff();
     }
 
+    updateLabelValue2(ui->label_vacpreset, 5);
+    updateLabelValue2(ui->label_vitpreset, 60);
+    ui->label_vitpreset->setText(QString::number(static_cast<int>(std::round(ui->label_vitpreset->text().toInt()/60))*60));
+    vit_value = ui->label_vitpreset->text().toInt();
+    vitc=0;
+    updateLabelValue2(ui->label_siloil, 5);
+    updateLabelValue2(ui->label_aipreset, 1);
+    updateLabelValue2(ui->label_dia, 5);
+    updateLabelValue2(ui->label_led1, 5);
+    updateLabelValue2(ui->label_led2, 5);
 
-    vit_value = static_cast<int>(std::round(vit_value/60))*60;
-    ui->label_vitpreset->setText(QString::number(vit_value));
-    ui->label_vacpreset->setText(QString::number(static_cast<int>(std::round(ui->label_vacpreset->text().toInt()/5))*5));
-    ui->label_siloil->setText(QString::number(static_cast<int>(std::round(ui->label_siloil->text().toInt()/5))*5));
-    ui->label_dia->setText(QString::number(static_cast<int>(std::round(ui->label_dia->text().toInt()/5))*5));
-    ui->label_led1->setText(QString::number(static_cast<int>(std::round(ui->label_led1->text().toInt()/5))*5));
-    ui->label_led2->setText(QString::number(static_cast<int>(std::round(ui->label_led2->text().toInt()/5))*5));
 }
 
 
@@ -1176,9 +1277,9 @@ void MainWindow::decreaseVaccumValue()
 
     int currentValue = ui->label_vacpreset->text().toInt();
     int newValue = currentValue - 5;
-    if(newValue < 0)
+    if(newValue < 5)
     {
-        newValue = 0;
+        newValue = 5;
     }
     ui->label_vacpreset->setText(QString::number(newValue));
 
@@ -1263,9 +1364,9 @@ void MainWindow::decreaseDiathermyValue()
 
     int currentValue = ui->label_dia->text().toInt();
     int newValue = currentValue - 5;
-    if(newValue<0)
+    if(newValue<5)
     {
-        newValue=0;
+        newValue=5;
     }
     ui->label_dia->setText(QString::number(newValue));
 
@@ -1337,9 +1438,9 @@ void MainWindow::decreaseAirInjectorValue()
 
     int currentValue = ui->label_aipreset->text().toInt();
     int newValue = currentValue - 1;
-    if(newValue<0)
+    if(newValue<1)
     {
-        newValue=0;
+        newValue=1;
     }
     ui->label_aipreset->setText(QString::number(newValue));
 
@@ -1414,9 +1515,9 @@ void MainWindow::decreaseLED1Value()
 
     int currentValue = ui->label_led1->text().toInt();
     int newValue = currentValue - 5;
-    if(newValue<0)
+    if(newValue<5)
     {
-        newValue=0;
+        newValue=5;
     }
     double choice = newValue;
     switchled(led1, choice);
@@ -1456,9 +1557,9 @@ void MainWindow::decreaseLED2Value()
 
     int currentValue = ui->label_led2->text().toInt();
     int newValue = currentValue - 5;
-    if(newValue<0)
+    if(newValue<5)
     {
-        newValue=0;
+        newValue=5;
     }
     double choice = newValue;
     switchled(led2, choice);
@@ -1496,9 +1597,9 @@ void MainWindow::decreaseSiliconOilValue()
 
     int currentValue = ui->label_siloil->text().toInt();
     int newValue = currentValue - 5;
-    if(newValue<0)
+    if(newValue<5)
     {
-        newValue=0;
+        newValue=5;
     }
     ui->label_siloil->setText(QString::number(newValue));
 
@@ -3876,4 +3977,71 @@ void MainWindow::reverseOnOff2()
         connect(ui->pushButton_siloilinc, &QPushButton::clicked, this, &MainWindow::increaseSiliconOilValue);
         connect(ui->pushButton_siloildec, &QPushButton::clicked, this, &MainWindow::decreaseSiliconOilValue);
     }
+}
+
+void MainWindow::updateLabelValue2(QLabel *label, int limit)
+{
+
+    if(label == ui->label_vacpreset)
+    {
+        if(label->text().toInt() < limit)
+        {
+            label->setText(QString::number(vacc2));
+            label->setText(QString::number(static_cast<int>(std::round(label->text().toInt()/5))*5));
+        }
+    }
+
+    if(label == ui->label_vitpreset)
+    {
+        if(label->text().toInt() < limit)
+        {
+            label->setText(QString::number(vitr2));
+            label->setText(QString::number(static_cast<int>(std::round(label->text().toInt()/60))*60));
+        }
+    }
+
+    if(label == ui->label_siloil)
+    {
+        if(label->text().toInt() < limit)
+        {
+            label->setText(QString::number(so2));
+            label->setText(QString::number(static_cast<int>(std::round(label->text().toInt()/5))*5));
+        }
+    }
+
+    if(label == ui->label_aipreset)
+    {
+        if(label->text().toInt() < limit)
+        {
+            label->setText(QString::number(air2));
+        }
+    }
+
+    if(label == ui->label_dia)
+    {
+        if(label->text().toInt() < limit)
+        {
+            label->setText(QString::number(diat2));
+            label->setText(QString::number(static_cast<int>(std::round(label->text().toInt()/5))*5));
+        }
+    }
+
+    if(label == ui->label_led1)
+    {
+        if(label->text().toInt() < limit)
+        {
+            label->setText(QString::number(l12));
+            label->setText(QString::number(static_cast<int>(std::round(label->text().toInt()/5))*5));
+        }
+    }
+
+    if(label == ui->label_led2)
+    {
+        if(label->text().toInt() < limit)
+        {
+            label->setText(QString::number(l22));
+            label->setText(QString::number(static_cast<int>(std::round(label->text().toInt()/5))*5));
+        }
+    }
+
 }
