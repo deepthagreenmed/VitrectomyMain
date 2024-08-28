@@ -81,6 +81,9 @@ MainWindow::MainWindow(QWidget *parent)
         setGPIODirection(gpioPin, "in");
     }
 
+    exportGPIO(965);
+    setGPIODirection(965, "out");
+
 
     fp = new footpedal;
     hhandler = new hwHandler;
