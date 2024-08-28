@@ -206,7 +206,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(win2, &settingswindow::siloil_pedal, this, &MainWindow::siloil_setvalue);
 
 
-
     QObject::connect(win2, &settingswindow::stringPassed, this, &MainWindow::receiveString);
 
     avgfp=fp->convert(CHANNEL_0);
@@ -1730,9 +1729,38 @@ void MainWindow::comboboxload()
     ui->comboBox_surgeonname->clear();
 
     // Adding surgeons to the combo box
-    for (int i = 1; i <= 20; ++i) {
-        ui->comboBox_surgeonname->addItem(QString("Surgeon %1").arg(i));
-    }
+    // Step 1: Connect to the database
+   QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+   db.setDatabaseName(PATH);
+
+   if (!db.open()) {
+       qDebug() << "Error: Could not connect to database!";
+   }
+
+   // Step 2: Execute the query
+   QSqlQuery query;
+   query.prepare("SELECT surgeon FROM maindb");
+
+   if (!query.exec()) {
+       qDebug() << "Error: Query execution failed!";
+   }
+
+   // Step 3: Store the results in an array
+   QVector<QString> columnArray;  // Assuming the column is of type QString
+
+   while (query.next()) {
+       QString value = query.value(0).toString();  // Get the value of the first (and only) column
+       columnArray.append(value);
+   }
+
+   // Example: Output the contents of the array
+   for (const auto& item : columnArray) {
+       ui->comboBox_surgeonname->addItem(item);
+   }
+
+   db.close();
+   QSqlDatabase::removeDatabase("QSQLITE");
+
 }
 
 // Change screens after 3 seconds
