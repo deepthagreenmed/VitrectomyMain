@@ -63,6 +63,7 @@ public:
     QPushButton *pushButton_40;
     QPushButton *pushButton_41;
     QPushButton *pushButton_42;
+    QPushButton *pushButton_43;
 
     void setupUi(QWidget *textkeypad)
     {
@@ -371,6 +372,11 @@ public:
         pushButton_42->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
 "color: rgba(191, 64, 64, 0);\n"
 "border:none;"));
+        pushButton_43 = new QPushButton(textkeypad);
+        pushButton_43->setObjectName(QString::fromUtf8("pushButton_43"));
+        pushButton_43->setGeometry(QRect(20, 170, 131, 61));
+        pushButton_43->setStyleSheet(QString::fromUtf8("background-color: rgb(35, 71, 64);\n"
+"border-radius:10px;"));
 
         retranslateUi(textkeypad);
 
@@ -423,6 +429,7 @@ public:
         pushButton_40->setText(QCoreApplication::translate("textkeypad", "Z", nullptr));
         pushButton_41->setText(QCoreApplication::translate("textkeypad", "?", nullptr));
         pushButton_42->setText(QString());
+        pushButton_43->setText(QCoreApplication::translate("textkeypad", "Caps", nullptr));
     } // retranslateUi
 
 };

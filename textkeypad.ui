@@ -997,6 +997,23 @@ border:none;</string>
     <string/>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton_43">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>170</y>
+     <width>131</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(35, 71, 64);
+border-radius:10px;</string>
+   </property>
+   <property name="text">
+    <string>Caps</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

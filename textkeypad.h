@@ -29,10 +29,12 @@ private slots:
     void enterback();
     void enterspace();
     void enterenter();
+    void caps();
 
 private:
     Ui::textkeypad *ui;
     QTimer *clicktimer;
+    bool isLowercaseMode=false;
 };
 
 #endif // TEXTKEYPAD_H

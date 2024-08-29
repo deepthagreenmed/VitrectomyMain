@@ -24,6 +24,7 @@ textkeypad::textkeypad(QWidget *parent) :
     connect(ui->pushButton_11, &QPushButton::pressed, this, &textkeypad::enterback);
     connect(ui->pushButton_12, &QPushButton::clicked, this, &textkeypad::enterenter);
     connect(ui->pushButton_42, &QPushButton::clicked, this, &textkeypad::enterspace);
+    connect(ui->pushButton_43, &QPushButton::pressed, this, &textkeypad::caps);
 
     clicktimer->setInterval(200);
     clicktimer->setSingleShot(true);
@@ -69,4 +70,27 @@ void textkeypad::enterenter()
     emit entersignal();
 //         clicktimer->start();
 //     }
+}
+
+void textkeypad::caps()
+{
+    if(!clicktimer->isActive()) {
+
+    // Toggle the mode
+    isLowercaseMode = !isLowercaseMode;
+
+    // Update the text of number and character buttons based on the current mode
+    for (int i = 1; i <= 41; ++i) {
+        QPushButton *button = findChild<QPushButton *>(QString("pushButton_%1").arg(i));
+        if (button) {
+            QString currentText = button->text();
+            if (isLowercaseMode) {
+                button->setText(currentText.toLower()); // Convert to lowercase
+            } else {
+                button->setText(currentText.toUpper()); // Convert to uppercase
+            }
+        }
+    }
+    clicktimer->start();
+    }
 }
