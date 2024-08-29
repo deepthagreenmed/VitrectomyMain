@@ -1745,17 +1745,9 @@ void MainWindow::comboboxload()
        qDebug() << "Error: Query execution failed!";
    }
 
-   // Step 3: Store the results in an array
-   QVector<QString> columnArray;  // Assuming the column is of type QString
-
    while (query.next()) {
        QString value = query.value(0).toString();  // Get the value of the first (and only) column
-       columnArray.append(value);
-   }
-
-   // Example: Output the contents of the array
-   for (const auto& item : columnArray) {
-       ui->comboBox_surgeonname->addItem(item);
+       ui->comboBox_surgeonname->addItem(value);
    }
 
    db.close();
