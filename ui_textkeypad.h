@@ -376,7 +376,8 @@ public:
         pushButton_43->setObjectName(QString::fromUtf8("pushButton_43"));
         pushButton_43->setGeometry(QRect(20, 170, 131, 61));
         pushButton_43->setStyleSheet(QString::fromUtf8("background-color: rgb(35, 71, 64);\n"
-"border-radius:10px;"));
+"border-radius:10px;\n"
+"color: rgb(255, 255, 255);"));
 
         retranslateUi(textkeypad);
 
