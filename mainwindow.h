@@ -112,7 +112,6 @@ private slots:
      bool delete20();
      void configOnOff();
      void siloil();
-     void siloil2();
      void ai_setvalue(int pin, int value);
      void led2_setvalue(int pin, int value);
      void vit_setvalue(int pin, int value);

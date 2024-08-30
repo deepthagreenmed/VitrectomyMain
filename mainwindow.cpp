@@ -367,10 +367,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(trunc, &QTimer::timeout, this, &MainWindow::delete20);
     trunc->start(100);
 
-    QTimer *tso = new QTimer;
-    connect(tso, &QTimer::timeout, this, &MainWindow::siloil2);
-    tso->start(1);
-
 }
 
 
@@ -519,7 +515,6 @@ bool MainWindow::eventFilter(QObject* object, QEvent* event)
         key->move(110,500);
         key->show();
         ui->label_vitpreset->setFocus();
-        ui->label_vitactual->setText("");
         ui->label_vacpreset->clearFocus();
         ui->label_siloil->clearFocus();
         ui->label_aipreset->clearFocus();
@@ -4099,19 +4094,4 @@ bool MainWindow::delete20() {
     db.close();
     QSqlDatabase::removeDatabase("QSQLITE");
     return true;
-}
-
-void MainWindow::siloil2()
-{
-    if (ui->label_siloil->text() == "0")
-    {
-        ui->label_siloil->setText(QString::number(so));
-    }
-    else
-    {
-        so = ui->label_siloil->text().toInt();
-    }
-
-    updateLabelValue2(ui->label_siloil, 5);
-
 }
