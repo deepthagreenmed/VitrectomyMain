@@ -817,6 +817,43 @@ mydb.close();
 QSqlDatabase::removeDatabase("QSQLITE");
 }
 
+void settingswindow::saveDatabaseFromList()
+{
+    // Step 1: Open the SQLite database connection
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName(PATH);
+
+    if (!db.open()) {
+        qDebug() << "Error: Could not open the database!";
+        return;
+    }
+
+    // Start transaction
+    db.transaction();
+
+    for (int i = 0; i < ui->listWidget->count(); ++i) {
+            QListWidgetItem* item = ui->listWidget->item(i);
+            QString newPrimaryKeyValue = item->text(); // Assuming text contains the new primary key value
+
+            // Prepare the query to update the primary key
+            QSqlQuery query(db);
+            query.prepare("UPDATE maindb SET surgeon = :new_value WHERE rowid = :rowid");
+
+            // Binding the new primary key value and row id
+            query.bindValue(":new_value", newPrimaryKeyValue);
+            query.bindValue(":rowid", i + 1);  // Assuming rowid matches the list widget index
+
+            query.exec();
+        }
+
+        // Commit transaction
+        db.commit();
+
+    // Step 4: Close the database connection
+    db.close();
+    QSqlDatabase::removeDatabase("QSQLITE");
+}
+
 // Footpedal 0 (increase)
 void settingswindow::zeroinc()
 {
@@ -1261,6 +1298,7 @@ void settingswindow::on_clickedentertext()
         return;
     }
     ui->listWidget->currentItem()->setText(docnamenew);
+    saveDatabaseFromList();
 
     db1.close();
     QSqlDatabase::removeDatabase("QSQLITE");

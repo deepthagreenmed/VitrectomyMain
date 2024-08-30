@@ -69,6 +69,7 @@ public:
     int beep_2to3=0;
     QString madtype;
     QString surgeon;
+    void comboboxload();
     void exportGPIO(int pin);
     void setGPIODirection(int pin, const std::string& direction);
     void writeGPIO(int pin, int value);
@@ -155,7 +156,7 @@ private slots:
     void vit_linear_nonlinear();
     //led2
     void led2_onoff();
-    void comboboxload();
+
     void onComboBoxClicked();
     void timerCompleted();
     //setup screen

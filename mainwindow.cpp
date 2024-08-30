@@ -320,7 +320,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(onofftimer, &QTimer::timeout, this, &MainWindow::configOnOff);
     onofftimer->start(1000);
 
-    if(ui->comboBox_surgeonname->currentText()=="Surgeon 1")
+    if(ui->comboBox_surgeonname->currentIndex()==0)
     {
         surgeon1();
     }
@@ -3303,6 +3303,7 @@ void MainWindow::setFPValues()
 // Transmit surgeon from settings window to main window
 void MainWindow::updateText(const QString &text)
 {
+    comboboxload();
     ui->comboBox_surgeonname->setCurrentText(text);
 }
 
@@ -3846,8 +3847,8 @@ void MainWindow::loadPresets()
 
 void MainWindow::surgeon1()
 {
-    surgeonid="Surgeon 1";
     surgeonind=0;
+    surgeonid=ui->comboBox_surgeonname->currentText();
 
     QSqlDatabase mydb1 = QSqlDatabase::addDatabase("QSQLITE");
     mydb1.setDatabaseName(PATH);

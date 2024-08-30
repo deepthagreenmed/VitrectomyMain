@@ -35,6 +35,7 @@ public:
     void updateLineEditValue(QLineEdit* label, int dig, int value, int maxValue);
     int flag2=0;
     int readGPIO(int pin);
+    void saveDatabaseFromList();
 
 
 
