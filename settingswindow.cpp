@@ -605,6 +605,16 @@ void settingswindow::on_vit_clicked()
 // Go to surgery screen
 void settingswindow::show_surgery_screen()
 {
+    saveDatabaseFromList();
+
+    QStringList items;
+    for (int i = 0; i < ui->listWidget->count(); ++i) {
+        items << ui->listWidget->item(i)->text();
+    }
+    emit listUpdated(items);
+
+    updateSurgeon();
+
 
     ui->lineEdit_cutrate->clearFocus();
     ui->lineEdit_powmax->clearFocus();
@@ -1302,7 +1312,7 @@ void settingswindow::on_clickedentertext()
         return;
     }
     ui->listWidget->currentItem()->setText(docnamenew);
-    saveDatabaseFromList();
+
 
     db1.close();
     QSqlDatabase::removeDatabase("QSQLITE");

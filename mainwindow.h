@@ -69,12 +69,12 @@ public:
     int beep_2to3=0;
     QString madtype;
     QString surgeon;
-    void comboboxload();
+
     void exportGPIO(int pin);
     void setGPIODirection(int pin, const std::string& direction);
     void writeGPIO(int pin, int value);
     void loadPresets();
-    void surgeon1();
+    void surgeonLoad(int index);
     void reverseOnOff();
     void reverseOnOff2();
 
@@ -84,6 +84,7 @@ public:
 signals:
 
 public slots:
+    void comboboxload(const QStringList& items);
     void updateText(const QString &text);
     void setFPValues();
     void receiveString(const QString& str);

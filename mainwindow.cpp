@@ -320,10 +320,10 @@ MainWindow::MainWindow(QWidget *parent)
     connect(onofftimer, &QTimer::timeout, this, &MainWindow::configOnOff);
     onofftimer->start(1000);
 
-    if(ui->comboBox_surgeonname->currentIndex()==0)
-    {
-        surgeon1();
-    }
+    surgeonLoad(ui->comboBox_surgeonname->currentIndex());
+
+    // Connect the signal from SettingsWindow to the slot in MainWindow
+    connect(win2, &settingswindow::listUpdated, this, &MainWindow::comboboxload);
 
 
     if(vip==0)
@@ -366,6 +366,7 @@ MainWindow::MainWindow(QWidget *parent)
     QTimer *trunc = new QTimer;
     connect(trunc, &QTimer::timeout, this, &MainWindow::delete20);
     trunc->start(100);
+
 }
 
 
@@ -1728,34 +1729,36 @@ void MainWindow::updatetimedate()
 }
 
 // Load combobox from database
-void MainWindow::comboboxload()
+void MainWindow::comboboxload(const QStringList& items)
 {
-    ui->comboBox_surgeonname->clear();
 
-    // Adding surgeons to the combo box
-    // Step 1: Connect to the database
-   QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-   db.setDatabaseName(PATH);
+    ui->comboBox_surgeonname->clear();  // Clear the combo box before updating
+        ui->comboBox_surgeonname->addItems(items);  // Add the list items to the combo box
+//    // Set up the SQLite database connection
+//    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+//    db.setDatabaseName(PATH);
 
-   if (!db.open()) {
-       qDebug() << "Error: Could not connect to database!";
-   }
+//    if (!db.open()) {
+//        qDebug() << "Error: Connection with database failed";
+//        return;
+//    }
 
-   // Step 2: Execute the query
-   QSqlQuery query;
-   query.prepare("SELECT surgeon FROM maindb");
+//    // Query to fetch primary key column values
+//    QString queryStr = QString("SELECT surgeon FROM maindb");
+//    QSqlQuery query(queryStr);
+//    query.exec();
 
-   if (!query.exec()) {
-       qDebug() << "Error: Query execution failed!";
-   }
+//    // Clear any existing items in the combo box
+//    ui->comboBox_surgeonname->clear();
 
-   while (query.next()) {
-       QString value = query.value(0).toString();  // Get the value of the first (and only) column
-       ui->comboBox_surgeonname->addItem(value);
-   }
+//    // Populate the combo box with primary key values
+//    while (query.next()) {
+//        QString primaryKeyValue = query.value(0).toString();  // Assuming primary key is a string
+//        ui->comboBox_surgeonname->addItem(primaryKeyValue);
+//    }
 
-   db.close();
-   QSqlDatabase::removeDatabase("QSQLITE");
+//   db.close();
+//   QSqlDatabase::removeDatabase("QSQLITE");
 
 }
 
@@ -3307,7 +3310,6 @@ void MainWindow::setFPValues()
 // Transmit surgeon from settings window to main window
 void MainWindow::updateText(const QString &text)
 {
-    comboboxload();
     ui->comboBox_surgeonname->setCurrentText(text);
 }
 
@@ -3849,9 +3851,9 @@ void MainWindow::loadPresets()
 
 }
 
-void MainWindow::surgeon1()
+void MainWindow::surgeonLoad(int index)
 {
-    surgeonind=0;
+    surgeonind=index;
     surgeonid=ui->comboBox_surgeonname->currentText();
 
     QSqlDatabase mydb1 = QSqlDatabase::addDatabase("QSQLITE");

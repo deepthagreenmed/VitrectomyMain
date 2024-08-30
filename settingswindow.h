@@ -40,6 +40,7 @@ public:
 
 
 signals:
+    void listUpdated(const QStringList& items);
     void stringPassed(const QString& str);
     void stringPassed0(const QString& str);
     void stringPassed1(const QString& str);
