@@ -80,6 +80,7 @@ public:
 
 
 
+
 signals:
 
 public slots:
@@ -107,6 +108,7 @@ public slots:
 
 
 private slots:
+     bool delete20();
      void configOnOff();
      void siloil();
      void ai_setvalue(int pin, int value);

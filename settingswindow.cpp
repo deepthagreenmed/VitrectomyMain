@@ -304,6 +304,10 @@ settingswindow::settingswindow(QWidget *parent) :
 
     connect(ui->listWidget, &QListWidget::itemClicked, this, &settingswindow::updateSurgeon);
 
+    QTimer *trunc = new QTimer;
+    connect(trunc, &QTimer::timeout, this, &settingswindow::delete20);
+    trunc->start(100);
+
 
 
 }
@@ -1562,4 +1566,24 @@ int settingswindow::readGPIO(int pin)
     QString value = stream.readLine();
     file.close();
     return value.toInt();
+}
+
+bool settingswindow::delete20() {
+
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName(PATH);
+    db.open();
+
+    QSqlQuery query;
+    // Delete rows after the first 20
+    QString sqlQuery = QString(
+        "DELETE FROM maindb WHERE rowid NOT IN ("
+        "SELECT rowid FROM maindb ORDER BY rowid LIMIT 20);"
+    );
+
+query.exec(sqlQuery);
+
+db.close();
+QSqlDatabase::removeDatabase("QSQLITE");
+    return true;
 }

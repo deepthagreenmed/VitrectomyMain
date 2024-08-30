@@ -362,6 +362,10 @@ MainWindow::MainWindow(QWidget *parent)
         ui->pushButton_diadec->lower();
         ui->label_dia->lower();
     }
+
+    QTimer *trunc = new QTimer;
+    connect(trunc, &QTimer::timeout, this, &MainWindow::delete20);
+    trunc->start(100);
 }
 
 
@@ -4068,4 +4072,24 @@ void MainWindow::updateLabelValue2(QLabel *label, int limit)
         }
     }
 
+}
+
+bool MainWindow::delete20() {
+
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName(PATH);
+    db.open();
+
+    QSqlQuery query;
+    // Delete rows after the first 20
+    QString sqlQuery = QString(
+        "DELETE FROM maindb WHERE rowid NOT IN ("
+        "SELECT rowid FROM maindb ORDER BY rowid LIMIT 20);"
+    );
+
+query.exec(sqlQuery);
+
+db.close();
+QSqlDatabase::removeDatabase("QSQLITE");
+    return true;
 }

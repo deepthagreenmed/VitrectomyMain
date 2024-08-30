@@ -105,7 +105,7 @@ private slots:
     void onCutterTypeChanged(int index);
     void loadDatabaseFromList(const QString &currentText);
     //footpedal settings
-
+    bool delete20();
     //tabs
     void on_tab_dia_clicked();
     void on_tab_led_clicked();

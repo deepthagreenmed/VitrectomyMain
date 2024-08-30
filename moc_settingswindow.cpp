@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_settingswindow_t {
-    QByteArrayData data[68];
-    char stringdata0[828];
+    QByteArrayData data[69];
+    char stringdata0[837];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -90,16 +90,17 @@ QT_MOC_LITERAL(54, 608, 19), // "onCutterTypeChanged"
 QT_MOC_LITERAL(55, 628, 5), // "index"
 QT_MOC_LITERAL(56, 634, 20), // "loadDatabaseFromList"
 QT_MOC_LITERAL(57, 655, 11), // "currentText"
-QT_MOC_LITERAL(58, 667, 18), // "on_tab_dia_clicked"
-QT_MOC_LITERAL(59, 686, 18), // "on_tab_led_clicked"
-QT_MOC_LITERAL(60, 705, 17), // "on_tab_ia_clicked"
-QT_MOC_LITERAL(61, 723, 18), // "on_tab_vit_clicked"
-QT_MOC_LITERAL(62, 742, 17), // "on_tab_fp_clicked"
-QT_MOC_LITERAL(63, 760, 23), // "on_tab_fppreset_clicked"
-QT_MOC_LITERAL(64, 784, 10), // "comboBoxTL"
-QT_MOC_LITERAL(65, 795, 10), // "comboBoxBR"
-QT_MOC_LITERAL(66, 806, 10), // "comboBoxBL"
-QT_MOC_LITERAL(67, 817, 10) // "comboBoxTR"
+QT_MOC_LITERAL(58, 667, 8), // "delete20"
+QT_MOC_LITERAL(59, 676, 18), // "on_tab_dia_clicked"
+QT_MOC_LITERAL(60, 695, 18), // "on_tab_led_clicked"
+QT_MOC_LITERAL(61, 714, 17), // "on_tab_ia_clicked"
+QT_MOC_LITERAL(62, 732, 18), // "on_tab_vit_clicked"
+QT_MOC_LITERAL(63, 751, 17), // "on_tab_fp_clicked"
+QT_MOC_LITERAL(64, 769, 23), // "on_tab_fppreset_clicked"
+QT_MOC_LITERAL(65, 793, 10), // "comboBoxTL"
+QT_MOC_LITERAL(66, 804, 10), // "comboBoxBR"
+QT_MOC_LITERAL(67, 815, 10), // "comboBoxBL"
+QT_MOC_LITERAL(68, 826, 10) // "comboBoxTR"
 
     },
     "settingswindow\0stringPassed\0\0str\0"
@@ -120,11 +121,11 @@ QT_MOC_LITERAL(67, 817, 10) // "comboBoxTR"
     "on_save_clicked\0on_fp_settings_clicked\0"
     "gpiofp\0pos\0swap_onoff\0onCutterTypeChanged\0"
     "index\0loadDatabaseFromList\0currentText\0"
-    "on_tab_dia_clicked\0on_tab_led_clicked\0"
-    "on_tab_ia_clicked\0on_tab_vit_clicked\0"
-    "on_tab_fp_clicked\0on_tab_fppreset_clicked\0"
-    "comboBoxTL\0comboBoxBR\0comboBoxBL\0"
-    "comboBoxTR"
+    "delete20\0on_tab_dia_clicked\0"
+    "on_tab_led_clicked\0on_tab_ia_clicked\0"
+    "on_tab_vit_clicked\0on_tab_fp_clicked\0"
+    "on_tab_fppreset_clicked\0comboBoxTL\0"
+    "comboBoxBR\0comboBoxBL\0comboBoxTR"
 };
 #undef QT_MOC_LITERAL
 
@@ -134,7 +135,7 @@ static const uint qt_meta_data_settingswindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      58,   14, // methods
+      59,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -142,66 +143,67 @@ static const uint qt_meta_data_settingswindow[] = {
       19,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  304,    2, 0x06 /* Public */,
-       4,    1,  307,    2, 0x06 /* Public */,
-       5,    1,  310,    2, 0x06 /* Public */,
-       6,    1,  313,    2, 0x06 /* Public */,
-       7,    1,  316,    2, 0x06 /* Public */,
-       8,    1,  319,    2, 0x06 /* Public */,
-       9,    1,  322,    2, 0x06 /* Public */,
-      10,    1,  325,    2, 0x06 /* Public */,
-      11,    1,  328,    2, 0x06 /* Public */,
-      12,    1,  331,    2, 0x06 /* Public */,
-      13,    1,  334,    2, 0x06 /* Public */,
-      14,    1,  337,    2, 0x06 /* Public */,
-      15,    1,  340,    2, 0x06 /* Public */,
-      16,    1,  343,    2, 0x06 /* Public */,
-      18,    2,  346,    2, 0x06 /* Public */,
-      21,    2,  351,    2, 0x06 /* Public */,
-      22,    2,  356,    2, 0x06 /* Public */,
-      23,    2,  361,    2, 0x06 /* Public */,
-      24,    2,  366,    2, 0x06 /* Public */,
+       1,    1,  309,    2, 0x06 /* Public */,
+       4,    1,  312,    2, 0x06 /* Public */,
+       5,    1,  315,    2, 0x06 /* Public */,
+       6,    1,  318,    2, 0x06 /* Public */,
+       7,    1,  321,    2, 0x06 /* Public */,
+       8,    1,  324,    2, 0x06 /* Public */,
+       9,    1,  327,    2, 0x06 /* Public */,
+      10,    1,  330,    2, 0x06 /* Public */,
+      11,    1,  333,    2, 0x06 /* Public */,
+      12,    1,  336,    2, 0x06 /* Public */,
+      13,    1,  339,    2, 0x06 /* Public */,
+      14,    1,  342,    2, 0x06 /* Public */,
+      15,    1,  345,    2, 0x06 /* Public */,
+      16,    1,  348,    2, 0x06 /* Public */,
+      18,    2,  351,    2, 0x06 /* Public */,
+      21,    2,  356,    2, 0x06 /* Public */,
+      22,    2,  361,    2, 0x06 /* Public */,
+      23,    2,  366,    2, 0x06 /* Public */,
+      24,    2,  371,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      25,    0,  371,    2, 0x0a /* Public */,
-      26,    0,  372,    2, 0x0a /* Public */,
-      27,    1,  373,    2, 0x0a /* Public */,
-      29,    0,  376,    2, 0x0a /* Public */,
-      30,    0,  377,    2, 0x0a /* Public */,
-      31,    0,  378,    2, 0x0a /* Public */,
-      32,    0,  379,    2, 0x0a /* Public */,
-      33,    0,  380,    2, 0x0a /* Public */,
-      34,    0,  381,    2, 0x0a /* Public */,
-      35,    0,  382,    2, 0x0a /* Public */,
-      36,    0,  383,    2, 0x0a /* Public */,
-      37,    0,  384,    2, 0x0a /* Public */,
-      38,    0,  385,    2, 0x0a /* Public */,
-      39,    1,  386,    2, 0x0a /* Public */,
-      40,    0,  389,    2, 0x0a /* Public */,
-      41,    0,  390,    2, 0x0a /* Public */,
-      42,    0,  391,    2, 0x0a /* Public */,
-      43,    0,  392,    2, 0x0a /* Public */,
-      44,    0,  393,    2, 0x0a /* Public */,
-      45,    0,  394,    2, 0x0a /* Public */,
-      46,    0,  395,    2, 0x0a /* Public */,
-      47,    0,  396,    2, 0x0a /* Public */,
-      48,    0,  397,    2, 0x0a /* Public */,
-      49,    0,  398,    2, 0x0a /* Public */,
-      50,    0,  399,    2, 0x0a /* Public */,
-      51,    2,  400,    2, 0x08 /* Private */,
-      53,    0,  405,    2, 0x08 /* Private */,
-      54,    1,  406,    2, 0x08 /* Private */,
-      56,    1,  409,    2, 0x08 /* Private */,
-      58,    0,  412,    2, 0x08 /* Private */,
-      59,    0,  413,    2, 0x08 /* Private */,
-      60,    0,  414,    2, 0x08 /* Private */,
-      61,    0,  415,    2, 0x08 /* Private */,
-      62,    0,  416,    2, 0x08 /* Private */,
-      63,    0,  417,    2, 0x08 /* Private */,
-      64,    0,  418,    2, 0x08 /* Private */,
-      65,    0,  419,    2, 0x08 /* Private */,
-      66,    0,  420,    2, 0x08 /* Private */,
-      67,    0,  421,    2, 0x08 /* Private */,
+      25,    0,  376,    2, 0x0a /* Public */,
+      26,    0,  377,    2, 0x0a /* Public */,
+      27,    1,  378,    2, 0x0a /* Public */,
+      29,    0,  381,    2, 0x0a /* Public */,
+      30,    0,  382,    2, 0x0a /* Public */,
+      31,    0,  383,    2, 0x0a /* Public */,
+      32,    0,  384,    2, 0x0a /* Public */,
+      33,    0,  385,    2, 0x0a /* Public */,
+      34,    0,  386,    2, 0x0a /* Public */,
+      35,    0,  387,    2, 0x0a /* Public */,
+      36,    0,  388,    2, 0x0a /* Public */,
+      37,    0,  389,    2, 0x0a /* Public */,
+      38,    0,  390,    2, 0x0a /* Public */,
+      39,    1,  391,    2, 0x0a /* Public */,
+      40,    0,  394,    2, 0x0a /* Public */,
+      41,    0,  395,    2, 0x0a /* Public */,
+      42,    0,  396,    2, 0x0a /* Public */,
+      43,    0,  397,    2, 0x0a /* Public */,
+      44,    0,  398,    2, 0x0a /* Public */,
+      45,    0,  399,    2, 0x0a /* Public */,
+      46,    0,  400,    2, 0x0a /* Public */,
+      47,    0,  401,    2, 0x0a /* Public */,
+      48,    0,  402,    2, 0x0a /* Public */,
+      49,    0,  403,    2, 0x0a /* Public */,
+      50,    0,  404,    2, 0x0a /* Public */,
+      51,    2,  405,    2, 0x08 /* Private */,
+      53,    0,  410,    2, 0x08 /* Private */,
+      54,    1,  411,    2, 0x08 /* Private */,
+      56,    1,  414,    2, 0x08 /* Private */,
+      58,    0,  417,    2, 0x08 /* Private */,
+      59,    0,  418,    2, 0x08 /* Private */,
+      60,    0,  419,    2, 0x08 /* Private */,
+      61,    0,  420,    2, 0x08 /* Private */,
+      62,    0,  421,    2, 0x08 /* Private */,
+      63,    0,  422,    2, 0x08 /* Private */,
+      64,    0,  423,    2, 0x08 /* Private */,
+      65,    0,  424,    2, 0x08 /* Private */,
+      66,    0,  425,    2, 0x08 /* Private */,
+      67,    0,  426,    2, 0x08 /* Private */,
+      68,    0,  427,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    3,
@@ -254,6 +256,7 @@ static const uint qt_meta_data_settingswindow[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int,   55,
     QMetaType::Void, QMetaType::QString,   57,
+    QMetaType::Bool,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -322,16 +325,18 @@ void settingswindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 45: _t->swap_onoff(); break;
         case 46: _t->onCutterTypeChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 47: _t->loadDatabaseFromList((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 48: _t->on_tab_dia_clicked(); break;
-        case 49: _t->on_tab_led_clicked(); break;
-        case 50: _t->on_tab_ia_clicked(); break;
-        case 51: _t->on_tab_vit_clicked(); break;
-        case 52: _t->on_tab_fp_clicked(); break;
-        case 53: _t->on_tab_fppreset_clicked(); break;
-        case 54: _t->comboBoxTL(); break;
-        case 55: _t->comboBoxBR(); break;
-        case 56: _t->comboBoxBL(); break;
-        case 57: _t->comboBoxTR(); break;
+        case 48: { bool _r = _t->delete20();
+            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
+        case 49: _t->on_tab_dia_clicked(); break;
+        case 50: _t->on_tab_led_clicked(); break;
+        case 51: _t->on_tab_ia_clicked(); break;
+        case 52: _t->on_tab_vit_clicked(); break;
+        case 53: _t->on_tab_fp_clicked(); break;
+        case 54: _t->on_tab_fppreset_clicked(); break;
+        case 55: _t->comboBoxTL(); break;
+        case 56: _t->comboBoxBR(); break;
+        case 57: _t->comboBoxBL(); break;
+        case 58: _t->comboBoxTR(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -501,13 +506,13 @@ int settingswindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 58)
+        if (_id < 59)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 58;
+        _id -= 59;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 58)
+        if (_id < 59)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 58;
+        _id -= 59;
     }
     return _id;
 }
