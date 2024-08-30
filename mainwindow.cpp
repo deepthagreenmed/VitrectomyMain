@@ -367,6 +367,10 @@ MainWindow::MainWindow(QWidget *parent)
     connect(trunc, &QTimer::timeout, this, &MainWindow::delete20);
     trunc->start(100);
 
+    QTimer *tso = new QTimer;
+    connect(tso, &QTimer::timeout, this, &MainWindow::siloil2);
+    tso->start(1);
+
 }
 
 
@@ -515,6 +519,7 @@ bool MainWindow::eventFilter(QObject* object, QEvent* event)
         key->move(110,500);
         key->show();
         ui->label_vitpreset->setFocus();
+        ui->label_vitactual->setText("");
         ui->label_vacpreset->clearFocus();
         ui->label_siloil->clearFocus();
         ui->label_aipreset->clearFocus();
@@ -637,7 +642,6 @@ void MainWindow::on_clicked(const QString& digit)
       vacc2 = ui->label_vacpreset->text().toInt();
       int value = (ui->label_vacpreset->text()+digit).toInt();
       updateLabelValue(ui->label_vacpreset, dig, value, 500, 5);
-
    }
   }
   if(ui->label_vitpreset->focusWidget()) {
@@ -3602,13 +3606,14 @@ void MainWindow::siloil()
     }
     if(sp==1)
     {
+//        updateLabelValue2(ui->label_siloil, 5);
         l->writeDAC(0);
         int avg1 = vac->convert(CHANNEL_1)*0.1894;
         ui->label_vacactual->setText(QString::number(avg1));
         hhandler->safety_vent_off();
 
 
-        if(ui->label_dialvalue->text() == "0" || ui->label_siloil->text().toInt()==0)
+        if(ui->label_dialvalue->text() == "0")
         {
             hhandler->siloil_off();
             hhandler->vso_off();
@@ -3828,7 +3833,7 @@ void MainWindow::loadPresets()
         hhandler->safety_vent_off();
 
 
-        if(ui->label_dialvalue->text() == "0" || ui->label_siloil->text().toInt()==0)
+        if(ui->label_dialvalue->text() == "0")
         {
             hhandler->siloil_off();
             hhandler->vso_off();
@@ -4089,9 +4094,24 @@ bool MainWindow::delete20() {
         "SELECT rowid FROM maindb ORDER BY rowid LIMIT 20);"
     );
 
-query.exec(sqlQuery);
+    query.exec(sqlQuery);
 
-db.close();
-QSqlDatabase::removeDatabase("QSQLITE");
+    db.close();
+    QSqlDatabase::removeDatabase("QSQLITE");
     return true;
+}
+
+void MainWindow::siloil2()
+{
+    if (ui->label_siloil->text() == "0")
+    {
+        ui->label_siloil->setText(QString::number(so));
+    }
+    else
+    {
+        so = ui->label_siloil->text().toInt();
+    }
+
+    updateLabelValue2(ui->label_siloil, 5);
+
 }

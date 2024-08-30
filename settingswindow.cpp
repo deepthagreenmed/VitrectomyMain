@@ -615,7 +615,6 @@ void settingswindow::show_surgery_screen()
 
     updateSurgeon();
 
-
     ui->lineEdit_cutrate->clearFocus();
     ui->lineEdit_powmax->clearFocus();
     ui->lineEdit_vac->clearFocus();
