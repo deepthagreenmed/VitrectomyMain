@@ -201,6 +201,11 @@ private:
     double idx;
     int avgfp=0;
     int vitc=0;
+    int vaccc=0;
+    int soc=0;
+    int diatc=0;
+    int l1c=0;
+    int l2c=0;
 
     int vp;
     int ap;
