@@ -153,8 +153,6 @@ private slots:
     void ai_onoff();
     //vitrectomy
     void vit_onoff();
-    //surgeon
-    void setsurgeon();
     //vitrectomy linear/nonlinear
     void vit_linear_nonlinear();
     //led2

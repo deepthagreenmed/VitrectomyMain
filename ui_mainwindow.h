@@ -52,7 +52,6 @@ public:
     QLabel *label_25;
     QLabel *label_26;
     QLabel *label_27;
-    QPushButton *pushButton_endcase;
     QLabel *label_28;
     QLabel *label_dialvalue;
     QDial *dial;
@@ -319,18 +318,6 @@ public:
         label_27->setObjectName(QString::fromUtf8("label_27"));
         label_27->setGeometry(QRect(620, 630, 171, 61));
         label_27->setStyleSheet(QString::fromUtf8("font: 40pt \"Ubuntu\";"));
-        pushButton_endcase = new QPushButton(centralwidget);
-        pushButton_endcase->setObjectName(QString::fromUtf8("pushButton_endcase"));
-        pushButton_endcase->setGeometry(QRect(1620, 20, 171, 101));
-        pushButton_endcase->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"	background-color: rgb(37, 173, 232);border-radius: 20px;\n"
-"font: 20pt \"Ubuntu\";\n"
-"}\n"
-"\n"
-"QPushButton::hover{background-color: #007dff;\n"
-"border-radius: 20px;\n"
-"font: 20pt \"Ubuntu\";\n"
-"color:white;;}"));
         label_28 = new QLabel(centralwidget);
         label_28->setObjectName(QString::fromUtf8("label_28"));
         label_28->setGeometry(QRect(530, 150, 101, 71));
@@ -623,7 +610,6 @@ public:
         label_vacactual->raise();
         label_21->raise();
         label_25->raise();
-        pushButton_endcase->raise();
         label_28->raise();
         pushButton_vaclinearnonlinear->raise();
         label_38->raise();
@@ -718,7 +704,6 @@ public:
         label_25->setText(QCoreApplication::translate("MainWindow", "DIATHERMY", nullptr));
         label_26->setText(QCoreApplication::translate("MainWindow", "SILICON OIL", nullptr));
         label_27->setText(QCoreApplication::translate("MainWindow", "LED-1", nullptr));
-        pushButton_endcase->setText(QCoreApplication::translate("MainWindow", "END CASE", nullptr));
         label_28->setText(QString());
         label_dialvalue->setText(QCoreApplication::translate("MainWindow", "0", nullptr));
         label_38->setText(QString());

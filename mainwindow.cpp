@@ -57,7 +57,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButton_aionoff, &QPushButton::pressed, this, &MainWindow::ai_onoff);
     connect(ui->pushButton_vitonoff, &QPushButton::pressed, this, &MainWindow::vit_onoff);
     connect(ui->pushButton_led2onoff, &QPushButton::pressed, this, &MainWindow::led2_onoff);
-    connect(ui->pushButton_endcase, &QPushButton::pressed, this, &MainWindow::setsurgeon);
     connect(ui->pushButton_vaclinearnonlinear, &QPushButton::pressed, this, &MainWindow::vac_linear_nonlinear);
     connect(ui->pushButton_vitlinearnonlinear, &QPushButton::pressed, this, &MainWindow::vit_linear_nonlinear);
     connect(ui->pushButton_start, &QPushButton::pressed, this, &MainWindow::showsetupscreen);
@@ -1713,13 +1712,6 @@ void MainWindow::diaval(QString str)
     ui->label_dia->setText(str);
 }
 
-// Get name of surgeon
-void MainWindow::setsurgeon()
-{
-   surgeon=ui->comboBox_surgeonname->currentText();
-}
-
-
 // Turn vitrectomy linear or non-linear
 void MainWindow::vit_linear_nonlinear()
 {
@@ -1758,31 +1750,6 @@ void MainWindow::comboboxload(const QStringList& items)
 
     ui->comboBox_surgeonname->clear();  // Clear the combo box before updating
         ui->comboBox_surgeonname->addItems(items);  // Add the list items to the combo box
-//    // Set up the SQLite database connection
-//    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-//    db.setDatabaseName(PATH);
-
-//    if (!db.open()) {
-//        qDebug() << "Error: Connection with database failed";
-//        return;
-//    }
-
-//    // Query to fetch primary key column values
-//    QString queryStr = QString("SELECT surgeon FROM maindb");
-//    QSqlQuery query(queryStr);
-//    query.exec();
-
-//    // Clear any existing items in the combo box
-//    ui->comboBox_surgeonname->clear();
-
-//    // Populate the combo box with primary key values
-//    while (query.next()) {
-//        QString primaryKeyValue = query.value(0).toString();  // Assuming primary key is a string
-//        ui->comboBox_surgeonname->addItem(primaryKeyValue);
-//    }
-
-//   db.close();
-//   QSqlDatabase::removeDatabase("QSQLITE");
 
 }
 

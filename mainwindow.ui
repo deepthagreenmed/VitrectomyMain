@@ -596,30 +596,6 @@ color: rgb(0, 0, 0);</string>
      <string>LED-1</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_endcase">
-    <property name="geometry">
-     <rect>
-      <x>1620</x>
-      <y>20</y>
-      <width>171</width>
-      <height>101</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-	background-color: rgb(37, 173, 232);border-radius: 20px;
-font: 20pt &quot;Ubuntu&quot;;
-}
-
-QPushButton::hover{background-color: #007dff;
-border-radius: 20px;
-font: 20pt &quot;Ubuntu&quot;;
-color:white;;}</string>
-    </property>
-    <property name="text">
-     <string>END CASE</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_28">
     <property name="geometry">
      <rect>
@@ -1499,7 +1475,6 @@ color:white;;}</string>
    <zorder>label_vacactual</zorder>
    <zorder>label_21</zorder>
    <zorder>label_25</zorder>
-   <zorder>pushButton_endcase</zorder>
    <zorder>label_28</zorder>
    <zorder>pushButton_vaclinearnonlinear</zorder>
    <zorder>label_38</zorder>
