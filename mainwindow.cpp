@@ -57,6 +57,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButton_aionoff, &QPushButton::pressed, this, &MainWindow::ai_onoff);
     connect(ui->pushButton_vitonoff, &QPushButton::pressed, this, &MainWindow::vit_onoff);
     connect(ui->pushButton_led2onoff, &QPushButton::pressed, this, &MainWindow::led2_onoff);
+//    connect(ui->pushButton_endcase, &QPushButton::clicked, this, &MainWindow::setsurgeon);
     connect(ui->pushButton_vaclinearnonlinear, &QPushButton::pressed, this, &MainWindow::vac_linear_nonlinear);
     connect(ui->pushButton_vitlinearnonlinear, &QPushButton::pressed, this, &MainWindow::vit_linear_nonlinear);
     connect(ui->pushButton_start, &QPushButton::pressed, this, &MainWindow::showsetupscreen);
@@ -64,6 +65,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     clicktimer->setInterval(200);
     clicktimer->setSingleShot(true);
+
+    QTimer *trunc = new QTimer;
+    connect(trunc, &QTimer::timeout, this, &MainWindow::delete20);
+    trunc->start(100);
 
     vacc = ui->label_vacpreset->text().toInt();
     vitr = ui->label_vitpreset->text().toInt();
@@ -99,7 +104,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->comboBox_surgeonname, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &MainWindow::onComboBoxClicked);
 
 
-
      timerscreen = new QTimer;
      timerscreen->start(7000);
      connect(timerscreen, &QTimer::timeout, this, &MainWindow::timerCompleted);
@@ -128,9 +132,17 @@ MainWindow::MainWindow(QWidget *parent)
         surgeonind=itemname48.toInt();
     }
 
+
     QString vacmode2, vitmode;
 
-     query.exec("select * from maindb where surgeon='"+surgeon+"'");
+    QString qstr = QString("SELECT surgeon from maindb LIMIT 1 OFFSET %1").arg(surgeonind);
+    query.exec(qstr);
+    if(query.next())
+    {
+        surgeonid = query.value(0).toString();
+    }
+
+     query.exec("select * from maindb where surgeon='"+surgeonid+"'");
      while(query.next()){
 
          vp=query.value(51).toInt();
@@ -196,7 +208,18 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->comboBox_surgeonname->setCurrentIndex(surgeonind);
 
+    surgeonLoad(ui->comboBox_surgeonname->currentIndex());
+
     win2=new settingswindow(this);
+
+
+    // Connect the signal from SettingsWindow to the slot in MainWindow
+    connect(win2, &settingswindow::listUpdated, this, &MainWindow::comboboxload);
+
+    win2->emitListContents();
+
+    connect(win2, &settingswindow::textSelected, this, &MainWindow::updateText);
+
 
     connect(win2, &settingswindow::ai_pedal, this, &MainWindow::ai_setvalue);
     connect(win2, &settingswindow::led2_pedal, this, &MainWindow::led2_setvalue);
@@ -297,7 +320,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(timervit, &QTimer::timeout, this, &MainWindow::vitvalset);
     timervit->start(1);
 
-    connect(win2, &settingswindow::textSelected, this, &MainWindow::updateText);
+
 
     pres=new sensor;
 
@@ -318,11 +341,6 @@ MainWindow::MainWindow(QWidget *parent)
     QTimer *onofftimer=new QTimer;
     connect(onofftimer, &QTimer::timeout, this, &MainWindow::configOnOff);
     onofftimer->start(1000);
-
-    surgeonLoad(ui->comboBox_surgeonname->currentIndex());
-
-    // Connect the signal from SettingsWindow to the slot in MainWindow
-    connect(win2, &settingswindow::listUpdated, this, &MainWindow::comboboxload);
 
 
     if(vip==0)
@@ -362,10 +380,55 @@ MainWindow::MainWindow(QWidget *parent)
         ui->label_dia->lower();
     }
 
-    QTimer *trunc = new QTimer;
-    connect(trunc, &QTimer::timeout, this, &MainWindow::delete20);
-    trunc->start(100);
+//    QTimer* tcb = new QTimer;
+//    connect(tcb, &QTimer::timeout, this, &MainWindow::comboboxload1);
+//    tcb->start(10);
 
+//    ui->comboBox_surgeonname->clear();
+//    QSqlDatabase mydb = QSqlDatabase::addDatabase("QSQLITE");
+//    mydb.setDatabaseName(PATH);
+//    mydb.open();
+//    QSqlQuery query1;
+//    query1.exec("SELECT surgeon FROM maindb");
+//    if (query1.exec()) {
+//        while (query1.next()) {
+//            QString pkValue = query1.value(0).toString();  // Get the primary key value (rowid)
+//            ui->comboBox_surgeonname->addItem(pkValue);  // Add the value to the ComboBox
+//        }
+//    }
+//    mydb.close();
+//    QSqlDatabase::removeDatabase("QSQLITE");
+
+
+
+
+}
+
+void MainWindow::comboboxload1()
+{
+    QSqlDatabase mydb = QSqlDatabase::addDatabase("QSQLITE");
+    mydb.setDatabaseName(PATH);
+    mydb.open();
+    QSqlQuery query;
+    query.exec("SELECT surgeon FROM maindb");
+    while (query.next()) {
+        QString itemName = query.value(0).toString();
+        ui->comboBox_surgeonname->addItem(itemName);
+        //qDebug()<<itemName;
+    }
+    mydb.close();
+    QSqlDatabase::removeDatabase("QSQLITE");
+
+//    int itemCount = ui->comboBox_surgeonname->count();
+//    // Remove all items before index 20
+//    for (int i = 0; i < 20 && i < itemCount; ++i) {
+//        ui->comboBox_surgeonname->removeItem(0);  // Always remove the first item (index 0) because the list shrinks
+//    }
+
+//    // Remove all items after index 39
+//    while (ui->comboBox_surgeonname->count() > 20) {
+//        ui->comboBox_surgeonname->removeItem(20);  // Always remove the item at index 20 as we want only 20 items
+//    }
 }
 
 
@@ -377,6 +440,12 @@ void MainWindow::transitionToNewScreen() {
     ui->label->hide();
     ui->comboBox_surgeonname->move(30,34);
     ui->pushButton_start->hide();
+}
+
+// Get name of surgeon
+void MainWindow::setsurgeon()
+{
+   surgeon=ui->comboBox_surgeonname->currentText();
 }
 
 // Set limits and input validation
@@ -3302,6 +3371,7 @@ void MainWindow::setFPValues()
 void MainWindow::updateText(const QString &text)
 {
     ui->comboBox_surgeonname->setCurrentText(text);
+    surgeonid=text;
 }
 
 //void MainWindow::pressureval()
@@ -4007,7 +4077,7 @@ void MainWindow::updateLabelValue2(QLabel *label, int limit)
     {
         if(label->text().toInt() < limit)
         {
-            label->setText(QString::number(vacc2));
+            label->setText(QString::number(limit));
             label->setText(QString::number(static_cast<int>(std::round(label->text().toInt()/5))*5));
         }
     }
@@ -4034,7 +4104,7 @@ void MainWindow::updateLabelValue2(QLabel *label, int limit)
     {
         if(label->text().toInt() < limit)
         {
-            label->setText(QString::number(air2));
+            label->setText(QString::number(limit));
         }
     }
 
@@ -4051,7 +4121,7 @@ void MainWindow::updateLabelValue2(QLabel *label, int limit)
     {
         if(label->text().toInt() < limit)
         {
-            label->setText(QString::number(l12));
+            label->setText(QString::number(limit));
             label->setText(QString::number(static_cast<int>(std::round(label->text().toInt()/5))*5));
         }
     }
@@ -4060,7 +4130,7 @@ void MainWindow::updateLabelValue2(QLabel *label, int limit)
     {
         if(label->text().toInt() < limit)
         {
-            label->setText(QString::number(l22));
+            label->setText(QString::number(limit));
             label->setText(QString::number(static_cast<int>(std::round(label->text().toInt()/5))*5));
         }
     }
@@ -4084,5 +4154,8 @@ bool MainWindow::delete20() {
 
     db.close();
     QSqlDatabase::removeDatabase("QSQLITE");
+
+
+
     return true;
 }

@@ -662,11 +662,11 @@ public:
         pushButton_diainc->raise();
         pushButton_diadec->raise();
         label_12->raise();
+        label->raise();
+        label_2->raise();
         comboBox_surgeonname->raise();
         pushButton_start->raise();
-        label->raise();
         label_22->raise();
-        label_2->raise();
 
         retranslateUi(MainWindow);
 

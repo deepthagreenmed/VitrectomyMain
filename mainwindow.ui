@@ -1527,11 +1527,11 @@ color:white;;}</string>
    <zorder>pushButton_diainc</zorder>
    <zorder>pushButton_diadec</zorder>
    <zorder>label_12</zorder>
+   <zorder>label</zorder>
+   <zorder>label_2</zorder>
    <zorder>comboBox_surgeonname</zorder>
    <zorder>pushButton_start</zorder>
-   <zorder>label</zorder>
    <zorder>label_22</zorder>
-   <zorder>label_2</zorder>
   </widget>
  </widget>
  <resources/>

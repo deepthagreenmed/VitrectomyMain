@@ -84,6 +84,7 @@ public:
 signals:
 
 public slots:
+    void comboboxload1();
     void comboboxload(const QStringList& items);
     void updateText(const QString &text);
     void setFPValues();
@@ -157,7 +158,8 @@ private slots:
     void vit_linear_nonlinear();
     //led2
     void led2_onoff();
-
+    //surgeon
+    void setsurgeon();
     void onComboBoxClicked();
     void timerCompleted();
     //setup screen

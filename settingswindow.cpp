@@ -1596,3 +1596,14 @@ db.close();
 QSqlDatabase::removeDatabase("QSQLITE");
     return true;
 }
+
+void settingswindow::emitListContents() {
+
+    QStringList items;
+    for (int i = 0; i < ui->listWidget->count(); ++i) {
+        items << ui->listWidget->item(i)->text();
+    }
+
+    emit listUpdated(items);
+}
+

@@ -36,7 +36,7 @@ public:
     int flag2=0;
     int readGPIO(int pin);
     void saveDatabaseFromList();
-
+    void emitListContents();
 
 
 signals:
