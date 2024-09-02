@@ -68,7 +68,7 @@ public:
     int beep_1to2=0;
     int beep_2to3=0;
     QString madtype;
-    QString surgeon;
+    int surgeonc=0;
 
     void exportGPIO(int pin);
     void setGPIODirection(int pin, const std::string& direction);
@@ -77,14 +77,14 @@ public:
     void surgeonLoad(int index);
     void reverseOnOff();
     void reverseOnOff2();
-
+    void setLastSelectedValue();
+    void onComboBoxIndexChanged(int index);
 
 
 
 signals:
 
 public slots:
-    void comboboxload1();
     void comboboxload(const QStringList& items);
     void updateText(const QString &text);
     void setFPValues();
@@ -110,7 +110,7 @@ public slots:
 
 
 private slots:
-     bool delete20();
+
      void configOnOff();
      void siloil();
      void ai_setvalue(int pin, int value);
@@ -158,9 +158,8 @@ private slots:
     void vit_linear_nonlinear();
     //led2
     void led2_onoff();
-    //surgeon
-    void setsurgeon();
-    void onComboBoxClicked();
+
+
     void timerCompleted();
     //setup screen
     void showsetupscreen();
