@@ -99,7 +99,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(timerfp, &QTimer::timeout, this, &MainWindow::setFPValues);
     timerfp->start(1);
 
-     setLastSelectedValue();
+    setLastSelectedValue();
 
     connect(ui->comboBox_surgeonname, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &MainWindow::onComboBoxIndexChanged);
 
@@ -337,90 +337,13 @@ MainWindow::MainWindow(QWidget *parent)
     connect(onofftimer, &QTimer::timeout, this, &MainWindow::configOnOff);
     onofftimer->start(1000);
 
-
-    //off
-    if(vip==0)
-    {
-        ui->label_38->setStyleSheet("");
-        ui->label_24->setStyleSheet("font: 40pt;color: rgb(255, 255, 255);");
-        ui->pushButton_vitinc->lower();
-        ui->pushButton_vitdec->lower();
-        ui->label_vitpreset->lower();
-        ui->label_vitactual->lower();
-    }
-    //on
-    else
-    {
-        ui->label_38->setStyleSheet("background-color: rgb(116, 184, 222);");
-        ui->label_24->setStyleSheet("font: 40pt ;color: rgb(0, 0, 0);");
-        ui->pushButton_vitinc->raise();
-        ui->pushButton_vitdec->raise();
-        ui->label_vitpreset->raise();
-        ui->label_vitactual->raise();
-    }
-
-
-    if(sp==0)
-    {
-        ui->label_19->setStyleSheet("");
-        ui->label_26->setStyleSheet("font: 40pt ;color: rgb(255,255,255);");
-        ui->pushButton_siloildec->lower();
-        ui->pushButton_siloilinc->lower();
-        ui->label_siloil->lower();
-
-    }
-    else
-    {
-        ui->label_19->setStyleSheet("background-color: rgb(116, 184, 222);");
-        ui->label_26->setStyleSheet("font: 40pt ;color: rgb(0, 0, 0);");
-        ui->pushButton_siloildec->raise();
-        ui->pushButton_siloilinc->raise();
-        ui->label_siloil->raise();
-    }
-
-
-    if(ap==0)
-    {
-        ui->label_13->setStyleSheet("");
-        ui->label_23->setStyleSheet("font: 40pt;color: rgb(255, 255, 255);");
-        ui->pushButton_aidec->lower();
-        ui->pushButton_aiinc->lower();
-        ui->label_aiactual->lower();
-        ui->label_aipreset->lower();
-
-    }
-    else
-    {
-        ui->label_13->setStyleSheet("background-color: rgb(116, 184, 222);");
-        ui->label_23->setStyleSheet("font: 40pt;color: rgb(0, 0, 0);");
-        ui->pushButton_aidec->raise();
-        ui->pushButton_aiinc->raise();
-        ui->label_aiactual->raise();
-        ui->label_aipreset->raise();
-    }
-
-
-    if(dp==0)
-    {
-        ui->label_14->setStyleSheet("");
-        ui->label_25->setStyleSheet("font: 40pt ;color: rgb(255,255,255);");
-        ui->pushButton_diainc->lower();
-        ui->pushButton_diadec->lower();
-        ui->label_dia->lower();
-    }
-    else
-    {
-        ui->label_14->setStyleSheet("background-color: rgb(116, 184, 222);");
-        ui->label_25->setStyleSheet("font: 40pt;color: rgb(0, 0, 0);");
-        ui->pushButton_diainc->raise();
-        ui->pushButton_diadec->raise();
-        ui->label_dia->raise();
-    }
+    QTimer *ton = new QTimer;
+    connect(ton, &QTimer::timeout, this, &MainWindow::colorOn);
+    ton->start(100);
 
     win2->emitListContents();
 
     setLastSelectedValue();
-
 
 
     if(sp==1)
@@ -4061,6 +3984,88 @@ void MainWindow::setLastSelectedValue()
 
     db.close();
     QSqlDatabase::removeDatabase("QSQLITE");
+}
+
+void MainWindow::colorOn()
+{
+    //off
+    if(vip==0)
+    {
+        ui->label_38->setStyleSheet("");
+        ui->label_24->setStyleSheet("font: 40pt;color: rgb(255, 255, 255);");
+        ui->pushButton_vitinc->lower();
+        ui->pushButton_vitdec->lower();
+        ui->label_vitpreset->lower();
+        ui->label_vitactual->lower();
+    }
+    //on
+    else
+    {
+        ui->label_38->setStyleSheet("background-color: rgb(116, 184, 222);");
+        ui->label_24->setStyleSheet("font: 40pt ;color: rgb(0, 0, 0);");
+        ui->pushButton_vitinc->raise();
+        ui->pushButton_vitdec->raise();
+        ui->label_vitpreset->raise();
+        ui->label_vitactual->raise();
+    }
+
+
+    if(sp==0)
+    {
+        ui->label_19->setStyleSheet("");
+        ui->label_26->setStyleSheet("font: 40pt ;color: rgb(255,255,255);");
+        ui->pushButton_siloildec->lower();
+        ui->pushButton_siloilinc->lower();
+        ui->label_siloil->lower();
+
+    }
+    else
+    {
+        ui->label_19->setStyleSheet("background-color: rgb(116, 184, 222);");
+        ui->label_26->setStyleSheet("font: 40pt ;color: rgb(0, 0, 0);");
+        ui->pushButton_siloildec->raise();
+        ui->pushButton_siloilinc->raise();
+        ui->label_siloil->raise();
+    }
+
+
+    if(ap==0)
+    {
+        ui->label_13->setStyleSheet("");
+        ui->label_23->setStyleSheet("font: 40pt;color: rgb(255, 255, 255);");
+        ui->pushButton_aidec->lower();
+        ui->pushButton_aiinc->lower();
+        ui->label_aiactual->lower();
+        ui->label_aipreset->lower();
+
+    }
+    else
+    {
+        ui->label_13->setStyleSheet("background-color: rgb(116, 184, 222);");
+        ui->label_23->setStyleSheet("font: 40pt;color: rgb(0, 0, 0);");
+        ui->pushButton_aidec->raise();
+        ui->pushButton_aiinc->raise();
+        ui->label_aiactual->raise();
+        ui->label_aipreset->raise();
+    }
+
+
+    if(dp==0)
+    {
+        ui->label_14->setStyleSheet("");
+        ui->label_25->setStyleSheet("font: 40pt ;color: rgb(255,255,255);");
+        ui->pushButton_diainc->lower();
+        ui->pushButton_diadec->lower();
+        ui->label_dia->lower();
+    }
+    else
+    {
+        ui->label_14->setStyleSheet("background-color: rgb(116, 184, 222);");
+        ui->label_25->setStyleSheet("font: 40pt;color: rgb(0, 0, 0);");
+        ui->pushButton_diainc->raise();
+        ui->pushButton_diadec->raise();
+        ui->label_dia->raise();
+    }
 }
 
 

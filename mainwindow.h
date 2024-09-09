@@ -105,6 +105,7 @@ public slots:
      void on_clickedenter();
      void on_clickedbackspace();
      void vitvalset();
+     void colorOn();
 
 
 
