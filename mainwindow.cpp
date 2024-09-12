@@ -316,6 +316,85 @@ MainWindow::MainWindow(QWidget *parent)
     timervit->start(1);
 
 
+    if(ap==0)
+    {
+        ui->label_13->setStyleSheet("background-color: rgb(116, 184, 222);");
+        ui->label_23->setStyleSheet("font: 40pt;color: rgb(0, 0, 0);");
+        ui->pushButton_aidec->raise();
+        ui->pushButton_aiinc->raise();
+        ui->label_aipreset->raise();
+        ui->label_aiactual->raise();
+
+        ui->pushButton_aionoff->setStyleSheet("image: url(:/new/prefix1/img/on.png);border:3px solid black;border-radius:40px;");
+        ui->pushButton_aionoff->setText("ON");
+
+        //int flow=90+ (int)(preset* 1.5);
+        int flow=105;
+        hhandler->write_motor(0x01,0x03,flow);
+
+        // Define the lambda function with arguments and return value
+        auto myFunction = [this]() -> int {
+            hhandler->ai_on();
+            int preset = ui->label_aipreset->text().toInt();
+            hhandler->ai_preset_count(preset);
+
+            int actual;
+
+            actual=0;
+            for(int i=0; i<10; i++)
+            {
+                actual += vac->convert(CHANNEL_2) * 0.1894;
+            }
+            actual = static_cast<int>(actual/10);
+
+            hhandler->ai_actual_count(actual);
+
+            return actual;
+        };
+
+    QObject::connect(&timeai, &QTimer::timeout, [this, myFunction]() {
+
+        if(ui->label_aipreset->text().toInt() == 0)
+        {
+            airinjectoroff();
+            return;
+        }
+
+        int actual = myFunction();
+        ui->label_aiactual->setText(QString::number(actual));
+    });
+    timeai.start(10);
+
+        connect(ui->pushButton_aiinc, &QPushButton::clicked, this, &MainWindow::increaseAirInjectorValue);
+        connect(ui->pushButton_aidec, &QPushButton::clicked, this, &MainWindow::decreaseAirInjectorValue);
+
+        hhandler->buzz();
+
+        ap=1;
+
+    }
+    else
+    {
+        ui->label_13->setStyleSheet("");
+        ui->label_23->setStyleSheet("font: 40pt;color: rgb(255, 255, 255);");
+        ui->pushButton_aidec->lower();
+        ui->pushButton_aiinc->lower();
+        ui->label_aiactual->lower();
+        ui->label_aipreset->lower();
+        ui->pushButton_aionoff->setStyleSheet("image: url(:/new/prefix1/img/off.png);border:3px solid black;border-radius:40px;");
+        ui->pushButton_aionoff->setText("OFF");
+
+        hhandler->ai_off();
+        airinjectoroff();
+
+        disconnect(ui->pushButton_aiinc, &QPushButton::clicked, this, &MainWindow::increaseAirInjectorValue);
+        disconnect(ui->pushButton_aidec, &QPushButton::clicked, this, &MainWindow::decreaseAirInjectorValue);
+
+        hhandler->buzz();
+
+        ap=0;
+    }
+
 
     pres=new sensor;
 
@@ -356,6 +435,41 @@ MainWindow::MainWindow(QWidget *parent)
     }
 
 
+    int flow=105;
+    hhandler->write_motor(0x01,0x03,flow);
+
+    // Define the lambda function with arguments and return value
+    auto myFunction = [this]() -> int {
+        hhandler->ai_on();
+        int preset = ui->label_aipreset->text().toInt();
+        hhandler->ai_preset_count(preset);
+
+        int actual;
+
+        actual=0;
+        for(int i=0; i<10; i++)
+        {
+            actual += vac->convert(CHANNEL_2) * 0.1894;
+        }
+        actual = static_cast<int>(actual/10);
+
+        hhandler->ai_actual_count(actual);
+
+        return actual;
+    };
+
+QObject::connect(&timeai, &QTimer::timeout, [this, myFunction]() {
+
+    if(ui->label_aipreset->text().toInt() == 0)
+    {
+        airinjectoroff();
+        return;
+    }
+
+    int actual = myFunction();
+    ui->label_aiactual->setText(QString::number(actual));
+});
+timeai.start(10);
 
 
 }
@@ -366,7 +480,7 @@ void MainWindow::transitionToNewScreen() {
     ui->label_22->hide();
     ui->label_12->hide();
     ui->label_2->hide();
-    ui->label->hide();
+    //ui->label->hide();
     ui->comboBox_surgeonname->move(30,34);
     ui->pushButton_start->hide();
 }
@@ -1131,7 +1245,7 @@ void MainWindow::ai_onoff()
             ui->pushButton_aionoff->setText("ON");
 
             //int flow=90+ (int)(preset* 1.5);
-            int flow=130;
+            int flow=105;
             hhandler->write_motor(0x01,0x03,flow);
 
             // Define the lambda function with arguments and return value
@@ -1411,7 +1525,7 @@ void MainWindow::increaseAirInjectorValue()
     }
     ui->label_aipreset->setText(QString::number(newValue));
 
-    int flow=130;
+    int flow=105;
     hhandler->write_motor(0x01,0x03,flow);
 
     // Define the lambda function with arguments and return value
@@ -1466,7 +1580,7 @@ void MainWindow::decreaseAirInjectorValue()
     }
     ui->label_aipreset->setText(QString::number(newValue));
 
-    int flow=130;
+    int flow=105;
     hhandler->write_motor(0x01,0x03,flow);
 
     // Define the lambda function with arguments and return value
@@ -1751,7 +1865,7 @@ void MainWindow::timerCompleted()
     ui->label_22->lower();
     ui->label_12->lower();
     ui->label_2->lower();
-    ui->label->lower();
+    //ui->label->lower();
     ui->comboBox_surgeonname->move(30,34);
     ui->pushButton_start->lower();
 
@@ -1764,7 +1878,7 @@ void MainWindow::showsetupscreen()
         ui->label_22->lower();
         ui->label_12->lower();
         ui->label_2->lower();
-        ui->label->lower();
+        //ui->label->lower();
         ui->comboBox_surgeonname->move(30,34);
         ui->pushButton_start->lower();
 }
@@ -3219,7 +3333,7 @@ void MainWindow::ai_setvalue(int pin, int value)
         ui->pushButton_aionoff->setText("ON");
 
         //int flow=90+ (int)(preset* 1.5);
-        int flow=130;
+        int flow=105;
         hhandler->write_motor(0x01,0x03,flow);
 
         // Define the lambda function with arguments and return value
@@ -4067,7 +4181,3 @@ void MainWindow::colorOn()
         ui->label_dia->raise();
     }
 }
-
-
-
-

@@ -88,7 +88,6 @@ public:
     QPushButton *pushButton_aionoff;
     QPushButton *pushButton_siloilonoff;
     QComboBox *comboBox_surgeonname;
-    QLabel *label;
     QLabel *label_dia;
     QPushButton *pushButton_diainc;
     QPushButton *pushButton_diadec;
@@ -564,10 +563,6 @@ public:
 "border-radius:20px;\n"
 "font-weight: bold;"));
         comboBox_surgeonname->setMaxVisibleItems(20);
-        label = new QLabel(centralwidget);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(430, 110, 971, 401));
-        label->setStyleSheet(QString::fromUtf8("background-image: url(:/new/prefix1/img/logo4.jpg);"));
         label_dia = new QLabel(centralwidget);
         label_dia->setObjectName(QString::fromUtf8("label_dia"));
         label_dia->setGeometry(QRect(1520, 800, 311, 141));
@@ -662,7 +657,6 @@ public:
         pushButton_diainc->raise();
         pushButton_diadec->raise();
         label_12->raise();
-        label->raise();
         label_2->raise();
         comboBox_surgeonname->raise();
         pushButton_start->raise();
@@ -759,7 +753,6 @@ public:
         comboBox_surgeonname->setItemText(18, QCoreApplication::translate("MainWindow", "Surgeon 19", nullptr));
         comboBox_surgeonname->setItemText(19, QCoreApplication::translate("MainWindow", "Surgeon 20", nullptr));
 
-        label->setText(QString());
         label_dia->setText(QCoreApplication::translate("MainWindow", "60", nullptr));
         pushButton_diainc->setText(QString());
         pushButton_diadec->setText(QString());
