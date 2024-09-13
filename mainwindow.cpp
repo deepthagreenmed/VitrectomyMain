@@ -2500,9 +2500,12 @@ void MainWindow::updateLabel()
          beep_2to3=0;
          hhandler->speaker_off();
 
-         hhandler->safety_vent_on();
-         QThread::msleep(10);
-         hhandler->safety_vent_off();
+         if(safety_flag0==0) {
+             hhandler->safety_vent_on();
+             QThread::msleep(10);
+             hhandler->safety_vent_off();
+             safety_flag0=1;
+         }
 
 
       }
@@ -2518,22 +2521,21 @@ void MainWindow::updateLabel()
           {
               beep_1to2=0;
 
-              hhandler->safety_vent_on();
-              QThread::msleep(10);
-              hhandler->safety_vent_off();
-
+              if(safety_flag1==0) {
+                  hhandler->safety_vent_on();
+                  QThread::msleep(10);
+                  hhandler->safety_vent_off();
+                  safety_flag1=1;
+              }
           }
           else if(beep_1to2>1 && beep_2to3>1)
           {
               beep_1to2=0;
               beep_2to3=0;
 
-              hhandler->safety_vent_on();
-              QThread::msleep(10);
-              hhandler->safety_vent_off();
           }
 
-        //irrigation/aspiration
+          //irrigation/aspiration
           l->writeDAC(0);
           int avg1 = vac->convert(CHANNEL_1)*0.1894;
           ui->label_vacactual->setText(QString::number(avg1));
@@ -2549,6 +2551,9 @@ void MainWindow::updateLabel()
       {
 
           beep_1to2++;
+
+          safety_flag0=0;
+          safety_flag1=0;
 
           hhandler->safety_vent_off();
 
@@ -2818,9 +2823,12 @@ void MainWindow::updateLabel()
         ui->label_vacactual->setText(QString::number(avg1));
         hhandler->speaker_off();
 
-        hhandler->safety_vent_on();
-        QThread::msleep(10);
-        hhandler->safety_vent_off();
+        if(safety_flag0==0) {
+            hhandler->safety_vent_on();
+            QThread::msleep(10);
+            hhandler->safety_vent_off();
+            safety_flag0=1;
+        }
 
 
     }
@@ -2836,19 +2844,18 @@ void MainWindow::updateLabel()
         {
             beep_1to2=0;
 
-            hhandler->safety_vent_on();
-            QThread::msleep(10);
-            hhandler->safety_vent_off();
+            if(safety_flag1==0) {
+                hhandler->safety_vent_on();
+                QThread::msleep(10);
+                hhandler->safety_vent_off();
+                safety_flag1=1;
+            }
 
         }
         else if(beep_1to2>1 && beep_2to3>1)
         {
             beep_1to2=0;
             beep_2to3=0;
-
-            hhandler->safety_vent_on();
-            QThread::msleep(10);
-            hhandler->safety_vent_off();
 
         }
 
@@ -2865,6 +2872,9 @@ void MainWindow::updateLabel()
     {
 
         beep_1to2++;
+
+        safety_flag0=0;
+        safety_flag1=0;
 
         hhandler->safety_vent_off();
 
@@ -3800,10 +3810,7 @@ void MainWindow::loadPresets()
 void MainWindow::onComboBoxIndexChanged(int index)
 {
     if(index != 0 && index != -1) {
-//    timerscreen->stop();
-//    if((ui->comboBox_surgeonname->currentIndex())>=0 && (ui->comboBox_surgeonname->currentIndex())<20)
-//    {
-        //if(!clicktimer->isActive()) {
+
     surgeonind=index;
     surgeonid=ui->comboBox_surgeonname->currentText();
 
@@ -3898,10 +3905,6 @@ mydb1.close();
 QSqlDatabase::removeDatabase("QSQLITE");
     }
 
-//clicktimer->start();
- //   }
-
-//}
 }
 
 void MainWindow::reverseOnOff()

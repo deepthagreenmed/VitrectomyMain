@@ -225,6 +225,9 @@ private:
     int flag2=0;
     int flag3=0;
 
+    int safety_flag0=0;
+    int safety_flag1=0;
+
 
 
 
