@@ -315,7 +315,7 @@ MainWindow::MainWindow(QWidget *parent)
     timervit->start(1);
 
 
-    airinjectoroff();
+  //  airinjectoroff();
 
 
     pres=new sensor;
@@ -2491,7 +2491,7 @@ void MainWindow::updateLabel()
           l->writeDAC(0);
           int avg1 = vac->convert(CHANNEL_1)*0.1894;
           ui->label_vacactual->setText(QString::number(avg1));
-         // hhandler->safety_vent_off();
+
          if(vip==1){hhandler->vit_off();}
          if(vip==0){hhandler->vit_off();}
 
@@ -2499,6 +2499,10 @@ void MainWindow::updateLabel()
          beep_1to2=0;
          beep_2to3=0;
          hhandler->speaker_off();
+
+         hhandler->safety_vent_on();
+         QThread::msleep(10);
+         hhandler->safety_vent_off();
 
 
       }
@@ -2514,18 +2518,26 @@ void MainWindow::updateLabel()
           {
               beep_1to2=0;
 
+              hhandler->safety_vent_on();
+              QThread::msleep(10);
+              hhandler->safety_vent_off();
+
           }
           else if(beep_1to2>1 && beep_2to3>1)
           {
               beep_1to2=0;
               beep_2to3=0;
+
+              hhandler->safety_vent_on();
+              QThread::msleep(10);
+              hhandler->safety_vent_off();
           }
 
         //irrigation/aspiration
           l->writeDAC(0);
           int avg1 = vac->convert(CHANNEL_1)*0.1894;
           ui->label_vacactual->setText(QString::number(avg1));
-          //hhandler->safety_vent_off();
+
           if(vip==1){hhandler->vit_off();}
           if(vip==0){hhandler->vit_off();}
           hhandler->speaker_off();
@@ -2537,6 +2549,9 @@ void MainWindow::updateLabel()
       {
 
           beep_1to2++;
+
+          hhandler->safety_vent_off();
+
           if(beep_1to2==1)
           {
                footpedalbeep();
@@ -2544,9 +2559,9 @@ void MainWindow::updateLabel()
           else if(beep_2to3>1)
           {
               beep_2to3=0;
+
           }
 
-            hhandler->safety_vent_on();
           if(flag2==0)
           {
           int dacval;
@@ -2643,11 +2658,14 @@ void MainWindow::updateLabel()
       {
 
           beep_2to3++;
+
+          hhandler->safety_vent_off();
+
           if(beep_2to3==1)
           {
                footpedalbeep();
           }
-       // hhandler->safety_vent_on();
+
           int dacval;
 
 
@@ -2798,8 +2816,13 @@ void MainWindow::updateLabel()
         l->writeDAC(0);
         int avg1 = vac->convert(CHANNEL_1)*0.1894;
         ui->label_vacactual->setText(QString::number(avg1));
-        //hhandler->safety_vent_off();
         hhandler->speaker_off();
+
+        hhandler->safety_vent_on();
+        QThread::msleep(10);
+        hhandler->safety_vent_off();
+
+
     }
     if(ui->label_dialvalue->text() == "1")
     {
@@ -2813,11 +2836,20 @@ void MainWindow::updateLabel()
         {
             beep_1to2=0;
 
+            hhandler->safety_vent_on();
+            QThread::msleep(10);
+            hhandler->safety_vent_off();
+
         }
         else if(beep_1to2>1 && beep_2to3>1)
         {
             beep_1to2=0;
             beep_2to3=0;
+
+            hhandler->safety_vent_on();
+            QThread::msleep(10);
+            hhandler->safety_vent_off();
+
         }
 
         if(vip==1){hhandler->vit_off();}
@@ -2826,7 +2858,6 @@ void MainWindow::updateLabel()
        l->writeDAC(0);
        int avg1 = vac->convert(CHANNEL_1)*0.1894;
        ui->label_vacactual->setText(QString::number(avg1));
-       //hhandler->safety_vent_off();
        hhandler->speaker_off();
 
     }
@@ -2834,6 +2865,9 @@ void MainWindow::updateLabel()
     {
 
         beep_1to2++;
+
+        hhandler->safety_vent_off();
+
         if(beep_1to2==1)
         {
              footpedalbeep();
@@ -2842,8 +2876,6 @@ void MainWindow::updateLabel()
         {
             beep_2to3=0;
         }
-
-       // hhandler->safety_vent_on();
 
         if(flag2==0)
         {
@@ -2911,7 +2943,7 @@ void MainWindow::updateLabel()
             l->writeDAC(0);
             int avg1 = vac->convert(CHANNEL_1)*0.1894;
             ui->label_vacactual->setText(QString::number(avg1));
-            //hhandler->safety_vent_off();
+
         }
     }
 
@@ -2930,11 +2962,13 @@ void MainWindow::updateLabel()
     {
 
         beep_2to3++;
+
+        hhandler->safety_vent_off();
+
         if(beep_2to3==1)
         {
              footpedalbeep();
         }
-        //hhandler->safety_vent_on();
 
         int dacval;
 
