@@ -57,7 +57,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButton_aionoff, &QPushButton::pressed, this, &MainWindow::ai_onoff);
     connect(ui->pushButton_vitonoff, &QPushButton::pressed, this, &MainWindow::vit_onoff);
     connect(ui->pushButton_led2onoff, &QPushButton::pressed, this, &MainWindow::led2_onoff);
-//    connect(ui->pushButton_endcase, &QPushButton::clicked, this, &MainWindow::setsurgeon);
     connect(ui->pushButton_vaclinearnonlinear, &QPushButton::pressed, this, &MainWindow::vac_linear_nonlinear);
     connect(ui->pushButton_vitlinearnonlinear, &QPushButton::pressed, this, &MainWindow::vit_linear_nonlinear);
     connect(ui->pushButton_start, &QPushButton::pressed, this, &MainWindow::showsetupscreen);
@@ -316,84 +315,7 @@ MainWindow::MainWindow(QWidget *parent)
     timervit->start(1);
 
 
-    if(ap==0)
-    {
-        ui->label_13->setStyleSheet("background-color: rgb(116, 184, 222);");
-        ui->label_23->setStyleSheet("font: 40pt;color: rgb(0, 0, 0);");
-        ui->pushButton_aidec->raise();
-        ui->pushButton_aiinc->raise();
-        ui->label_aipreset->raise();
-        ui->label_aiactual->raise();
-
-        ui->pushButton_aionoff->setStyleSheet("image: url(:/new/prefix1/img/on.png);border:3px solid black;border-radius:40px;");
-        ui->pushButton_aionoff->setText("ON");
-
-        //int flow=90+ (int)(preset* 1.5);
-        int flow=105;
-        hhandler->write_motor(0x01,0x03,flow);
-
-        // Define the lambda function with arguments and return value
-        auto myFunction = [this]() -> int {
-            hhandler->ai_on();
-            int preset = ui->label_aipreset->text().toInt();
-            hhandler->ai_preset_count(preset);
-
-            int actual;
-
-            actual=0;
-            for(int i=0; i<10; i++)
-            {
-                actual += vac->convert(CHANNEL_2) * 0.1894;
-            }
-            actual = static_cast<int>(actual/10);
-
-            hhandler->ai_actual_count(actual);
-
-            return actual;
-        };
-
-    QObject::connect(&timeai, &QTimer::timeout, [this, myFunction]() {
-
-        if(ui->label_aipreset->text().toInt() == 0)
-        {
-            airinjectoroff();
-            return;
-        }
-
-        int actual = myFunction();
-        ui->label_aiactual->setText(QString::number(actual));
-    });
-    timeai.start(10);
-
-        connect(ui->pushButton_aiinc, &QPushButton::clicked, this, &MainWindow::increaseAirInjectorValue);
-        connect(ui->pushButton_aidec, &QPushButton::clicked, this, &MainWindow::decreaseAirInjectorValue);
-
-        hhandler->buzz();
-
-        ap=1;
-
-    }
-    else
-    {
-        ui->label_13->setStyleSheet("");
-        ui->label_23->setStyleSheet("font: 40pt;color: rgb(255, 255, 255);");
-        ui->pushButton_aidec->lower();
-        ui->pushButton_aiinc->lower();
-        ui->label_aiactual->lower();
-        ui->label_aipreset->lower();
-        ui->pushButton_aionoff->setStyleSheet("image: url(:/new/prefix1/img/off.png);border:3px solid black;border-radius:40px;");
-        ui->pushButton_aionoff->setText("OFF");
-
-        hhandler->ai_off();
-        airinjectoroff();
-
-        disconnect(ui->pushButton_aiinc, &QPushButton::clicked, this, &MainWindow::increaseAirInjectorValue);
-        disconnect(ui->pushButton_aidec, &QPushButton::clicked, this, &MainWindow::decreaseAirInjectorValue);
-
-        hhandler->buzz();
-
-        ap=0;
-    }
+    airinjectoroff();
 
 
     pres=new sensor;
@@ -2569,7 +2491,7 @@ void MainWindow::updateLabel()
           l->writeDAC(0);
           int avg1 = vac->convert(CHANNEL_1)*0.1894;
           ui->label_vacactual->setText(QString::number(avg1));
-          hhandler->safety_vent_off();
+         // hhandler->safety_vent_off();
          if(vip==1){hhandler->vit_off();}
          if(vip==0){hhandler->vit_off();}
 
@@ -2603,7 +2525,7 @@ void MainWindow::updateLabel()
           l->writeDAC(0);
           int avg1 = vac->convert(CHANNEL_1)*0.1894;
           ui->label_vacactual->setText(QString::number(avg1));
-          hhandler->safety_vent_off();
+          //hhandler->safety_vent_off();
           if(vip==1){hhandler->vit_off();}
           if(vip==0){hhandler->vit_off();}
           hhandler->speaker_off();
@@ -2699,7 +2621,7 @@ void MainWindow::updateLabel()
                l->writeDAC(0);
                int avg1 = vac->convert(CHANNEL_1)*0.1894;
                ui->label_vacactual->setText(QString::number(avg1));
-               hhandler->safety_vent_off();
+              // hhandler->safety_vent_off();
 
               }
           }
@@ -2725,7 +2647,7 @@ void MainWindow::updateLabel()
           {
                footpedalbeep();
           }
-        hhandler->safety_vent_on();
+       // hhandler->safety_vent_on();
           int dacval;
 
 
@@ -2876,7 +2798,7 @@ void MainWindow::updateLabel()
         l->writeDAC(0);
         int avg1 = vac->convert(CHANNEL_1)*0.1894;
         ui->label_vacactual->setText(QString::number(avg1));
-        hhandler->safety_vent_off();
+        //hhandler->safety_vent_off();
         hhandler->speaker_off();
     }
     if(ui->label_dialvalue->text() == "1")
@@ -2904,7 +2826,7 @@ void MainWindow::updateLabel()
        l->writeDAC(0);
        int avg1 = vac->convert(CHANNEL_1)*0.1894;
        ui->label_vacactual->setText(QString::number(avg1));
-       hhandler->safety_vent_off();
+       //hhandler->safety_vent_off();
        hhandler->speaker_off();
 
     }
@@ -2921,7 +2843,7 @@ void MainWindow::updateLabel()
             beep_2to3=0;
         }
 
-        hhandler->safety_vent_on();
+       // hhandler->safety_vent_on();
 
         if(flag2==0)
         {
@@ -2989,7 +2911,7 @@ void MainWindow::updateLabel()
             l->writeDAC(0);
             int avg1 = vac->convert(CHANNEL_1)*0.1894;
             ui->label_vacactual->setText(QString::number(avg1));
-            hhandler->safety_vent_off();
+            //hhandler->safety_vent_off();
         }
     }
 
@@ -3012,7 +2934,7 @@ void MainWindow::updateLabel()
         {
              footpedalbeep();
         }
-        hhandler->safety_vent_on();
+        //hhandler->safety_vent_on();
 
         int dacval;
 
@@ -3595,7 +3517,7 @@ void MainWindow::siloil()
         l->writeDAC(0);
         int avg1 = vac->convert(CHANNEL_1)*0.1894;
         ui->label_vacactual->setText(QString::number(avg1));
-        hhandler->safety_vent_off();
+        //hhandler->safety_vent_off();
 
 
         if(ui->label_dialvalue->text() == "0")
@@ -3815,7 +3737,7 @@ void MainWindow::loadPresets()
         l->writeDAC(0);
         int avg1 = vac->convert(CHANNEL_1)*0.1894;
         ui->label_vacactual->setText(QString::number(avg1));
-        hhandler->safety_vent_off();
+        //hhandler->safety_vent_off();
 
 
         if(ui->label_dialvalue->text() == "0")
