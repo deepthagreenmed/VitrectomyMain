@@ -315,9 +315,6 @@ MainWindow::MainWindow(QWidget *parent)
     timervit->start(1);
 
 
-  //  airinjectoroff();
-
-
     pres=new sensor;
 
 //    QTimer *timerpres = new QTimer(this);
@@ -2641,7 +2638,6 @@ void MainWindow::updateLabel()
                l->writeDAC(0);
                int avg1 = vac->convert(CHANNEL_1)*0.1894;
                ui->label_vacactual->setText(QString::number(avg1));
-              // hhandler->safety_vent_off();
 
               }
           }
