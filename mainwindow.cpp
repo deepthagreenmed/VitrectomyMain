@@ -119,11 +119,11 @@ MainWindow::MainWindow(QWidget *parent)
     QString itemname34;
     QString itemname35;
     QString itemname36;
-     QString itemname43;
-     QString itemname44;
-     QString itemname45;
-     QString itemname46;
-     QString itemname47;
+    QString itemname43;
+    QString itemname44;
+    QString itemname45;
+    QString itemname46;
+    QString itemname47;
     QString itemname48;
 
 
@@ -354,42 +354,73 @@ MainWindow::MainWindow(QWidget *parent)
     }
 
 
-    int flow=105;
-    hhandler->write_motor(0x01,0x03,flow);
-
-    // Define the lambda function with arguments and return value
-    auto myFunction = [this]() -> int {
-        hhandler->ai_on();
-        int preset = ui->label_aipreset->text().toInt();
-        hhandler->ai_preset_count(preset);
-
-        int actual;
-
-        actual=0;
-        for(int i=0; i<10; i++)
-        {
-            actual += vac->convert(CHANNEL_2) * 0.1894;
-        }
-        actual = static_cast<int>(actual/10);
-
-        hhandler->ai_actual_count(actual);
-
-        return actual;
-    };
-
-QObject::connect(&timeai, &QTimer::timeout, [this, myFunction]() {
-
-    if(ui->label_aipreset->text().toInt() == 0)
+    if(ap==1)
     {
-        airinjectoroff();
-        return;
+        ui->label_13->setStyleSheet("background-color: rgb(116, 184, 222);");
+        ui->label_23->setStyleSheet("font: 40pt;color: rgb(0, 0, 0);");
+        ui->pushButton_aidec->raise();
+        ui->pushButton_aiinc->raise();
+        ui->label_aipreset->raise();
+        ui->label_aiactual->raise();
+
+        int flow=105;
+        hhandler->write_motor(0x01,0x03,flow);
+
+        // Define the lambda function with arguments and return value
+        auto myFunction = [this]() -> int {
+            hhandler->ai_on();
+            int preset = ui->label_aipreset->text().toInt();
+            hhandler->ai_preset_count(preset);
+
+            int actual;
+
+            actual=0;
+            for(int i=0; i<10; i++)
+            {
+                actual += vac->convert(CHANNEL_2) * 0.1894;
+            }
+            actual = static_cast<int>(actual/10);
+
+            hhandler->ai_actual_count(actual);
+
+            return actual;
+        };
+
+    QObject::connect(&timeai, &QTimer::timeout, [this, myFunction]() {
+
+        if(ui->label_aipreset->text().toInt() == 0)
+        {
+            airinjectoroff();
+            return;
+        }
+
+        int actual = myFunction();
+        ui->label_aiactual->setText(QString::number(actual));
+    });
+    timeai.start(10);
+
+        connect(ui->pushButton_aiinc, &QPushButton::clicked, this, &MainWindow::increaseAirInjectorValue);
+        connect(ui->pushButton_aidec, &QPushButton::clicked, this, &MainWindow::decreaseAirInjectorValue);
+
     }
 
-    int actual = myFunction();
-    ui->label_aiactual->setText(QString::number(actual));
-});
-timeai.start(10);
 
+    if(ap==0)
+    {
+        ui->label_13->setStyleSheet("");
+        ui->label_23->setStyleSheet("font: 40pt;color: rgb(255, 255, 255);");
+        ui->pushButton_aidec->lower();
+        ui->pushButton_aiinc->lower();
+        ui->label_aiactual->lower();
+        ui->label_aipreset->lower();
+
+        hhandler->ai_off();
+        airinjectoroff();
+
+        disconnect(ui->pushButton_aiinc, &QPushButton::clicked, this, &MainWindow::increaseAirInjectorValue);
+        disconnect(ui->pushButton_aidec, &QPushButton::clicked, this, &MainWindow::decreaseAirInjectorValue);
+
+    }
 
 }
 
@@ -868,7 +899,7 @@ void MainWindow::showsettingswindow()
     ui->label_siloil->lower();
     ui->pushButton_siloilonoff->setStyleSheet("image: url(:/new/prefix1/img/off.png);border:3px solid black;border-radius:40px;");
     ui->pushButton_siloilonoff->setText("OFF");
-    hhandler->siloil_off();
+    //hhandler->siloil_off();
     hhandler->vso_off();
     disconnect(ui->pushButton_siloilinc, &QPushButton::clicked, this, &MainWindow::increaseSiliconOilValue);
     disconnect(ui->pushButton_siloildec, &QPushButton::clicked, this, &MainWindow::decreaseSiliconOilValue);
@@ -969,7 +1000,7 @@ void MainWindow::siloil_onoff()
         disconnect(ui->pushButton_siloilinc, &QPushButton::clicked, this, &MainWindow::increaseSiliconOilValue);
         disconnect(ui->pushButton_siloildec, &QPushButton::clicked, this, &MainWindow::decreaseSiliconOilValue);
         hhandler->vso_off();
-        hhandler->siloil_off();
+        //hhandler->siloil_off();
         timesiloil.stop();
         disconnect(&timesiloil, &QTimer::timeout, this, &MainWindow::siloil);
         sp=0;
@@ -3051,8 +3082,7 @@ void MainWindow::updateLabel2()
     {
         hhandler->vit_off();
         ui->label_vitactual->setText("0");
-//        ui->pushButton_siloilonoff->setStyleSheet("image: url(:/new/prefix1/img/on.png);border:3px solid black;border-radius:40px;");
-//        ui->pushButton_siloilonoff->setText("ON");
+
     }
     else if(vip==1)
     {
@@ -3532,7 +3562,7 @@ void MainWindow::siloil_setvalue(int pin, int value)
         disconnect(ui->pushButton_siloildec, &QPushButton::clicked, this, &MainWindow::decreaseSiliconOilValue);
 
         hhandler->vso_off();
-        hhandler->siloil_off();
+        //hhandler->siloil_off();
 
         sp=0;
     }
@@ -3549,7 +3579,7 @@ void MainWindow::siloil()
 {
     if(sp==0)
     {
-        hhandler->siloil_off();
+        //hhandler->siloil_off();
         hhandler->vso_off();
     }
     if(sp==1)
@@ -3562,7 +3592,7 @@ void MainWindow::siloil()
 
         if(ui->label_dialvalue->text() == "0")
         {
-            hhandler->siloil_off();
+            //hhandler->siloil_off();
             hhandler->vso_off();
         }
         else
@@ -3782,7 +3812,7 @@ void MainWindow::loadPresets()
 
         if(ui->label_dialvalue->text() == "0")
         {
-            hhandler->siloil_off();
+            //hhandler->siloil_off();
             hhandler->vso_off();
         }
         else
