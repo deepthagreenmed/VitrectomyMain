@@ -2532,7 +2532,7 @@ void MainWindow::updateLabel()
 
          if(safety_flag0==false) {
              hhandler->safety_vent_on();
-             QThread::msleep(10);
+             QThread::msleep(1000);
              hhandler->safety_vent_off();
              safety_flag0=true;
          }
@@ -2555,7 +2555,7 @@ void MainWindow::updateLabel()
 
               if(safety_flag1==false) {
                   hhandler->safety_vent_on();
-                  QThread::msleep(10);
+                  QThread::msleep(1000);
                   hhandler->safety_vent_off();
                   safety_flag1=true;
               }
@@ -2872,7 +2872,7 @@ void MainWindow::updateLabel()
 
         if(safety_flag2==false) {
             hhandler->safety_vent_on();
-            QThread::msleep(10);
+            QThread::msleep(1000);
             hhandler->safety_vent_off();
             safety_flag2=true;
         }
@@ -2895,7 +2895,7 @@ void MainWindow::updateLabel()
 
             if(safety_flag3==false) {
                 hhandler->safety_vent_on();
-                QThread::msleep(10);
+                QThread::msleep(1000);
                 hhandler->safety_vent_off();
                 safety_flag3=true;
             }
