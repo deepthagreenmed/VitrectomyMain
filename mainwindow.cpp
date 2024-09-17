@@ -228,6 +228,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     hhandler->speaker_off();
     hhandler->safety_vent_off();
+    hhandler->pinch_valve_off();
 
     hhandler->vit_off();
 
@@ -2516,6 +2517,7 @@ void MainWindow::updateLabel()
 
       if(ui->label_dialvalue->text() == "0")
       {
+
           l->writeDAC(0);
           int avg1 = vac->convert(CHANNEL_1)*0.1894;
           ui->label_vacactual->setText(QString::number(avg1));
@@ -2528,12 +2530,14 @@ void MainWindow::updateLabel()
          beep_2to3=0;
          hhandler->speaker_off();
 
-         if(safety_flag0==0) {
+         if(safety_flag0==false) {
              hhandler->safety_vent_on();
              QThread::msleep(10);
              hhandler->safety_vent_off();
-             safety_flag0=1;
+             safety_flag0=true;
          }
+
+          hhandler->pinch_valve_off();
 
 
       }
@@ -2549,12 +2553,13 @@ void MainWindow::updateLabel()
           {
               beep_1to2=0;
 
-              if(safety_flag1==0) {
+              if(safety_flag1==false) {
                   hhandler->safety_vent_on();
                   QThread::msleep(10);
                   hhandler->safety_vent_off();
-                  safety_flag1=1;
+                  safety_flag1=true;
               }
+
           }
           else if(beep_1to2>1 && beep_2to3>1)
           {
@@ -2572,6 +2577,7 @@ void MainWindow::updateLabel()
           if(vip==0){hhandler->vit_off();}
           hhandler->speaker_off();
 
+        hhandler->pinch_valve_off();
 
       }
       //vaccum
@@ -2579,9 +2585,6 @@ void MainWindow::updateLabel()
       {
 
           beep_1to2++;
-
-          safety_flag0=0;
-          safety_flag1=0;
 
           hhandler->safety_vent_off();
 
@@ -2652,6 +2655,8 @@ void MainWindow::updateLabel()
 
         }
 
+        hhandler->pinch_valve_on();
+
 
 
 
@@ -2669,6 +2674,7 @@ void MainWindow::updateLabel()
                l->writeDAC(0);
                int avg1 = vac->convert(CHANNEL_1)*0.1894;
                ui->label_vacactual->setText(QString::number(avg1));
+               hhandler->pinch_valve_off();
 
               }
           }
@@ -2758,6 +2764,8 @@ void MainWindow::updateLabel()
         file.close();
          file2.close();
 
+         hhandler->pinch_valve_on();
+
        }
 
        else if(flag2==1)
@@ -2823,6 +2831,8 @@ void MainWindow::updateLabel()
            file.close();
             file2.close();
 
+            hhandler->pinch_valve_on();
+
        }
 
 
@@ -2850,12 +2860,14 @@ void MainWindow::updateLabel()
         ui->label_vacactual->setText(QString::number(avg1));
         hhandler->speaker_off();
 
-        if(safety_flag0==0) {
+        if(safety_flag2==false) {
             hhandler->safety_vent_on();
             QThread::msleep(10);
             hhandler->safety_vent_off();
-            safety_flag0=1;
+            safety_flag2=true;
         }
+
+        hhandler->pinch_valve_off();
 
 
     }
@@ -2871,11 +2883,11 @@ void MainWindow::updateLabel()
         {
             beep_1to2=0;
 
-            if(safety_flag1==0) {
+            if(safety_flag3==false) {
                 hhandler->safety_vent_on();
                 QThread::msleep(10);
                 hhandler->safety_vent_off();
-                safety_flag1=1;
+                safety_flag3=true;
             }
 
         }
@@ -2893,6 +2905,8 @@ void MainWindow::updateLabel()
        int avg1 = vac->convert(CHANNEL_1)*0.1894;
        ui->label_vacactual->setText(QString::number(avg1));
        hhandler->speaker_off();
+
+       hhandler->pinch_valve_off();
 
     }
     if(ui->label_dialvalue->text() == "2")
@@ -2922,7 +2936,7 @@ void MainWindow::updateLabel()
 
         std::string col1, col2;
         std::ifstream file(PATH6);
-          int lineCount=0;
+        int lineCount=0;
         while(file >> col1 >> col2)
         {
             if(std::stoi(col2) <= ui->label_vacpreset->text().toInt())
@@ -2972,6 +2986,8 @@ void MainWindow::updateLabel()
 
         file.close();
          file2.close();
+
+         hhandler->pinch_valve_on();
     }
     else {
         if(flag2==1)
@@ -2980,6 +2996,8 @@ void MainWindow::updateLabel()
             l->writeDAC(0);
             int avg1 = vac->convert(CHANNEL_1)*0.1894;
             ui->label_vacactual->setText(QString::number(avg1));
+
+            hhandler->pinch_valve_off();
 
         }
     }
@@ -3011,7 +3029,7 @@ void MainWindow::updateLabel()
 
         std::string col1, col2;
         std::ifstream file(PATH6);
-          int lineCount=0;
+        int lineCount=0;
         while(file >> col1 >> col2)
         {
             if(std::stoi(col2) <= ui->label_vacpreset->text().toInt())
@@ -3060,6 +3078,8 @@ void MainWindow::updateLabel()
 
         file.close();
         file2.close();
+
+        hhandler->pinch_valve_on();
 
         hhandler->speaker_on(75,0,0,1);
 

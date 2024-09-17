@@ -225,8 +225,10 @@ private:
     int flag2=0;
     int flag3=0;
 
-    int safety_flag0=0;
-    int safety_flag1=0;
+    bool safety_flag0=false;
+    bool safety_flag1=false;
+    bool safety_flag2=false;
+    bool safety_flag3=false;
 
 
 

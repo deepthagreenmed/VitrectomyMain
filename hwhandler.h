@@ -89,6 +89,9 @@ public:
 
     void write_motor(uint16_t status, uint16_t direction, uint16_t value);
 
+    static void pinch_valve_on();
+    static void pinch_valve_off();
+
     static void safety_vent_on();
     static void safety_vent_off();
 
