@@ -2586,6 +2586,11 @@ void MainWindow::updateLabel()
 
           beep_1to2++;
 
+          safety_flag0=false;
+          safety_flag1=false;
+          safety_flag2=false;
+          safety_flag3=false;
+
           hhandler->safety_vent_off();
 
           if(beep_1to2==1)
@@ -2696,6 +2701,11 @@ void MainWindow::updateLabel()
       {
 
           beep_2to3++;
+
+          safety_flag0=false;
+          safety_flag1=false;
+          safety_flag2=false;
+          safety_flag3=false;
 
           hhandler->safety_vent_off();
 
@@ -2914,8 +2924,10 @@ void MainWindow::updateLabel()
 
         beep_1to2++;
 
-        safety_flag0=0;
-        safety_flag1=0;
+        safety_flag0=false;
+        safety_flag1=false;
+        safety_flag2=false;
+        safety_flag3=false;
 
         hhandler->safety_vent_off();
 
@@ -3017,6 +3029,11 @@ void MainWindow::updateLabel()
     {
 
         beep_2to3++;
+
+        safety_flag0=false;
+        safety_flag1=false;
+        safety_flag2=false;
+        safety_flag3=false;
 
         hhandler->safety_vent_off();
 
