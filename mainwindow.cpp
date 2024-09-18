@@ -16,6 +16,10 @@
 #include <QRegExpValidator>
 #include <QThread>
 #include <QLoggingCategory>
+#include <QScroller>
+#include <QComboBox>
+#include <QListView>
+
 
 #include <stdint.h>
 #include <cstdio>
@@ -64,6 +68,16 @@ MainWindow::MainWindow(QWidget *parent)
 
     clicktimer->setInterval(200);
     clicktimer->setSingleShot(true);
+
+    ui->comboBox_surgeonname->setAttribute(Qt::WA_AcceptTouchEvents, true);
+
+    // Cast the combo box popup to a QListView
+    QListView *view = qobject_cast<QListView*>(ui->comboBox_surgeonname->view());
+
+    // Enable scrolling on the list view
+    if (view) {
+        QScroller::grabGesture(view, QScroller::TouchGesture);
+    }
 
 
     vacc = ui->label_vacpreset->text().toInt();
@@ -1008,6 +1022,11 @@ void MainWindow::siloil_onoff()
         disconnect(ui->pushButton_vitinc, &QPushButton::clicked, this, &MainWindow::increaseVitrectomyValue);
         disconnect(ui->pushButton_vitdec, &QPushButton::clicked, this, &MainWindow::decreaseVitrectomyValue);
 
+        l->writeDAC(0);
+        int avg1 = vac->convert(CHANNEL_1)*0.1894;
+        ui->label_vacactual->setText(QString::number(avg1));
+        hhandler->pinch_valve_off();
+
         }
         else
         {
@@ -1021,7 +1040,7 @@ void MainWindow::siloil_onoff()
         disconnect(ui->pushButton_siloilinc, &QPushButton::clicked, this, &MainWindow::increaseSiliconOilValue);
         disconnect(ui->pushButton_siloildec, &QPushButton::clicked, this, &MainWindow::decreaseSiliconOilValue);
         hhandler->vso_off();
-        //hhandler->siloil_off();
+
         timesiloil.stop();
         disconnect(&timesiloil, &QTimer::timeout, this, &MainWindow::siloil);
         sp=0;
@@ -2682,6 +2701,7 @@ void MainWindow::updateLabel()
 
         hhandler->pinch_valve_on();
 
+        hhandler->vso_off();
 
 
 
@@ -2796,6 +2816,8 @@ void MainWindow::updateLabel()
 
          hhandler->pinch_valve_on();
 
+         hhandler->vso_off();
+
        }
 
        else if(flag2==1)
@@ -2862,6 +2884,8 @@ void MainWindow::updateLabel()
             file2.close();
 
             hhandler->pinch_valve_on();
+
+            hhandler->vso_off();
 
        }
 
@@ -3020,6 +3044,9 @@ void MainWindow::updateLabel()
          file2.close();
 
          hhandler->pinch_valve_on();
+
+         hhandler->vso_off();
+
     }
     else {
         if(flag2==1)
@@ -3117,6 +3144,8 @@ void MainWindow::updateLabel()
         file2.close();
 
         hhandler->pinch_valve_on();
+
+        hhandler->vso_off();
 
         hhandler->speaker_on(75,0,0,1);
 
@@ -3603,6 +3632,11 @@ void MainWindow::siloil_setvalue(int pin, int value)
 
         sp=1;
 
+        l->writeDAC(0);
+        int avg1 = vac->convert(CHANNEL_1)*0.1894;
+        ui->label_vacactual->setText(QString::number(avg1));
+        hhandler->pinch_valve_off();
+
     }
     else
     {
@@ -3619,7 +3653,6 @@ void MainWindow::siloil_setvalue(int pin, int value)
         disconnect(ui->pushButton_siloildec, &QPushButton::clicked, this, &MainWindow::decreaseSiliconOilValue);
 
         hhandler->vso_off();
-        //hhandler->siloil_off();
 
         sp=0;
     }

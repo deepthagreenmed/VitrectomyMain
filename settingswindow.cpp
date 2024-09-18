@@ -433,7 +433,22 @@ void settingswindow::on_clicked(const QString& digit)
       ui->lineEdit_cutrate->setFocus();
       int dig = digit.toInt();
       int value = (ui->lineEdit_cutrate->text()+digit).toInt();
-      updateLineEditValue(ui->lineEdit_cutrate, dig, value, 9600);
+
+      if(ui->comboBox_cuttertype->currentText() == "Midlabs")
+       {
+          updateLineEditValue(ui->lineEdit_cutrate, dig, value, 8040);
+       }
+       if(ui->comboBox_cuttertype->currentText() == "Alcon")
+       {
+           updateLineEditValue(ui->lineEdit_cutrate, dig, value, 7500);
+       }
+       if(ui->comboBox_cuttertype->currentText() == "Dorc")
+       {
+           updateLineEditValue(ui->lineEdit_cutrate, dig, value, 8040);
+       }
+
+
+
 
    }
   }
