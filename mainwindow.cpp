@@ -202,10 +202,6 @@ MainWindow::MainWindow(QWidget *parent)
     mydb1.close();
     QSqlDatabase::removeDatabase("QSQLITE");
 
-    //ui->comboBox_surgeonname->setCurrentIndex(surgeonind);
-
-    //surgeonLoad(ui->comboBox_surgeonname->currentIndex());
-
     win2=new settingswindow(this);
 
 
@@ -305,11 +301,25 @@ MainWindow::MainWindow(QWidget *parent)
     ui->label_vacpreset->clearFocus();
     ui->label_led1->clearFocus();
 
+    ui->label_vacpreset->hide();
+    ui->label_vacactual->hide();
+    ui->label_vitpreset->hide();
+    ui->label_vitactual->hide();
+    ui->label_siloil->hide();
+    ui->label_led1->hide();
+    ui->label_led2->hide();
+    ui->label_aipreset->hide();
+    ui->label_aiactual->hide();
+    ui->label_dia->hide();
+
 
     QTimer *timermain = new QTimer(this);
     timermain->setSingleShot(true);
     timermain->start(3000); // 3 seconds
     connect(timermain, &QTimer::timeout, this, &MainWindow::transitionToNewScreen);
+
+
+
 
     QTimer *timervit = new QTimer;
     connect(timervit, &QTimer::timeout, this, &MainWindow::vitvalset);
@@ -431,9 +441,19 @@ void MainWindow::transitionToNewScreen() {
     ui->label_22->hide();
     ui->label_12->hide();
     ui->label_2->hide();
-    //ui->label->hide();
     ui->comboBox_surgeonname->move(30,34);
     ui->pushButton_start->hide();
+
+    ui->label_vacpreset->show();
+    ui->label_vacactual->show();
+    ui->label_vitpreset->show();
+    ui->label_vitactual->show();
+    ui->label_siloil->show();
+    ui->label_led1->show();
+    ui->label_led2->show();
+    ui->label_aipreset->show();
+    ui->label_aiactual->show();
+    ui->label_dia->show();
 }
 
 // Set limits and input validation
@@ -2532,7 +2552,7 @@ void MainWindow::updateLabel()
 
          if(safety_flag0==false) {
              hhandler->safety_vent_on();
-             QThread::msleep(1000);
+             QThread::msleep(1200);
              hhandler->safety_vent_off();
              safety_flag0=true;
          }
@@ -2555,7 +2575,7 @@ void MainWindow::updateLabel()
 
               if(safety_flag1==false) {
                   hhandler->safety_vent_on();
-                  QThread::msleep(1000);
+                  QThread::msleep(1200);
                   hhandler->safety_vent_off();
                   safety_flag1=true;
               }
@@ -2872,7 +2892,7 @@ void MainWindow::updateLabel()
 
         if(safety_flag2==false) {
             hhandler->safety_vent_on();
-            QThread::msleep(1000);
+            QThread::msleep(1200);
             hhandler->safety_vent_off();
             safety_flag2=true;
         }
@@ -2895,7 +2915,7 @@ void MainWindow::updateLabel()
 
             if(safety_flag3==false) {
                 hhandler->safety_vent_on();
-                QThread::msleep(1000);
+                QThread::msleep(1200);
                 hhandler->safety_vent_off();
                 safety_flag3=true;
             }
