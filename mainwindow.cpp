@@ -35,6 +35,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    QScroller::grabGesture(ui->comboBox_surgeonname->view()->viewport(),QScroller::LeftMouseButtonGesture);
+
 
     clicktimer=new QTimer;
 
@@ -69,15 +71,7 @@ MainWindow::MainWindow(QWidget *parent)
     clicktimer->setInterval(200);
     clicktimer->setSingleShot(true);
 
-    ui->comboBox_surgeonname->setAttribute(Qt::WA_AcceptTouchEvents, true);
 
-    // Cast the combo box popup to a QListView
-    QListView *view = qobject_cast<QListView*>(ui->comboBox_surgeonname->view());
-
-    // Enable scrolling on the list view
-    if (view) {
-        QScroller::grabGesture(view, QScroller::TouchGesture);
-    }
 
 
     vacc = ui->label_vacpreset->text().toInt();
@@ -298,7 +292,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->dial->setValue(avgfp);
 
 
-
     ui->label_vacpreset->installEventFilter(this);
     ui->label_vitpreset->installEventFilter(this);
     ui->label_siloil->installEventFilter(this);
@@ -326,13 +319,26 @@ MainWindow::MainWindow(QWidget *parent)
     ui->label_aiactual->hide();
     ui->label_dia->hide();
 
+    ui->pushButton_vitdec->hide();
+    ui->pushButton_vitinc->hide();
+    ui->pushButton_vacdec->hide();
+    ui->pushButton_vacinc->hide();
+    ui->pushButton_siloildec->hide();
+    ui->pushButton_siloilinc->hide();
+    ui->pushButton_led1dec->hide();
+    ui->pushButton_led1inc->hide();
+    ui->pushButton_led2dec->hide();
+    ui->pushButton_led2inc->hide();
+    ui->pushButton_aidec->hide();
+    ui->pushButton_aiinc->hide();
+    ui->pushButton_diadec->hide();
+    ui->pushButton_diainc->hide();
+
 
     QTimer *timermain = new QTimer(this);
     timermain->setSingleShot(true);
     timermain->start(3000); // 3 seconds
     connect(timermain, &QTimer::timeout, this, &MainWindow::transitionToNewScreen);
-
-
 
 
     QTimer *timervit = new QTimer;
@@ -376,6 +382,11 @@ MainWindow::MainWindow(QWidget *parent)
         ui->pushButton_siloildec->raise();
         ui->pushButton_siloilinc->raise();
         ui->label_siloil->raise();
+        l->writeDAC(0);
+        int avg1 = vac->convert(CHANNEL_1)*0.1894;
+        ui->label_vacactual->setText(QString::number(avg1));
+        hhandler->pinch_valve_off();
+
     }
 
 
@@ -447,6 +458,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     }
 
+    QTimer *valvetimer=new QTimer;
+    connect(valvetimer, &QTimer::timeout, this, &MainWindow::switchValves);
+    valvetimer->start(100);
+
 }
 
 
@@ -468,6 +483,21 @@ void MainWindow::transitionToNewScreen() {
     ui->label_aipreset->show();
     ui->label_aiactual->show();
     ui->label_dia->show();
+    ui->pushButton_vitdec->show();
+    ui->pushButton_vitinc->show();
+    ui->pushButton_vacdec->show();
+    ui->pushButton_vacinc->show();
+    ui->pushButton_siloildec->show();
+    ui->pushButton_siloilinc->show();
+    ui->pushButton_led1dec->show();
+    ui->pushButton_led1inc->show();
+    ui->pushButton_led2dec->show();
+    ui->pushButton_led2inc->show();
+    ui->pushButton_aidec->show();
+    ui->pushButton_aiinc->show();
+    ui->pushButton_diadec->show();
+    ui->pushButton_diainc->show();
+
 }
 
 // Set limits and input validation
@@ -2699,7 +2729,14 @@ void MainWindow::updateLabel()
 
         }
 
-        hhandler->pinch_valve_on();
+        if(sp==0) {
+            hhandler->pinch_valve_on();
+            hhandler->vso_off();
+        }
+        if(sp==1)
+        {
+            hhandler->pinch_valve_off();
+        }
 
         hhandler->vso_off();
 
@@ -2814,7 +2851,14 @@ void MainWindow::updateLabel()
         file.close();
          file2.close();
 
-         hhandler->pinch_valve_on();
+         if(sp==0) {
+             hhandler->pinch_valve_on();
+             hhandler->vso_off();
+         }
+         if(sp==1)
+         {
+             hhandler->pinch_valve_off();
+         }
 
          hhandler->vso_off();
 
@@ -2883,7 +2927,14 @@ void MainWindow::updateLabel()
            file.close();
             file2.close();
 
-            hhandler->pinch_valve_on();
+            if(sp==0) {
+                hhandler->pinch_valve_on();
+                hhandler->vso_off();
+            }
+            if(sp==1)
+            {
+                hhandler->pinch_valve_off();
+            }
 
             hhandler->vso_off();
 
@@ -3043,9 +3094,16 @@ void MainWindow::updateLabel()
         file.close();
          file2.close();
 
-         hhandler->pinch_valve_on();
+         if(sp==0) {
+             hhandler->pinch_valve_on();
+             hhandler->vso_off();
+         }
+         if(sp==1)
+         {
+             hhandler->pinch_valve_off();
 
-         hhandler->vso_off();
+         }
+
 
     }
     else {
@@ -3143,9 +3201,14 @@ void MainWindow::updateLabel()
         file.close();
         file2.close();
 
-        hhandler->pinch_valve_on();
-
-        hhandler->vso_off();
+        if(sp==0) {
+            hhandler->pinch_valve_on();
+            hhandler->vso_off();
+        }
+        if(sp==1)
+        {
+            hhandler->pinch_valve_off();
+        }
 
         hhandler->speaker_on(75,0,0,1);
 
@@ -3669,7 +3732,6 @@ void MainWindow::siloil()
 {
     if(sp==0)
     {
-        //hhandler->siloil_off();
         hhandler->vso_off();
     }
     if(sp==1)
@@ -3677,12 +3739,11 @@ void MainWindow::siloil()
         l->writeDAC(0);
         int avg1 = vac->convert(CHANNEL_1)*0.1894;
         ui->label_vacactual->setText(QString::number(avg1));
-        //hhandler->safety_vent_off();
+        hhandler->pinch_valve_off();
 
 
         if(ui->label_dialvalue->text() == "0")
         {
-            //hhandler->siloil_off();
             hhandler->vso_off();
         }
         else
@@ -3897,12 +3958,11 @@ void MainWindow::loadPresets()
         l->writeDAC(0);
         int avg1 = vac->convert(CHANNEL_1)*0.1894;
         ui->label_vacactual->setText(QString::number(avg1));
-        //hhandler->safety_vent_off();
+        hhandler->pinch_valve_off();
 
 
         if(ui->label_dialvalue->text() == "0")
         {
-            //hhandler->siloil_off();
             hhandler->vso_off();
         }
         else
@@ -4254,5 +4314,17 @@ void MainWindow::colorOn()
         ui->pushButton_diainc->raise();
         ui->pushButton_diadec->raise();
         ui->label_dia->raise();
+    }
+}
+
+void MainWindow::switchValves()
+{
+    if(sp==1)
+    {
+        l->writeDAC(0);
+        int avg1 = vac->convert(CHANNEL_1)*0.1894;
+        ui->label_vacactual->setText(QString::number(avg1));
+        hhandler->pinch_valve_off();
+
     }
 }

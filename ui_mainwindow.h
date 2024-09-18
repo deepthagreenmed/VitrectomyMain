@@ -561,7 +561,21 @@ public:
 "background-color: rgb(0, 0, 0);\n"
 "color: rgb(255,255,255);\n"
 "border-radius:20px;\n"
-"font-weight: bold;"));
+"font-weight: bold;\n"
+"\n"
+"QComboBox {\n"
+"padding-right: 30px; /* Ensure there's enough space for the larger icon */\n"
+"}\n"
+"\n"
+"\n"
+"QComboBox::drop-down {\n"
+"subcontrol-position: right center;\n"
+"subcontrol-origin: padding;\n"
+"width: 30px; /* Increase the width to make the dropdown area larger */\n"
+"}\n"
+"\n"
+"\n"
+""));
         comboBox_surgeonname->setMaxVisibleItems(20);
         label_dia = new QLabel(centralwidget);
         label_dia->setObjectName(QString::fromUtf8("label_dia"));
