@@ -35,7 +35,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    QScroller::grabGesture(ui->comboBox_surgeonname->view()->viewport(),QScroller::LeftMouseButtonGesture);
+    QScroller::grabGesture(ui->comboBox_surgeonname->view()->viewport(),QScroller::RightMouseButtonGesture);
+
 
 
     clicktimer=new QTimer;
