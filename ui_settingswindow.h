@@ -418,6 +418,7 @@ public:
         comboBox_tl->addItem(QString());
         comboBox_tl->addItem(QString());
         comboBox_tl->addItem(QString());
+        comboBox_tl->addItem(QString());
         comboBox_tl->setObjectName(QString::fromUtf8("comboBox_tl"));
         comboBox_tl->setGeometry(QRect(10, 290, 291, 61));
         comboBox_tl->setStyleSheet(QString::fromUtf8("font: 20pt \"Ubuntu\";\n"
@@ -426,6 +427,7 @@ public:
 "border-radius:20px;\n"
 "font-weight: bold;"));
         comboBox_bl = new QComboBox(tab_9);
+        comboBox_bl->addItem(QString());
         comboBox_bl->addItem(QString());
         comboBox_bl->addItem(QString());
         comboBox_bl->addItem(QString());
@@ -444,6 +446,7 @@ public:
         comboBox_tr->addItem(QString());
         comboBox_tr->addItem(QString());
         comboBox_tr->addItem(QString());
+        comboBox_tr->addItem(QString());
         comboBox_tr->setObjectName(QString::fromUtf8("comboBox_tr"));
         comboBox_tr->setGeometry(QRect(770, 290, 291, 61));
         comboBox_tr->setStyleSheet(QString::fromUtf8("font: 20pt \"Ubuntu\";\n"
@@ -452,6 +455,7 @@ public:
 "border-radius:20px;\n"
 "font-weight: bold;"));
         comboBox_br = new QComboBox(tab_9);
+        comboBox_br->addItem(QString());
         comboBox_br->addItem(QString());
         comboBox_br->addItem(QString());
         comboBox_br->addItem(QString());
@@ -1065,28 +1069,32 @@ public:
         label_20->setText(QString());
         label_35->setText(QString());
         comboBox_tl->setItemText(0, QCoreApplication::translate("settingswindow", "Air Injector On/Off", nullptr));
-        comboBox_tl->setItemText(1, QCoreApplication::translate("settingswindow", "LED2 On/Off", nullptr));
-        comboBox_tl->setItemText(2, QCoreApplication::translate("settingswindow", "Vitrectomy On/Off", nullptr));
-        comboBox_tl->setItemText(3, QCoreApplication::translate("settingswindow", "Diathermy On/Off", nullptr));
-        comboBox_tl->setItemText(4, QCoreApplication::translate("settingswindow", "Silicon Oil On/Off", nullptr));
+        comboBox_tl->setItemText(1, QCoreApplication::translate("settingswindow", "LED1 On/Off", nullptr));
+        comboBox_tl->setItemText(2, QCoreApplication::translate("settingswindow", "LED2 On/Off", nullptr));
+        comboBox_tl->setItemText(3, QCoreApplication::translate("settingswindow", "Vitrectomy On/Off", nullptr));
+        comboBox_tl->setItemText(4, QCoreApplication::translate("settingswindow", "Diathermy On/Off", nullptr));
+        comboBox_tl->setItemText(5, QCoreApplication::translate("settingswindow", "Silicon Oil On/Off", nullptr));
 
         comboBox_bl->setItemText(0, QCoreApplication::translate("settingswindow", "Air Injector On/Off", nullptr));
-        comboBox_bl->setItemText(1, QCoreApplication::translate("settingswindow", "LED2 On/Off", nullptr));
-        comboBox_bl->setItemText(2, QCoreApplication::translate("settingswindow", "Vitrectomy On/Off", nullptr));
-        comboBox_bl->setItemText(3, QCoreApplication::translate("settingswindow", "Diathermy On/Off", nullptr));
-        comboBox_bl->setItemText(4, QCoreApplication::translate("settingswindow", "Silicon Oil On/Off", nullptr));
+        comboBox_bl->setItemText(1, QCoreApplication::translate("settingswindow", "LED1 On/Off", nullptr));
+        comboBox_bl->setItemText(2, QCoreApplication::translate("settingswindow", "LED2 On/Off", nullptr));
+        comboBox_bl->setItemText(3, QCoreApplication::translate("settingswindow", "Vitrectomy On/Off", nullptr));
+        comboBox_bl->setItemText(4, QCoreApplication::translate("settingswindow", "Diathermy On/Off", nullptr));
+        comboBox_bl->setItemText(5, QCoreApplication::translate("settingswindow", "Silicon Oil On/Off", nullptr));
 
         comboBox_tr->setItemText(0, QCoreApplication::translate("settingswindow", "Air Injector On/Off", nullptr));
-        comboBox_tr->setItemText(1, QCoreApplication::translate("settingswindow", "LED2 On/Off", nullptr));
-        comboBox_tr->setItemText(2, QCoreApplication::translate("settingswindow", "Vitrectomy On/Off", nullptr));
-        comboBox_tr->setItemText(3, QCoreApplication::translate("settingswindow", "Diathermy On/Off", nullptr));
-        comboBox_tr->setItemText(4, QCoreApplication::translate("settingswindow", "Silicon Oil On/Off", nullptr));
+        comboBox_tr->setItemText(1, QCoreApplication::translate("settingswindow", "LED1 On/Off", nullptr));
+        comboBox_tr->setItemText(2, QCoreApplication::translate("settingswindow", "LED2 On/Off", nullptr));
+        comboBox_tr->setItemText(3, QCoreApplication::translate("settingswindow", "Vitrectomy On/Off", nullptr));
+        comboBox_tr->setItemText(4, QCoreApplication::translate("settingswindow", "Diathermy On/Off", nullptr));
+        comboBox_tr->setItemText(5, QCoreApplication::translate("settingswindow", "Silicon Oil On/Off", nullptr));
 
         comboBox_br->setItemText(0, QCoreApplication::translate("settingswindow", "Air Injector On/Off", nullptr));
-        comboBox_br->setItemText(1, QCoreApplication::translate("settingswindow", "LED2 On/Off", nullptr));
-        comboBox_br->setItemText(2, QCoreApplication::translate("settingswindow", "Vitrectomy On/Off", nullptr));
-        comboBox_br->setItemText(3, QCoreApplication::translate("settingswindow", "Diathermy On/Off", nullptr));
-        comboBox_br->setItemText(4, QCoreApplication::translate("settingswindow", "Silicon Oil On/Off", nullptr));
+        comboBox_br->setItemText(1, QCoreApplication::translate("settingswindow", "LED1 On/Off", nullptr));
+        comboBox_br->setItemText(2, QCoreApplication::translate("settingswindow", "LED2 On/Off", nullptr));
+        comboBox_br->setItemText(3, QCoreApplication::translate("settingswindow", "Vitrectomy On/Off", nullptr));
+        comboBox_br->setItemText(4, QCoreApplication::translate("settingswindow", "Diathermy On/Off", nullptr));
+        comboBox_br->setItemText(5, QCoreApplication::translate("settingswindow", "Silicon Oil On/Off", nullptr));
 
         tabWidget_2->setTabText(tabWidget_2->indexOf(tab_9), QCoreApplication::translate("settingswindow", "Foot Pedal", nullptr));
         pushButton_oneinc->setText(QString());

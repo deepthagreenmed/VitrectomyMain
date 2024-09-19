@@ -37,8 +37,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     QScroller::grabGesture(ui->comboBox_surgeonname->view()->viewport(),QScroller::RightMouseButtonGesture);
 
-
-
     clicktimer=new QTimer;
 
     connect(ui->pushButton_vacinc, &QPushButton::pressed, this, &MainWindow::increaseVaccumValue);
@@ -120,7 +118,7 @@ MainWindow::MainWindow(QWidget *parent)
     QSqlDatabase mydb1 = QSqlDatabase::addDatabase("QSQLITE");
     mydb1.setDatabaseName(PATH);
 
-     mydb1.open();
+    mydb1.open();
 
 
     QSqlQuery query;
@@ -289,6 +287,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->dial->setStyle(QStyleFactory::create("Fusion"));
     ui->dial->setStyleSheet("background-color: rgb(26, 95, 180);");
     ui->dial->setRange(0, 4096);
+
+    ui->dial->setSingleStep(5);     // Increase the step size when rotated
+    ui->dial->setPageStep(10);      // Step size when clicked or dragged
 
     ui->dial->setValue(avgfp);
 
@@ -480,6 +481,8 @@ void MainWindow::transitionToNewScreen() {
     ui->label_aipreset->show();
     ui->label_aiactual->show();
     ui->label_dia->show();
+
+
     ui->pushButton_vitdec->show();
     ui->pushButton_vitinc->show();
     ui->pushButton_vacdec->show();
@@ -751,11 +754,6 @@ void MainWindow::on_clicked(const QString& digit)
       {
       ui->label_vacpreset->setFocus();
       int dig = digit.toInt();
-      if(vaccc%2==0) {
-        vacc2 = ui->label_vacpreset->text().toInt();
-        vaccc++;
-      }
-
       int value = (ui->label_vacpreset->text()+digit).toInt();
       updateLabelValue(ui->label_vacpreset, dig, value, 500, 5);
    }
@@ -771,10 +769,6 @@ void MainWindow::on_clicked(const QString& digit)
       {
       ui->label_vitpreset->setFocus();
       int dig = digit.toInt();
-      if(vitc%2==0) {
-        vitr2 = ui->label_vitpreset->text().toInt();
-        vitc++;
-      }
       int value = (ui->label_vitpreset->text()+digit).toInt();
       if(madtype=="Midlabs")
       {
@@ -799,10 +793,6 @@ if(ui->label_siloil->focusWidget()) {
     {
     ui->label_siloil->setFocus();
     int dig = digit.toInt();
-    if(soc%2==0) {
-       so2=ui->label_siloil->text().toInt();
-      soc++;
-    }
     int value = (ui->label_siloil->text()+digit).toInt();
     updateLabelValue(ui->label_siloil, dig, value, 100, 5);
 
@@ -819,7 +809,6 @@ if(ui->label_aipreset->focusWidget()) {
     {
     ui->label_aipreset->setFocus();
     int dig = digit.toInt();
-    air2=ui->label_aipreset->text().toInt();
     int value = (ui->label_aipreset->text()+digit).toInt();
     updateLabelValue(ui->label_aipreset, dig, value, 100, 1);
 
@@ -837,10 +826,6 @@ if(ui->label_dia->focusWidget()) {
     {
     ui->label_dia->setFocus();
     int dig = digit.toInt();
-    if(diatc%2==0) {
-       diat2=ui->label_dia->text().toInt();
-      diatc++;
-    }
     int value = (ui->label_dia->text()+digit).toInt();
     updateLabelValue(ui->label_dia, dig, value, 100, 5);
 
@@ -858,10 +843,6 @@ if(ui->label_led2->focusWidget()) {
     {
     ui->label_led2->setFocus();
     int dig = digit.toInt();
-    if(l2c%2==0) {
-       l22=ui->label_led2->text().toInt();
-      l2c++;
-    }
     int value = (ui->label_led2->text()+digit).toInt();
     updateLabelValue(ui->label_led2, dig, value, 100, 5);
 
@@ -878,10 +859,6 @@ if(ui->label_led1->focusWidget()) {
     {
     ui->label_led1->setFocus();
     int dig = digit.toInt();
-    if(l1c%2==0) {
-       l12=ui->label_led2->text().toInt();
-      l1c++;
-    }
     int value = (ui->label_led1->text()+digit).toInt();
     updateLabelValue(ui->label_led1, dig, value, 100, 5);
 
@@ -910,24 +887,24 @@ void MainWindow::on_clickedenter()
 
     updateLabelValue2(ui->label_vacpreset, 5);
     ui->label_vacpreset->setText(QString::number(static_cast<int>(std::round(ui->label_vacpreset->text().toInt()/5))*5));
-    vaccc=0;
+
     updateLabelValue2(ui->label_vitpreset, 60);
     ui->label_vitpreset->setText(QString::number(static_cast<int>(std::round(ui->label_vitpreset->text().toInt()/60))*60));
     vit_value = ui->label_vitpreset->text().toInt();
-    vitc=0;
+
     updateLabelValue2(ui->label_siloil, 5);
     ui->label_siloil->setText(QString::number(static_cast<int>(std::round(ui->label_siloil->text().toInt()/5))*5));
-    soc=0;
+
     updateLabelValue2(ui->label_aipreset, 1);
     updateLabelValue2(ui->label_dia, 5);
     ui->label_dia->setText(QString::number(static_cast<int>(std::round(ui->label_dia->text().toInt()/5))*5));
-    diatc=0;
+
     updateLabelValue2(ui->label_led1, 5);
     ui->label_led1->setText(QString::number(static_cast<int>(std::round(ui->label_led1->text().toInt()/5))*5));
-    l1c=0;
+
     updateLabelValue2(ui->label_led2, 5);
     ui->label_led2->setText(QString::number(static_cast<int>(std::round(ui->label_led2->text().toInt()/5))*5));
-    l2c=0;
+
 }
 
 
@@ -3536,6 +3513,41 @@ void MainWindow::ai_setvalue(int pin, int value)
 
 }
 
+//led1 on off
+void MainWindow::led1_setvalue(int pin, int value)
+{
+    lp=value;
+    //qDebug()<<"led1 pedal"<<lp;
+    if(lp==0)
+    {
+        ui->label_27->setStyleSheet("font: 40pt ;color: rgb(0,0,0);");
+        ui->pushButton_led1onoff->setStyleSheet("image: url(:/new/prefix1/img/on.png);border:3px solid black;border-radius:40px;");
+        ui->pushButton_led1onoff->setText("ON");
+        if(ui->label_led1->text().toInt() != 0)
+        {
+            led1->processUserInput(1);
+        }
+
+        connect(ui->pushButton_led1inc, &QPushButton::clicked, this, &MainWindow::increaseLED1Value);
+        connect(ui->pushButton_led1dec, &QPushButton::clicked, this, &MainWindow::decreaseLED1Value);
+        lp2=1;
+
+    }
+    else
+    {   ui->label_27->setStyleSheet("font: 40pt ;color: rgb(255,255,255);");
+        ui->pushButton_led1onoff->setStyleSheet("image: url(:/new/prefix1/img/off.png);border:3px solid black;border-radius:40px;");
+        ui->pushButton_led1onoff->setText("OFF");
+        led1->processUserInput(2);
+
+        disconnect(ui->pushButton_led1inc, &QPushButton::clicked, this, &MainWindow::increaseLED1Value);
+        disconnect(ui->pushButton_led1dec, &QPushButton::clicked, this, &MainWindow::decreaseLED1Value);
+       lp=0;
+    }
+
+}
+
+
+
 //led2 on off
 void MainWindow::led2_setvalue(int pin, int value)
 {
@@ -3553,8 +3565,6 @@ void MainWindow::led2_setvalue(int pin, int value)
 
         connect(ui->pushButton_led2inc, &QPushButton::clicked, this, &MainWindow::increaseLED2Value);
         connect(ui->pushButton_led2dec, &QPushButton::clicked, this, &MainWindow::decreaseLED2Value);
-
-
         lp2=1;
 
     }
@@ -3822,7 +3832,6 @@ void MainWindow::configOnOff()
 
     loadPresets();
 
-
     mydb.close();
     QSqlDatabase::removeDatabase("QSQLITE");
 
@@ -3841,7 +3850,6 @@ void MainWindow::loadPresets()
     query.exec("select * from maindb where surgeon='"+surgeonid+"'");
     while(query.next()){
         vp=query.value(51).toInt();
-        //qDebug()<<"vac_mode"<<vp;
         vip=query.value(52).toInt();
         vitp=query.value(53).toInt();
         lp=query.value(54).toInt();

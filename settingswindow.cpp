@@ -143,7 +143,6 @@ settingswindow::settingswindow(QWidget *parent) :
 
 
 
-
     QRegExp regex2("^(?:[0-4]?\\d{1,2}|500)$");
     QRegExpValidator* validator2 = new QRegExpValidator(regex2, ui->lineEdit_vac);
     ui->lineEdit_vac->setValidator(validator2);
@@ -313,10 +312,6 @@ settingswindow::settingswindow(QWidget *parent) :
 
     connect(ui->listWidget, &QListWidget::itemClicked, this, &settingswindow::updateSurgeon);
 
-    QTimer *trunc = new QTimer;
-    connect(trunc, &QTimer::timeout, this, &settingswindow::delete20);
-    trunc->start(100);
-
 
 
 }
@@ -396,6 +391,7 @@ bool settingswindow::eventFilter(QObject* object, QEvent* event)
 
 // Set limits and input validation
 void settingswindow::updateLineEditValue(QLineEdit* label, int dig, int value, int maxValue) {
+
     if (value > maxValue) {
         label->setText("");
         label->setText(QString::number(dig));
@@ -1532,6 +1528,31 @@ void settingswindow::gpiofp(int pin, QString pos)
         }
     }
 
+    if(pos=="LED1 On/Off")
+    {
+        int value2 = readGPIO(pin);
+        if(value2==0 && flag_2==0 && state2==0)
+        {
+            state2=1;
+        }
+        if(value2==1 && flag_2==0 && state2==1)
+        {
+            flag_2=1;
+            state2=2;
+            emit led1_pedal(pin,0);
+        }
+        if(value2==0 && flag_2==1 && state2==2)
+        {
+            state2=3;
+        }
+        if(value2==1 && flag_2==1 && state2==3)
+        {
+            emit led1_pedal(pin,1);
+            flag_2=0;
+            state2=0;
+        }
+    }
+
     if(pos=="LED2 On/Off")
     {
         int value2 = readGPIO(pin);
@@ -1630,26 +1651,6 @@ int settingswindow::readGPIO(int pin)
     QString value = stream.readLine();
     file.close();
     return value.toInt();
-}
-
-bool settingswindow::delete20() {
-
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName(PATH);
-    db.open();
-
-    QSqlQuery query;
-    // Delete rows after the first 20
-    QString sqlQuery = QString(
-        "DELETE FROM maindb WHERE rowid NOT IN ("
-        "SELECT rowid FROM maindb ORDER BY rowid LIMIT 20);"
-    );
-
-query.exec(sqlQuery);
-
-db.close();
-QSqlDatabase::removeDatabase("QSQLITE");
-    return true;
 }
 
 void settingswindow::emitListContents() {

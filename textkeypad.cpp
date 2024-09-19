@@ -26,7 +26,7 @@ textkeypad::textkeypad(QWidget *parent) :
     connect(ui->pushButton_42, &QPushButton::clicked, this, &textkeypad::enterspace);
     connect(ui->pushButton_43, &QPushButton::pressed, this, &textkeypad::caps);
 
-    clicktimer->setInterval(200);
+    clicktimer->setInterval(100);
     clicktimer->setSingleShot(true);
 
 }

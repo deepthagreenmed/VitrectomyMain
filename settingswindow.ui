@@ -808,6 +808,11 @@ font-weight: bold;</string>
      </item>
      <item>
       <property name="text">
+       <string>LED1 On/Off</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
        <string>LED2 On/Off</string>
       </property>
      </item>
@@ -846,6 +851,11 @@ font-weight: bold;</string>
      <item>
       <property name="text">
        <string>Air Injector On/Off</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>LED1 On/Off</string>
       </property>
      </item>
      <item>
@@ -892,6 +902,11 @@ font-weight: bold;</string>
      </item>
      <item>
       <property name="text">
+       <string>LED1 On/Off</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
        <string>LED2 On/Off</string>
       </property>
      </item>
@@ -930,6 +945,11 @@ font-weight: bold;</string>
      <item>
       <property name="text">
        <string>Air Injector On/Off</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>LED1 On/Off</string>
       </property>
      </item>
      <item>

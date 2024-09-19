@@ -56,6 +56,7 @@ signals:
     void diastr(QString str);
     void textSelected(const QString &text);
     void ai_pedal(int pin, int value);
+    void led1_pedal(int pin, int value);
     void led2_pedal(int pin, int value);
     void vit_pedal(int pin, int value);
     void dia_pedal(int pin, int value);
@@ -106,7 +107,7 @@ private slots:
     void onCutterTypeChanged(int index);
     void loadDatabaseFromList(const QString &currentText);
     //footpedal settings
-    bool delete20();
+
     //tabs
     void on_tab_dia_clicked();
     void on_tab_led_clicked();

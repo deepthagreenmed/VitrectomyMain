@@ -47,7 +47,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-   void connections();
+  // void connections();
    QString surgeonid;
    int surgeonind;
     int vit_value=60; //period
@@ -57,24 +57,20 @@ public:
     void linearcall3();
     void nonlinearcall2();
     void nonlinearcall3();
-    LED *led1;
-    LED *led2;
+
     bool eventFilter(QObject* object, QEvent* event);
     void updateLabelValue(QLabel* label, int dig, int value, int maxValue, int limit);
     void updateLabelValue2(QLabel *label, int limit);
     void switchled(LED *led, int choice);
     void footpedalbeep();
-    int beep_0to1=0;
-    int beep_1to2=0;
-    int beep_2to3=0;
-    QString madtype;
-    int surgeonc=0;
+
+    //int surgeonc=0;
 
     void exportGPIO(int pin);
     void setGPIODirection(int pin, const std::string& direction);
     void writeGPIO(int pin, int value);
     void loadPresets();
-    void surgeonLoad(int index);
+
     void reverseOnOff();
     void reverseOnOff2();
     void setLastSelectedValue();
@@ -113,6 +109,7 @@ private slots:
      void configOnOff();
      void siloil();
      void ai_setvalue(int pin, int value);
+     void led1_setvalue(int pin, int value);
      void led2_setvalue(int pin, int value);
      void vit_setvalue(int pin, int value);
      void dia_setvalue(int pin, int value);
@@ -173,6 +170,8 @@ private:
     keypad *key;
     ltc2614 *l;
     sensor *pres;
+    LED *led1;
+    LED *led2;
 
     QTimer *timerscreen;
     QTimer timeai;
@@ -188,22 +187,8 @@ private:
     int l1;
     int l2;
 
-    int vacc2;
-    int vitr2;
-    int so2;
-    int air2;
-    int diat2;
-    int l12;
-    int l22;
-
     double idx;
     int avgfp=0;
-    int vitc=0;
-    int vaccc=0;
-    int soc=0;
-    int diatc=0;
-    int l1c=0;
-    int l2c=0;
 
     int vp;
     int ap;
@@ -218,6 +203,11 @@ private:
     double fp1=8*40.95;
     double fp2=45*40.95;
     double fp3=45*40.95;
+
+    int beep_0to1=0;
+    int beep_1to2=0;
+    int beep_2to3=0;
+    QString madtype;
 
     int flag=0;
     int flag2=0;
