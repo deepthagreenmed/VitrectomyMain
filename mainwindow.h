@@ -110,7 +110,6 @@ public slots:
 
 
 private slots:
-
      void configOnOff();
      void siloil();
      void ai_setvalue(int pin, int value);
