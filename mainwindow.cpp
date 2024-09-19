@@ -459,10 +459,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     }
 
-    QTimer *valvetimer=new QTimer;
-    connect(valvetimer, &QTimer::timeout, this, &MainWindow::switchValves);
-    valvetimer->start(100);
-
 }
 
 
@@ -4315,17 +4311,5 @@ void MainWindow::colorOn()
         ui->pushButton_diainc->raise();
         ui->pushButton_diadec->raise();
         ui->label_dia->raise();
-    }
-}
-
-void MainWindow::switchValves()
-{
-    if(sp==1)
-    {
-        l->writeDAC(0);
-        int avg1 = vac->convert(CHANNEL_1)*0.1894;
-        ui->label_vacactual->setText(QString::number(avg1));
-        hhandler->pinch_valve_off();
-
     }
 }

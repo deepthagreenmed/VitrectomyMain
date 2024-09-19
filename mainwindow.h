@@ -110,7 +110,7 @@ public slots:
 
 
 private slots:
-    void switchValves();
+
      void configOnOff();
      void siloil();
      void ai_setvalue(int pin, int value);

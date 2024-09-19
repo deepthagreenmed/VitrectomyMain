@@ -535,6 +535,11 @@ void settingswindow::on_clickedenter()
          }
      }
 
+     if(ui->lineEdit_cutrate->text().toInt() < 60)
+     {
+         ui->lineEdit_cutrate->setText("60");
+     }
+
 
 
 }
