@@ -402,6 +402,8 @@ void settingswindow::updateLineEditValue(QLineEdit* label, int dig, int value, i
     } else {
         label->setText(QString::number(value));
     }
+
+
 }
 
 
@@ -510,6 +512,30 @@ void settingswindow::on_clickedenter()
     ui->lineEdit_led2->setText(QString::number(static_cast<int>(std::round(ui->lineEdit_led2->text().toInt()/5))*5));
     ui->lineEdit_cutrate->setText(QString::number(static_cast<int>(std::round(ui->lineEdit_cutrate->text().toInt()/60))*60));
     ui->lineEdit_vac->setText(QString::number(static_cast<int>(std::round(ui->lineEdit_vac->text().toInt()/5))*5));
+
+    if(ui->comboBox_cuttertype->currentText() == "Midlabs")
+     {
+         if(ui->lineEdit_cutrate->text().toInt() > 8040)
+         {
+             ui->lineEdit_cutrate->setText("8040");
+         }
+     }
+     if(ui->comboBox_cuttertype->currentText() == "Alcon")
+     {
+         if(ui->lineEdit_cutrate->text().toInt() > 7500)
+         {
+             ui->lineEdit_cutrate->setText("7500");
+         }
+     }
+     if(ui->comboBox_cuttertype->currentText() == "Dorc")
+     {
+         if(ui->lineEdit_cutrate->text().toInt() > 8040)
+         {
+             ui->lineEdit_cutrate->setText("8040");
+         }
+     }
+
+
 
 }
 
