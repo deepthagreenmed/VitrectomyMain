@@ -1238,7 +1238,8 @@ void settingswindow::on_tab_led_clicked()
 
 // Irrigation/aspiration tab
 void settingswindow::on_tab_ia_clicked()
-{key->hide();
+{
+    key->hide();
     ui->lineEdit_cutrate->clearFocus();
     ui->lineEdit_powmax->clearFocus();
     ui->lineEdit_vac->clearFocus();
@@ -1253,7 +1254,8 @@ void settingswindow::on_tab_ia_clicked()
 
 // Vitrectomy tab
 void settingswindow::on_tab_vit_clicked()
-{key->hide();
+{
+    key->hide();
     ui->lineEdit_cutrate->clearFocus();
     ui->lineEdit_powmax->clearFocus();
     ui->lineEdit_vac->clearFocus();
@@ -1268,7 +1270,8 @@ void settingswindow::on_tab_vit_clicked()
 
 // Footpedal tab
 void settingswindow::on_tab_fp_clicked()
-{key->hide();
+{
+    key->hide();
     ui->lineEdit_cutrate->clearFocus();
     ui->lineEdit_powmax->clearFocus();
     ui->lineEdit_vac->clearFocus();

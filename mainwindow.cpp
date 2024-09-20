@@ -219,6 +219,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     connect(win2, &settingswindow::ai_pedal, this, &MainWindow::ai_setvalue);
+    connect(win2, &settingswindow::led1_pedal, this, &MainWindow::led1_setvalue);
     connect(win2, &settingswindow::led2_pedal, this, &MainWindow::led2_setvalue);
     connect(win2, &settingswindow::vit_pedal, this, &MainWindow::vit_setvalue);
     connect(win2, &settingswindow::dia_pedal, this, &MainWindow::dia_setvalue);
@@ -287,11 +288,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->dial->setStyle(QStyleFactory::create("Fusion"));
     ui->dial->setStyleSheet("background-color: rgb(26, 95, 180);");
     ui->dial->setRange(0, 4096);
-
-    ui->dial->setSingleStep(5);     // Increase the step size when rotated
-    ui->dial->setPageStep(10);      // Step size when clicked or dragged
-
     ui->dial->setValue(avgfp);
+    ui->dial->setSingleStep(1);
 
 
     ui->label_vacpreset->installEventFilter(this);
