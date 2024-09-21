@@ -47,12 +47,13 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-  // void connections();
+
    QString surgeonid;
    int surgeonind;
     int vit_value=60; //period
     float resolution = 0.000000005; //5ns
     float freq=12000;   //12kHz
+
     void linearcall2();
     void linearcall3();
     void nonlinearcall2();
@@ -63,8 +64,6 @@ public:
     void updateLabelValue2(QLabel *label, int limit);
     void switchled(LED *led, int choice);
     void footpedalbeep();
-
-    //int surgeonc=0;
 
     void exportGPIO(int pin);
     void setGPIODirection(int pin, const std::string& direction);
@@ -81,13 +80,14 @@ signals:
 
 public slots:
     void comboboxload(const QStringList& items);
+
     void updateText(const QString &text);
-    void setFPValues();
     void receiveString(const QString& str);
     void receiveString0(QString val);
     void receiveString1(QString val);
     void receiveString2(QString val);
     void receiveString3(QString val);
+
     void led1val(QString str);
     void led2val(QString str);
     void vacval(QString str);
@@ -96,9 +96,11 @@ public slots:
     void vitlnl(QString str);
     void typevit(QString str);
     void diaval(QString val);
+
     void on_clicked(const QString& digit);
      void on_clickedenter();
      void on_clickedbackspace();
+
      void vitvalset();
      void colorOn();
 
@@ -106,22 +108,32 @@ public slots:
 
 
 private slots:
+     void setFPValues();
      void configOnOff();
+     void transitionToNewScreen();
+     void setZero();
+
      void siloil();
+     void diathermy();
+     void airinjectoroff();
+
      void ai_setvalue(int pin, int value);
      void led1_setvalue(int pin, int value);
      void led2_setvalue(int pin, int value);
      void vit_setvalue(int pin, int value);
      void dia_setvalue(int pin, int value);
      void siloil_setvalue(int pin, int value);
-    //void pressureval();
-    void transitionToNewScreen();
-    void setZero();
+
+
+
      void updateLabel();
      void updateLabel2();
-    void diathermy();
-    void airinjectoroff();
+
      void updatetimedate();
+     void timerCompleted();
+     void showsetupscreen();
+    void showsettingswindow();
+
     void increaseVaccumValue();
     void decreaseVaccumValue();
     void increaseVitrectomyValue();
@@ -136,29 +148,16 @@ private slots:
     void decreaseLED2Value();
     void increaseSiliconOilValue();
     void decreaseSiliconOilValue();
-    //settings window
-    void showsettingswindow();
-    //silicon oil
+
+
     void siloil_onoff();
-    //vaccum linear/nonlinear
     void vac_linear_nonlinear();
-    //led1
     void led1_onoff();
-    //diathermy
     void dia_onoff();
-    //air injector
     void ai_onoff();
-    //vitrectomy
     void vit_onoff();
-    //vitrectomy linear/nonlinear
     void vit_linear_nonlinear();
-    //led2
     void led2_onoff();
-
-
-    void timerCompleted();
-    //setup screen
-    void showsetupscreen();
 
 private:
     Ui::MainWindow *ui;
@@ -189,6 +188,7 @@ private:
 
     double idx;
     int avgfp=0;
+    QString madtype;
 
     int vp;
     int ap;
@@ -207,7 +207,7 @@ private:
     int beep_0to1=0;
     int beep_1to2=0;
     int beep_2to3=0;
-    QString madtype;
+
 
     int flag=0;
     int flag2=0;
@@ -217,10 +217,6 @@ private:
     bool safety_flag1=false;
     bool safety_flag2=false;
     bool safety_flag3=false;
-
-
-
-
 
 };
 #endif // MAINWINDOW_H

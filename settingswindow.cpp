@@ -629,8 +629,8 @@ void settingswindow::on_vit_clicked()
     QSqlDatabase mydb = QSqlDatabase::addDatabase("QSQLITE");
     mydb.setDatabaseName(PATH);
     mydb.open();
-     QSqlQuery query;
-     QString vcmax,vcmin,vvmax,vvmin,vaspmax,type;
+    QSqlQuery query;
+    QString vcmax,vcmin,vvmax,vvmin,vaspmax,type;
 
      surgeonid=ui->lineEdit_5->text();
      vcmax=ui->lineEdit_cutrate->text();
@@ -748,7 +748,7 @@ void settingswindow::on_save_clicked()
 }
 
 
-// Load database from list
+// Load from database
 void settingswindow::loadDatabaseFromList(const QString &currentText)
 {
     key->hide();

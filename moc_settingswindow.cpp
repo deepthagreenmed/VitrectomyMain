@@ -36,22 +36,22 @@ QT_MOC_LITERAL(0, 0, 14), // "settingswindow"
 QT_MOC_LITERAL(1, 15, 11), // "listUpdated"
 QT_MOC_LITERAL(2, 27, 0), // ""
 QT_MOC_LITERAL(3, 28, 5), // "items"
-QT_MOC_LITERAL(4, 34, 12), // "stringPassed"
-QT_MOC_LITERAL(5, 47, 3), // "str"
-QT_MOC_LITERAL(6, 51, 13), // "stringPassed0"
-QT_MOC_LITERAL(7, 65, 13), // "stringPassed1"
-QT_MOC_LITERAL(8, 79, 13), // "stringPassed2"
-QT_MOC_LITERAL(9, 93, 13), // "stringPassed3"
-QT_MOC_LITERAL(10, 107, 7), // "led1str"
-QT_MOC_LITERAL(11, 115, 7), // "led2str"
-QT_MOC_LITERAL(12, 123, 6), // "vacstr"
-QT_MOC_LITERAL(13, 130, 7), // "vacmode"
-QT_MOC_LITERAL(14, 138, 6), // "vitstr"
-QT_MOC_LITERAL(15, 145, 7), // "vitmode"
-QT_MOC_LITERAL(16, 153, 7), // "vittype"
-QT_MOC_LITERAL(17, 161, 6), // "diastr"
-QT_MOC_LITERAL(18, 168, 12), // "textSelected"
-QT_MOC_LITERAL(19, 181, 4), // "text"
+QT_MOC_LITERAL(4, 34, 12), // "textSelected"
+QT_MOC_LITERAL(5, 47, 4), // "text"
+QT_MOC_LITERAL(6, 52, 12), // "stringPassed"
+QT_MOC_LITERAL(7, 65, 3), // "str"
+QT_MOC_LITERAL(8, 69, 13), // "stringPassed0"
+QT_MOC_LITERAL(9, 83, 13), // "stringPassed1"
+QT_MOC_LITERAL(10, 97, 13), // "stringPassed2"
+QT_MOC_LITERAL(11, 111, 13), // "stringPassed3"
+QT_MOC_LITERAL(12, 125, 7), // "led1str"
+QT_MOC_LITERAL(13, 133, 7), // "led2str"
+QT_MOC_LITERAL(14, 141, 6), // "vacstr"
+QT_MOC_LITERAL(15, 148, 7), // "vacmode"
+QT_MOC_LITERAL(16, 156, 6), // "vitstr"
+QT_MOC_LITERAL(17, 163, 7), // "vitmode"
+QT_MOC_LITERAL(18, 171, 7), // "vittype"
+QT_MOC_LITERAL(19, 179, 6), // "diastr"
 QT_MOC_LITERAL(20, 186, 8), // "ai_pedal"
 QT_MOC_LITERAL(21, 195, 3), // "pin"
 QT_MOC_LITERAL(22, 199, 5), // "value"
@@ -62,27 +62,27 @@ QT_MOC_LITERAL(26, 237, 9), // "dia_pedal"
 QT_MOC_LITERAL(27, 247, 12), // "siloil_pedal"
 QT_MOC_LITERAL(28, 260, 10), // "fpsettings"
 QT_MOC_LITERAL(29, 271, 13), // "updateSurgeon"
-QT_MOC_LITERAL(30, 285, 10), // "on_clicked"
-QT_MOC_LITERAL(31, 296, 5), // "digit"
-QT_MOC_LITERAL(32, 302, 19), // "on_clickedbackspace"
-QT_MOC_LITERAL(33, 322, 15), // "on_clickedenter"
-QT_MOC_LITERAL(34, 338, 7), // "zeroinc"
-QT_MOC_LITERAL(35, 346, 7), // "zerodec"
-QT_MOC_LITERAL(36, 354, 6), // "oneinc"
-QT_MOC_LITERAL(37, 361, 6), // "onedec"
-QT_MOC_LITERAL(38, 368, 6), // "twoinc"
-QT_MOC_LITERAL(39, 375, 6), // "twodec"
-QT_MOC_LITERAL(40, 382, 8), // "threeinc"
-QT_MOC_LITERAL(41, 391, 8), // "threedec"
-QT_MOC_LITERAL(42, 400, 14), // "on_clickedtext"
-QT_MOC_LITERAL(43, 415, 23), // "on_clickedbackspacetext"
-QT_MOC_LITERAL(44, 439, 15), // "on_clickedspace"
-QT_MOC_LITERAL(45, 455, 19), // "on_clickedentertext"
-QT_MOC_LITERAL(46, 475, 14), // "on_dia_clicked"
-QT_MOC_LITERAL(47, 490, 14), // "on_led_clicked"
-QT_MOC_LITERAL(48, 505, 13), // "on_ia_clicked"
-QT_MOC_LITERAL(49, 519, 14), // "on_vit_clicked"
-QT_MOC_LITERAL(50, 534, 19), // "show_surgery_screen"
+QT_MOC_LITERAL(30, 285, 19), // "show_surgery_screen"
+QT_MOC_LITERAL(31, 305, 10), // "on_clicked"
+QT_MOC_LITERAL(32, 316, 5), // "digit"
+QT_MOC_LITERAL(33, 322, 19), // "on_clickedbackspace"
+QT_MOC_LITERAL(34, 342, 15), // "on_clickedenter"
+QT_MOC_LITERAL(35, 358, 7), // "zeroinc"
+QT_MOC_LITERAL(36, 366, 7), // "zerodec"
+QT_MOC_LITERAL(37, 374, 6), // "oneinc"
+QT_MOC_LITERAL(38, 381, 6), // "onedec"
+QT_MOC_LITERAL(39, 388, 6), // "twoinc"
+QT_MOC_LITERAL(40, 395, 6), // "twodec"
+QT_MOC_LITERAL(41, 402, 8), // "threeinc"
+QT_MOC_LITERAL(42, 411, 8), // "threedec"
+QT_MOC_LITERAL(43, 420, 14), // "on_clickedtext"
+QT_MOC_LITERAL(44, 435, 23), // "on_clickedbackspacetext"
+QT_MOC_LITERAL(45, 459, 15), // "on_clickedspace"
+QT_MOC_LITERAL(46, 475, 19), // "on_clickedentertext"
+QT_MOC_LITERAL(47, 495, 14), // "on_dia_clicked"
+QT_MOC_LITERAL(48, 510, 14), // "on_led_clicked"
+QT_MOC_LITERAL(49, 525, 13), // "on_ia_clicked"
+QT_MOC_LITERAL(50, 539, 14), // "on_vit_clicked"
 QT_MOC_LITERAL(51, 554, 21), // "on_saveforall_clicked"
 QT_MOC_LITERAL(52, 576, 15), // "on_save_clicked"
 QT_MOC_LITERAL(53, 592, 22), // "on_fp_settings_clicked"
@@ -106,13 +106,13 @@ QT_MOC_LITERAL(70, 846, 10) // "comboBoxTR"
 
     },
     "settingswindow\0listUpdated\0\0items\0"
-    "stringPassed\0str\0stringPassed0\0"
-    "stringPassed1\0stringPassed2\0stringPassed3\0"
-    "led1str\0led2str\0vacstr\0vacmode\0vitstr\0"
-    "vitmode\0vittype\0diastr\0textSelected\0"
-    "text\0ai_pedal\0pin\0value\0led1_pedal\0"
-    "led2_pedal\0vit_pedal\0dia_pedal\0"
-    "siloil_pedal\0fpsettings\0updateSurgeon\0"
+    "textSelected\0text\0stringPassed\0str\0"
+    "stringPassed0\0stringPassed1\0stringPassed2\0"
+    "stringPassed3\0led1str\0led2str\0vacstr\0"
+    "vacmode\0vitstr\0vitmode\0vittype\0diastr\0"
+    "ai_pedal\0pin\0value\0led1_pedal\0led2_pedal\0"
+    "vit_pedal\0dia_pedal\0siloil_pedal\0"
+    "fpsettings\0updateSurgeon\0show_surgery_screen\0"
     "on_clicked\0digit\0on_clickedbackspace\0"
     "on_clickedenter\0zeroinc\0zerodec\0oneinc\0"
     "onedec\0twoinc\0twodec\0threeinc\0threedec\0"
@@ -120,10 +120,10 @@ QT_MOC_LITERAL(70, 846, 10) // "comboBoxTR"
     "on_clickedspace\0on_clickedentertext\0"
     "on_dia_clicked\0on_led_clicked\0"
     "on_ia_clicked\0on_vit_clicked\0"
-    "show_surgery_screen\0on_saveforall_clicked\0"
-    "on_save_clicked\0on_fp_settings_clicked\0"
-    "gpiofp\0pos\0swap_onoff\0onCutterTypeChanged\0"
-    "index\0loadDatabaseFromList\0currentText\0"
+    "on_saveforall_clicked\0on_save_clicked\0"
+    "on_fp_settings_clicked\0gpiofp\0pos\0"
+    "swap_onoff\0onCutterTypeChanged\0index\0"
+    "loadDatabaseFromList\0currentText\0"
     "on_tab_dia_clicked\0on_tab_led_clicked\0"
     "on_tab_ia_clicked\0on_tab_vit_clicked\0"
     "on_tab_fp_clicked\0on_tab_fppreset_clicked\0"
@@ -149,18 +149,18 @@ static const uint qt_meta_data_settingswindow[] = {
        1,    1,  314,    2, 0x06 /* Public */,
        4,    1,  317,    2, 0x06 /* Public */,
        6,    1,  320,    2, 0x06 /* Public */,
-       7,    1,  323,    2, 0x06 /* Public */,
-       8,    1,  326,    2, 0x06 /* Public */,
-       9,    1,  329,    2, 0x06 /* Public */,
-      10,    1,  332,    2, 0x06 /* Public */,
-      11,    1,  335,    2, 0x06 /* Public */,
-      12,    1,  338,    2, 0x06 /* Public */,
-      13,    1,  341,    2, 0x06 /* Public */,
-      14,    1,  344,    2, 0x06 /* Public */,
-      15,    1,  347,    2, 0x06 /* Public */,
-      16,    1,  350,    2, 0x06 /* Public */,
-      17,    1,  353,    2, 0x06 /* Public */,
-      18,    1,  356,    2, 0x06 /* Public */,
+       8,    1,  323,    2, 0x06 /* Public */,
+       9,    1,  326,    2, 0x06 /* Public */,
+      10,    1,  329,    2, 0x06 /* Public */,
+      11,    1,  332,    2, 0x06 /* Public */,
+      12,    1,  335,    2, 0x06 /* Public */,
+      13,    1,  338,    2, 0x06 /* Public */,
+      14,    1,  341,    2, 0x06 /* Public */,
+      15,    1,  344,    2, 0x06 /* Public */,
+      16,    1,  347,    2, 0x06 /* Public */,
+      17,    1,  350,    2, 0x06 /* Public */,
+      18,    1,  353,    2, 0x06 /* Public */,
+      19,    1,  356,    2, 0x06 /* Public */,
       20,    2,  359,    2, 0x06 /* Public */,
       23,    2,  364,    2, 0x06 /* Public */,
       24,    2,  369,    2, 0x06 /* Public */,
@@ -171,8 +171,8 @@ static const uint qt_meta_data_settingswindow[] = {
  // slots: name, argc, parameters, tag, flags
       28,    0,  389,    2, 0x0a /* Public */,
       29,    0,  390,    2, 0x0a /* Public */,
-      30,    1,  391,    2, 0x0a /* Public */,
-      32,    0,  394,    2, 0x0a /* Public */,
+      30,    0,  391,    2, 0x0a /* Public */,
+      31,    1,  392,    2, 0x0a /* Public */,
       33,    0,  395,    2, 0x0a /* Public */,
       34,    0,  396,    2, 0x0a /* Public */,
       35,    0,  397,    2, 0x0a /* Public */,
@@ -182,8 +182,8 @@ static const uint qt_meta_data_settingswindow[] = {
       39,    0,  401,    2, 0x0a /* Public */,
       40,    0,  402,    2, 0x0a /* Public */,
       41,    0,  403,    2, 0x0a /* Public */,
-      42,    1,  404,    2, 0x0a /* Public */,
-      43,    0,  407,    2, 0x0a /* Public */,
+      42,    0,  404,    2, 0x0a /* Public */,
+      43,    1,  405,    2, 0x0a /* Public */,
       44,    0,  408,    2, 0x0a /* Public */,
       45,    0,  409,    2, 0x0a /* Public */,
       46,    0,  410,    2, 0x0a /* Public */,
@@ -212,19 +212,19 @@ static const uint qt_meta_data_settingswindow[] = {
  // signals: parameters
     QMetaType::Void, QMetaType::QStringList,    3,
     QMetaType::Void, QMetaType::QString,    5,
-    QMetaType::Void, QMetaType::QString,    5,
-    QMetaType::Void, QMetaType::QString,    5,
-    QMetaType::Void, QMetaType::QString,    5,
-    QMetaType::Void, QMetaType::QString,    5,
-    QMetaType::Void, QMetaType::QString,    5,
-    QMetaType::Void, QMetaType::QString,    5,
-    QMetaType::Void, QMetaType::QString,    5,
-    QMetaType::Void, QMetaType::QString,    5,
-    QMetaType::Void, QMetaType::QString,    5,
-    QMetaType::Void, QMetaType::QString,    5,
-    QMetaType::Void, QMetaType::QString,    5,
-    QMetaType::Void, QMetaType::QString,    5,
-    QMetaType::Void, QMetaType::QString,   19,
+    QMetaType::Void, QMetaType::QString,    7,
+    QMetaType::Void, QMetaType::QString,    7,
+    QMetaType::Void, QMetaType::QString,    7,
+    QMetaType::Void, QMetaType::QString,    7,
+    QMetaType::Void, QMetaType::QString,    7,
+    QMetaType::Void, QMetaType::QString,    7,
+    QMetaType::Void, QMetaType::QString,    7,
+    QMetaType::Void, QMetaType::QString,    7,
+    QMetaType::Void, QMetaType::QString,    7,
+    QMetaType::Void, QMetaType::QString,    7,
+    QMetaType::Void, QMetaType::QString,    7,
+    QMetaType::Void, QMetaType::QString,    7,
+    QMetaType::Void, QMetaType::QString,    7,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,   21,   22,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,   21,   22,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,   21,   22,
@@ -235,7 +235,8 @@ static const uint qt_meta_data_settingswindow[] = {
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   31,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,   32,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -246,8 +247,7 @@ static const uint qt_meta_data_settingswindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   31,
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,   32,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -283,20 +283,20 @@ void settingswindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         (void)_t;
         switch (_id) {
         case 0: _t->listUpdated((*reinterpret_cast< const QStringList(*)>(_a[1]))); break;
-        case 1: _t->stringPassed((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 2: _t->stringPassed0((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 3: _t->stringPassed1((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 4: _t->stringPassed2((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 5: _t->stringPassed3((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 6: _t->led1str((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 7: _t->led2str((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 8: _t->vacstr((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 9: _t->vacmode((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 10: _t->vitstr((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 11: _t->vitmode((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 12: _t->vittype((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 13: _t->diastr((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 14: _t->textSelected((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 1: _t->textSelected((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 2: _t->stringPassed((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 3: _t->stringPassed0((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 4: _t->stringPassed1((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 5: _t->stringPassed2((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 6: _t->stringPassed3((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 7: _t->led1str((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 8: _t->led2str((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 9: _t->vacstr((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 10: _t->vacmode((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 11: _t->vitstr((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 12: _t->vitmode((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 13: _t->vittype((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 14: _t->diastr((*reinterpret_cast< QString(*)>(_a[1]))); break;
         case 15: _t->ai_pedal((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 16: _t->led1_pedal((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 17: _t->led2_pedal((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
@@ -305,26 +305,26 @@ void settingswindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 20: _t->siloil_pedal((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         case 21: _t->fpsettings(); break;
         case 22: _t->updateSurgeon(); break;
-        case 23: _t->on_clicked((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 24: _t->on_clickedbackspace(); break;
-        case 25: _t->on_clickedenter(); break;
-        case 26: _t->zeroinc(); break;
-        case 27: _t->zerodec(); break;
-        case 28: _t->oneinc(); break;
-        case 29: _t->onedec(); break;
-        case 30: _t->twoinc(); break;
-        case 31: _t->twodec(); break;
-        case 32: _t->threeinc(); break;
-        case 33: _t->threedec(); break;
-        case 34: _t->on_clickedtext((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 35: _t->on_clickedbackspacetext(); break;
-        case 36: _t->on_clickedspace(); break;
-        case 37: _t->on_clickedentertext(); break;
-        case 38: _t->on_dia_clicked(); break;
-        case 39: _t->on_led_clicked(); break;
-        case 40: _t->on_ia_clicked(); break;
-        case 41: _t->on_vit_clicked(); break;
-        case 42: _t->show_surgery_screen(); break;
+        case 23: _t->show_surgery_screen(); break;
+        case 24: _t->on_clicked((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 25: _t->on_clickedbackspace(); break;
+        case 26: _t->on_clickedenter(); break;
+        case 27: _t->zeroinc(); break;
+        case 28: _t->zerodec(); break;
+        case 29: _t->oneinc(); break;
+        case 30: _t->onedec(); break;
+        case 31: _t->twoinc(); break;
+        case 32: _t->twodec(); break;
+        case 33: _t->threeinc(); break;
+        case 34: _t->threedec(); break;
+        case 35: _t->on_clickedtext((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 36: _t->on_clickedbackspacetext(); break;
+        case 37: _t->on_clickedspace(); break;
+        case 38: _t->on_clickedentertext(); break;
+        case 39: _t->on_dia_clicked(); break;
+        case 40: _t->on_led_clicked(); break;
+        case 41: _t->on_ia_clicked(); break;
+        case 42: _t->on_vit_clicked(); break;
         case 43: _t->on_saveforall_clicked(); break;
         case 44: _t->on_save_clicked(); break;
         case 45: _t->on_fp_settings_clicked(); break;
@@ -355,98 +355,98 @@ void settingswindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         }
         {
             using _t = void (settingswindow::*)(const QString & );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::stringPassed)) {
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::textSelected)) {
                 *result = 1;
                 return;
             }
         }
         {
             using _t = void (settingswindow::*)(const QString & );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::stringPassed0)) {
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::stringPassed)) {
                 *result = 2;
                 return;
             }
         }
         {
             using _t = void (settingswindow::*)(const QString & );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::stringPassed1)) {
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::stringPassed0)) {
                 *result = 3;
                 return;
             }
         }
         {
             using _t = void (settingswindow::*)(const QString & );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::stringPassed2)) {
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::stringPassed1)) {
                 *result = 4;
                 return;
             }
         }
         {
             using _t = void (settingswindow::*)(const QString & );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::stringPassed3)) {
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::stringPassed2)) {
                 *result = 5;
                 return;
             }
         }
         {
-            using _t = void (settingswindow::*)(QString );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::led1str)) {
+            using _t = void (settingswindow::*)(const QString & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::stringPassed3)) {
                 *result = 6;
                 return;
             }
         }
         {
             using _t = void (settingswindow::*)(QString );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::led2str)) {
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::led1str)) {
                 *result = 7;
                 return;
             }
         }
         {
             using _t = void (settingswindow::*)(QString );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::vacstr)) {
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::led2str)) {
                 *result = 8;
                 return;
             }
         }
         {
             using _t = void (settingswindow::*)(QString );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::vacmode)) {
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::vacstr)) {
                 *result = 9;
                 return;
             }
         }
         {
             using _t = void (settingswindow::*)(QString );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::vitstr)) {
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::vacmode)) {
                 *result = 10;
                 return;
             }
         }
         {
             using _t = void (settingswindow::*)(QString );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::vitmode)) {
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::vitstr)) {
                 *result = 11;
                 return;
             }
         }
         {
             using _t = void (settingswindow::*)(QString );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::vittype)) {
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::vitmode)) {
                 *result = 12;
                 return;
             }
         }
         {
             using _t = void (settingswindow::*)(QString );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::diastr)) {
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::vittype)) {
                 *result = 13;
                 return;
             }
         }
         {
-            using _t = void (settingswindow::*)(const QString & );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::textSelected)) {
+            using _t = void (settingswindow::*)(QString );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&settingswindow::diastr)) {
                 *result = 14;
                 return;
             }
@@ -544,98 +544,98 @@ void settingswindow::listUpdated(const QStringList & _t1)
 }
 
 // SIGNAL 1
-void settingswindow::stringPassed(const QString & _t1)
+void settingswindow::textSelected(const QString & _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
 
 // SIGNAL 2
-void settingswindow::stringPassed0(const QString & _t1)
+void settingswindow::stringPassed(const QString & _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 2, _a);
 }
 
 // SIGNAL 3
-void settingswindow::stringPassed1(const QString & _t1)
+void settingswindow::stringPassed0(const QString & _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 3, _a);
 }
 
 // SIGNAL 4
-void settingswindow::stringPassed2(const QString & _t1)
+void settingswindow::stringPassed1(const QString & _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 4, _a);
 }
 
 // SIGNAL 5
-void settingswindow::stringPassed3(const QString & _t1)
+void settingswindow::stringPassed2(const QString & _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 5, _a);
 }
 
 // SIGNAL 6
-void settingswindow::led1str(QString _t1)
+void settingswindow::stringPassed3(const QString & _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 6, _a);
 }
 
 // SIGNAL 7
-void settingswindow::led2str(QString _t1)
+void settingswindow::led1str(QString _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 7, _a);
 }
 
 // SIGNAL 8
-void settingswindow::vacstr(QString _t1)
+void settingswindow::led2str(QString _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 8, _a);
 }
 
 // SIGNAL 9
-void settingswindow::vacmode(QString _t1)
+void settingswindow::vacstr(QString _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 9, _a);
 }
 
 // SIGNAL 10
-void settingswindow::vitstr(QString _t1)
+void settingswindow::vacmode(QString _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 10, _a);
 }
 
 // SIGNAL 11
-void settingswindow::vitmode(QString _t1)
+void settingswindow::vitstr(QString _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 11, _a);
 }
 
 // SIGNAL 12
-void settingswindow::vittype(QString _t1)
+void settingswindow::vitmode(QString _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 12, _a);
 }
 
 // SIGNAL 13
-void settingswindow::diastr(QString _t1)
+void settingswindow::vittype(QString _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 13, _a);
 }
 
 // SIGNAL 14
-void settingswindow::textSelected(const QString & _t1)
+void settingswindow::diastr(QString _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 14, _a);

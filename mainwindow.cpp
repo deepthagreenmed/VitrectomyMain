@@ -19,6 +19,7 @@
 #include <QScroller>
 #include <QComboBox>
 #include <QListView>
+#include <QCoreApplication>
 
 
 #include <stdint.h>
@@ -100,10 +101,6 @@ MainWindow::MainWindow(QWidget *parent)
     l = new ltc2614;
     key = new keypad;
 
-
-    QTimer *timerfp = new QTimer;
-    connect(timerfp, &QTimer::timeout, this, &MainWindow::setFPValues);
-    timerfp->start(1);
 
     setLastSelectedValue();
 
@@ -263,6 +260,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(key, &keypad::backsignal, this, &MainWindow::on_clickedbackspace);
 
 
+
+
     hhandler->ai_off();
     hhandler->ai_preset_count(0);
     hhandler->ai_actual_count(0);
@@ -288,8 +287,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->dial->setStyle(QStyleFactory::create("Fusion"));
     ui->dial->setStyleSheet("background-color: rgb(26, 95, 180);");
     ui->dial->setRange(0, 4096);
-    ui->dial->setValue(avgfp);
-    ui->dial->setSingleStep(1);
 
 
     ui->label_vacpreset->installEventFilter(this);
@@ -455,6 +452,102 @@ MainWindow::MainWindow(QWidget *parent)
 
         disconnect(ui->pushButton_aiinc, &QPushButton::clicked, this, &MainWindow::increaseAirInjectorValue);
         disconnect(ui->pushButton_aidec, &QPushButton::clicked, this, &MainWindow::decreaseAirInjectorValue);
+
+    }
+
+    QTimer *timerfp = new QTimer;
+    connect(timerfp, &QTimer::timeout, this, &MainWindow::setFPValues);
+    timerfp->start(1);
+
+
+}
+
+void MainWindow::setFPValues() {
+
+    flag2=win2->flag2;
+
+    avgfp=fp->convert(CHANNEL_0);
+
+    // Update the UI and process pending events to avoid UI freezing
+    QCoreApplication::processEvents();
+
+    if(avgfp>=0 && avgfp<=fp0)
+    {
+        if(vitp==0)
+        {
+            ui->dial->setValue(avgfp);
+        }
+        if(vitp==1)
+        {
+            ui->dial->setValue(0);
+        }
+        ui->label_dialvalue->setText("0");
+        hhandler->speaker_off();
+
+    }
+    if(avgfp>fp0 && avgfp<=(fp0+fp1))
+    {
+        if(vitp==0)
+        {
+            ui->dial->setValue(avgfp);
+        }
+        if(vitp==1)
+        {
+            ui->dial->setValue(fp0+fp1);
+        }
+        ui->label_dialvalue->setText("1");
+        hhandler->speaker_off();
+
+    }
+    if(avgfp>(fp0+fp1) && avgfp<=(fp0+fp1+fp2))
+    {
+        if(vp==0 && flag2==0)
+        {
+            ui->dial->setValue(avgfp);
+        }
+        if(vp==1 && flag2==0)
+        {
+            ui->dial->setValue(fp0+fp1+fp2);
+        }
+        if(vitp==0 && flag2==1)
+        {
+            ui->dial->setValue(avgfp);
+        }
+        if(vitp==1 && flag2==1)
+        {
+            ui->dial->setValue(fp0+fp1+fp2);
+        }
+        ui->label_dialvalue->setText("2");
+
+        if(ui->label_vacactual->text().toInt() <= ui->label_vacpreset->text().toInt() && ui->label_vacactual->text().toInt()>0) {
+            hhandler->speaker_on(ui->label_vacactual->text().toInt(),1,0,0);
+        }
+        else
+        {
+            hhandler->speaker_off();
+        }
+
+    }
+    if(avgfp>(fp0+fp1+fp2) && avgfp<=(fp0+fp1+fp2+fp3))
+    {
+        if(vitp==0 && flag2==0)
+        {
+            ui->dial->setValue(avgfp);
+        }
+        if(vitp==1 && flag2==0)
+        {
+            ui->dial->setValue(fp0+fp1+fp2+fp3);
+        }
+        if(vp==0 && flag2==1)
+        {
+            ui->dial->setValue(avgfp);
+        }
+        if(vp==1 && flag2==1)
+        {
+            ui->dial->setValue(fp0+fp1+fp2+fp3);
+        }
+        ui->label_dialvalue->setText("3");
+        hhandler->speaker_on(75,0,0,1);
 
     }
 
@@ -1851,7 +1944,7 @@ void MainWindow::comboboxload(const QStringList& items)
 
 }
 
-// Change screens after 3 seconds
+// Change screens after 7 seconds
 void MainWindow::timerCompleted()
 {
     ui->label_22->lower();
@@ -3322,92 +3415,6 @@ void MainWindow::on_clickedbackspace()
   }
 }
 
-// Linear/Non-linear footpedal
-void MainWindow::setFPValues()
-{
-    flag2=win2->flag2;
-
-    avgfp=fp->convert(CHANNEL_0);
-
-    if(avgfp>=0 && avgfp<=fp0)
-    {
-        if(vitp==0)
-        {
-            ui->dial->setValue(avgfp);
-        }
-        if(vitp==1)
-        {
-            ui->dial->setValue(0);
-        }
-        ui->label_dialvalue->setText("0");
-        hhandler->speaker_off();
-    }
-    if(avgfp>fp0 && avgfp<=(fp0+fp1))
-    {
-        if(vitp==0)
-        {
-            ui->dial->setValue(avgfp);
-        }
-        if(vitp==1)
-        {
-            ui->dial->setValue(fp0+fp1);
-        }
-        ui->label_dialvalue->setText("1");
-        hhandler->speaker_off();
-    }
-    if(avgfp>(fp0+fp1) && avgfp<=(fp0+fp1+fp2))
-    {
-        if(vp==0 && flag2==0)
-        {
-            ui->dial->setValue(avgfp);
-        }
-        if(vp==1 && flag2==0)
-        {
-            ui->dial->setValue(fp0+fp1+fp2);
-        }
-        if(vitp==0 && flag2==1)
-        {
-            ui->dial->setValue(avgfp);
-        }
-        if(vitp==1 && flag2==1)
-        {
-            ui->dial->setValue(fp0+fp1+fp2);
-        }
-        ui->label_dialvalue->setText("2");
-
-        if(ui->label_vacactual->text().toInt() <= ui->label_vacpreset->text().toInt() && ui->label_vacactual->text().toInt()>0) {
-            hhandler->speaker_on(ui->label_vacactual->text().toInt(),1,0,0);
-        }
-        else
-        {
-            hhandler->speaker_off();
-        }
-
-    }
-    if(avgfp>(fp0+fp1+fp2) && avgfp<=(fp0+fp1+fp2+fp3))
-    {
-        if(vitp==0 && flag2==0)
-        {
-            ui->dial->setValue(avgfp);
-        }
-        if(vitp==1 && flag2==0)
-        {
-            ui->dial->setValue(fp0+fp1+fp2+fp3);
-        }
-        if(vp==0 && flag2==1)
-        {
-            ui->dial->setValue(avgfp);
-        }
-        if(vp==1 && flag2==1)
-        {
-            ui->dial->setValue(fp0+fp1+fp2+fp3);
-        }
-        ui->label_dialvalue->setText("3");
-        hhandler->speaker_on(75,0,0,1);
-    }
-    //qDebug()<<avgfp;
-
-}
 
 // Transmit surgeon from settings window to main window
 void MainWindow::updateText(const QString &text)

@@ -27,13 +27,14 @@ class settingswindow : public QDialog
 public:
     explicit settingswindow(QWidget *parent = nullptr);
     ~settingswindow();
-     QString surgeonid,le1,le2,le3;
+
+     QString surgeonid;
      QString docnameold;
      int currentindex=0;
+     int flag2=0;
+
     bool eventFilter(QObject* object, QEvent* event);
-    void populatetype();
     void updateLineEditValue(QLineEdit* label, int dig, int value, int maxValue);
-    int flag2=0;
     int readGPIO(int pin);
     void saveDatabaseFromList();
     void emitListContents();
@@ -41,11 +42,14 @@ public:
 
 signals:
     void listUpdated(const QStringList& items);
+    void textSelected(const QString &text);
+
     void stringPassed(const QString& str);
     void stringPassed0(const QString& str);
     void stringPassed1(const QString& str);
     void stringPassed2(const QString& str);
     void stringPassed3(const QString& str);
+
     void led1str(QString str);
     void led2str(QString str);
     void vacstr(QString str);
@@ -54,7 +58,7 @@ signals:
     void vitmode(QString str);
     void vittype(QString str);
     void diastr(QString str);
-    void textSelected(const QString &text);
+
     void ai_pedal(int pin, int value);
     void led1_pedal(int pin, int value);
     void led2_pedal(int pin, int value);
@@ -67,9 +71,12 @@ signals:
 public slots:
     void fpsettings();
     void updateSurgeon();
+    void show_surgery_screen();
+
     void on_clicked(const QString& digit);
-     void on_clickedbackspace();
-     void on_clickedenter();
+    void on_clickedbackspace();
+    void on_clickedenter();
+
      void zeroinc();
      void zerodec();
      void oneinc();
@@ -78,37 +85,28 @@ public slots:
      void twodec();
      void threeinc();
      void threedec();
+
      void on_clickedtext(const QString& digit);
      void on_clickedbackspacetext();
      void on_clickedspace();
      void on_clickedentertext();
-     //dia
+
     void on_dia_clicked();
-    //led
     void on_led_clicked();
-    //vac
     void on_ia_clicked();
-    //vit
     void on_vit_clicked();
-    //home screen
-    void show_surgery_screen();
-    //save for all surgeons
+
     void on_saveforall_clicked();
-    //save for current surgeon
     void on_save_clicked();
     void on_fp_settings_clicked();
-    //void onTimeout();
 
 
 private slots:
     void gpiofp(int pin, QString pos);
-    //swap on/off
     void swap_onoff();
     void onCutterTypeChanged(int index);
     void loadDatabaseFromList(const QString &currentText);
-    //footpedal settings
 
-    //tabs
     void on_tab_dia_clicked();
     void on_tab_led_clicked();
     void on_tab_ia_clicked();
