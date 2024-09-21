@@ -72,8 +72,6 @@ MainWindow::MainWindow(QWidget *parent)
     clicktimer->setSingleShot(true);
 
 
-
-
     vacc = ui->label_vacpreset->text().toInt();
     vitr = ui->label_vitpreset->text().toInt();
     so=ui->label_siloil->text().toInt();
