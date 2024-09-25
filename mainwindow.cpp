@@ -2729,10 +2729,9 @@ void MainWindow::updateLabel()
           if(flag2==0)
           {
           int dacval;
-
           std::string col1, col2;
           std::ifstream file(PATH6);
-            int lineCount=0;
+          int lineCount=0;
           while(file >> col1 >> col2)
           {
               if(std::stoi(col2) <= ui->label_vacpreset->text().toInt())
@@ -2793,9 +2792,13 @@ void MainWindow::updateLabel()
             int avg1 = vac->convert(CHANNEL_1)*0.1894;
             ui->label_vacactual->setText(QString::number(avg1));
             hhandler->pinch_valve_off();
-        }
+            avgfp=fp->convert(CHANNEL_0);
+            float value1 = ui->label_siloil->text().toInt();
+            float value2 = (((avgfp-fp0)/(fp1+fp2+fp3))*(55*(value1/100)))+45;
+            hhandler->vso_ontime((value2/(100*freq))/resolution);
+            hhandler->vso_period((1/freq)/resolution);
 
-        hhandler->vso_off();
+        }
 
 
 
@@ -2809,10 +2812,16 @@ void MainWindow::updateLabel()
           else {
               if(flag2==1)
               {
-               l->writeDAC(0);
-               int avg1 = vac->convert(CHANNEL_1)*0.1894;
-               ui->label_vacactual->setText(QString::number(avg1));
-               hhandler->pinch_valve_off();
+                  l->writeDAC(0);
+                  int avg1 = vac->convert(CHANNEL_1)*0.1894;
+                  ui->label_vacactual->setText(QString::number(avg1));
+                  hhandler->pinch_valve_off();
+                  avgfp=fp->convert(CHANNEL_0);
+                  float value1 = ui->label_siloil->text().toInt();
+                  float value2 = (((avgfp-fp0)/(fp1+fp2+fp3))*(55*(value1/100)))+45;
+                  hhandler->vso_ontime((value2/(100*freq))/resolution);
+                  hhandler->vso_period((1/freq)/resolution);
+
 
               }
           }
@@ -2917,9 +2926,14 @@ void MainWindow::updateLabel()
              int avg1 = vac->convert(CHANNEL_1)*0.1894;
              ui->label_vacactual->setText(QString::number(avg1));
              hhandler->pinch_valve_off();
+             avgfp=fp->convert(CHANNEL_0);
+             float value1 = ui->label_siloil->text().toInt();
+             float value2 = (((avgfp-fp0)/(fp1+fp2+fp3))*(55*(value1/100)))+45;
+             hhandler->vso_ontime((value2/(100*freq))/resolution);
+             hhandler->vso_period((1/freq)/resolution);
+
          }
 
-         hhandler->vso_off();
 
        }
 
@@ -2996,9 +3010,14 @@ void MainWindow::updateLabel()
                 int avg1 = vac->convert(CHANNEL_1)*0.1894;
                 ui->label_vacactual->setText(QString::number(avg1));
                 hhandler->pinch_valve_off();
+                avgfp=fp->convert(CHANNEL_0);
+                float value1 = ui->label_siloil->text().toInt();
+                float value2 = (((avgfp-fp0)/(fp1+fp2+fp3))*(55*(value1/100)))+45;
+                hhandler->vso_ontime((value2/(100*freq))/resolution);
+                hhandler->vso_period((1/freq)/resolution);
+
             }
 
-            hhandler->vso_off();
 
        }
 
@@ -3180,9 +3199,7 @@ void MainWindow::updateLabel()
             l->writeDAC(0);
             int avg1 = vac->convert(CHANNEL_1)*0.1894;
             ui->label_vacactual->setText(QString::number(avg1));
-
             hhandler->pinch_valve_off();
-
             avgfp=fp->convert(CHANNEL_0);
             float value1 = ui->label_siloil->text().toInt();
             float value2 = (((avgfp-fp0)/(fp1+fp2+fp3))*(55*(value1/100)))+45;
