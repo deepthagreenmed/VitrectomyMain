@@ -109,7 +109,7 @@ MainWindow::MainWindow(QWidget *parent)
      timerscreen->start(7000);
      connect(timerscreen, &QTimer::timeout, this, &MainWindow::timerCompleted);
 
-    //code to load database
+
     QSqlDatabase mydb1 = QSqlDatabase::addDatabase("QSQLITE");
     mydb1.setDatabaseName(PATH);
 
@@ -207,7 +207,7 @@ MainWindow::MainWindow(QWidget *parent)
     win2=new settingswindow(this);
 
 
-    // Connect the signal from SettingsWindow to the slot in MainWindow
+
     connect(win2, &settingswindow::listUpdated, this, &MainWindow::comboboxload);
 
     connect(win2, &settingswindow::textSelected, this, &MainWindow::updateText);
@@ -332,7 +332,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     QTimer *timermain = new QTimer(this);
     timermain->setSingleShot(true);
-    timermain->start(3000); // 3 seconds
+    timermain->start(3000);
     connect(timermain, &QTimer::timeout, this, &MainWindow::transitionToNewScreen);
 
 
@@ -460,6 +460,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 }
 
+// Footpedal dial
 void MainWindow::setFPValues() {
 
     flag2=win2->flag2;
@@ -695,7 +696,7 @@ void MainWindow::updateLabelValue(QLabel* label, int dig, int value, int maxValu
 
 }
 
-// keypad showing code
+// Event handler
 bool MainWindow::eventFilter(QObject* object, QEvent* event)
 {
 
@@ -828,7 +829,7 @@ bool MainWindow::eventFilter(QObject* object, QEvent* event)
   return false;
 }
 
-//settings focus and insert digit
+// Keypad
 void MainWindow::on_clicked(const QString& digit)
 {
 
@@ -955,7 +956,7 @@ if(ui->label_led1->focusWidget()) {
 }
 }
 
-// Hide keypad, switch between LED1 and LED2, fix increments
+// Keypad
 void MainWindow::on_clickedenter()
 {
     key->hide();
@@ -1003,7 +1004,7 @@ MainWindow::~MainWindow()
 
 }
 
-//settings window showing
+// Go to settings screen
 void MainWindow::showsettingswindow()
 {
     vip=0;
@@ -1027,7 +1028,6 @@ void MainWindow::showsettingswindow()
     ui->label_siloil->lower();
     ui->pushButton_siloilonoff->setStyleSheet("image: url(:/new/prefix1/img/off.png);border:3px solid black;border-radius:40px;");
     ui->pushButton_siloilonoff->setText("OFF");
-    //hhandler->siloil_off();
     hhandler->vso_off();
     disconnect(ui->pushButton_siloilinc, &QPushButton::clicked, this, &MainWindow::increaseSiliconOilValue);
     disconnect(ui->pushButton_siloildec, &QPushButton::clicked, this, &MainWindow::decreaseSiliconOilValue);
@@ -1327,11 +1327,10 @@ void MainWindow::ai_onoff()
             ui->pushButton_aionoff->setStyleSheet("image: url(:/new/prefix1/img/on.png);border:3px solid black;border-radius:40px;");
             ui->pushButton_aionoff->setText("ON");
 
-            //int flow=90+ (int)(preset* 1.5);
             int flow=105;
             hhandler->write_motor(0x01,0x03,flow);
 
-            // Define the lambda function with arguments and return value
+
             auto myFunction = [this]() -> int {
                 hhandler->ai_on();
                 int preset = ui->label_aipreset->text().toInt();
@@ -1611,7 +1610,7 @@ void MainWindow::increaseAirInjectorValue()
     int flow=105;
     hhandler->write_motor(0x01,0x03,flow);
 
-    // Define the lambda function with arguments and return value
+
     auto myFunction = [this]() -> int {
         hhandler->ai_on();
         int preset = ui->label_aipreset->text().toInt();
@@ -1666,7 +1665,7 @@ void MainWindow::decreaseAirInjectorValue()
     int flow=105;
     hhandler->write_motor(0x01,0x03,flow);
 
-    // Define the lambda function with arguments and return value
+
     auto myFunction = [this]() -> int {
         hhandler->ai_on();
         int preset = ui->label_aipreset->text().toInt();
@@ -1826,25 +1825,25 @@ void MainWindow::decreaseSiliconOilValue()
     }}
 }
 
-// Slot function to set name of surgeon
+// Set name of surgeon
 void MainWindow::receiveString(const QString& str)
 {
     ui->comboBox_surgeonname->setCurrentText(str);
 }
 
-// Slot function to set value of LED1
+// Set value of LED1
 void MainWindow::led1val(QString str)
 {
     ui->label_led1->setText(str);
 }
 
-// Slot function to set value of LED2
+// Set value of LED2
 void MainWindow::led2val(QString str)
 {
     ui->label_led2->setText(str);
 }
 
-// Slot function to set value of vaccum preset
+// Set value of vaccum preset
 void MainWindow::vacval(QString str)
 {
     ui->label_vacpreset->setText(str);
@@ -1867,7 +1866,7 @@ void MainWindow::vaclnl(QString str)
 
 }
 
-// Slot function to set value of vitrectomy preset
+// Set value of vitrectomy preset
 void MainWindow::vitval(QString str)
 {
     ui->label_vitpreset->setText(str);
@@ -1890,12 +1889,13 @@ void MainWindow::vitlnl(QString str)
 
 }
 
+// Vitrectomy cutter
 void MainWindow::typevit(QString str)
 {
     madtype = str;
 }
 
-// Slot function to set value of diathermy
+// Set value of diathermy
 void MainWindow::diaval(QString str)
 {
     ui->label_dia->setText(str);
@@ -1936,10 +1936,8 @@ void MainWindow::updatetimedate()
 // Load combobox from database
 void MainWindow::comboboxload(const QStringList& items)
 {
-
-    ui->comboBox_surgeonname->clear();  // Clear the combo box before updating
-        ui->comboBox_surgeonname->addItems(items);  // Add the list items to the combo box
-
+    ui->comboBox_surgeonname->clear();
+    ui->comboBox_surgeonname->addItems(items);
 }
 
 // Change screens after 7 seconds
@@ -1948,20 +1946,18 @@ void MainWindow::timerCompleted()
     ui->label_22->lower();
     ui->label_12->lower();
     ui->label_2->lower();
-    //ui->label->lower();
     ui->comboBox_surgeonname->move(30,34);
     ui->pushButton_start->lower();
 
 }
 
 
-// Show setup screen
+// Show main screen
 void MainWindow::showsetupscreen()
 {
         ui->label_22->lower();
         ui->label_12->lower();
         ui->label_2->lower();
-        //ui->label->lower();
         ui->comboBox_surgeonname->move(30,34);
         ui->pushButton_start->lower();
 }
@@ -2434,7 +2430,7 @@ void MainWindow::setZero()
     }
 }
 
-// LED1 and LED2
+// LED1, LED2
 void MainWindow::switchled(LED *led, int choice)
 {
     if(led == led1)
@@ -2633,19 +2629,15 @@ void MainWindow::footpedalbeep()
     p.waitForFinished();
 }
 
-// Interface with vaccum based on footpedal reading
+// Vaccum update
 void MainWindow::updateLabel()
 {
-
-    // FOOTPEDAL
-
-// setting value for dial
     avgfp = fp->convert(CHANNEL_0);
     flag2=win2->flag2;
 
 
   if(vp==0)
-  {//linear
+  {
 
       if(ui->label_dialvalue->text() == "0")
       {
@@ -2700,7 +2692,6 @@ void MainWindow::updateLabel()
 
           }
 
-          //irrigation/aspiration
           l->writeDAC(0);
           int avg1 = vac->convert(CHANNEL_1)*0.1894;
           ui->label_vacactual->setText(QString::number(avg1));
@@ -2712,7 +2703,7 @@ void MainWindow::updateLabel()
         hhandler->pinch_valve_off();
 
       }
-      //vaccum
+
       if(ui->label_dialvalue->text() == "2")
       {
 
@@ -2798,6 +2789,9 @@ void MainWindow::updateLabel()
         }
         if(sp==1)
         {
+            l->writeDAC(0);
+            int avg1 = vac->convert(CHANNEL_1)*0.1894;
+            ui->label_vacactual->setText(QString::number(avg1));
             hhandler->pinch_valve_off();
         }
 
@@ -2815,7 +2809,6 @@ void MainWindow::updateLabel()
           else {
               if(flag2==1)
               {
-               //swap
                l->writeDAC(0);
                int avg1 = vac->convert(CHANNEL_1)*0.1894;
                ui->label_vacactual->setText(QString::number(avg1));
@@ -2836,7 +2829,7 @@ void MainWindow::updateLabel()
           }
 
       }
-      //vitrectomy
+
       if(ui->label_dialvalue->text() == "3")
       {
 
@@ -2920,6 +2913,9 @@ void MainWindow::updateLabel()
          }
          if(sp==1)
          {
+             l->writeDAC(0);
+             int avg1 = vac->convert(CHANNEL_1)*0.1894;
+             ui->label_vacactual->setText(QString::number(avg1));
              hhandler->pinch_valve_off();
          }
 
@@ -2996,6 +2992,9 @@ void MainWindow::updateLabel()
             }
             if(sp==1)
             {
+                l->writeDAC(0);
+                int avg1 = vac->convert(CHANNEL_1)*0.1894;
+                ui->label_vacactual->setText(QString::number(avg1));
                 hhandler->pinch_valve_off();
             }
 
@@ -3012,7 +3011,7 @@ void MainWindow::updateLabel()
   }
 
   if(vp==1)
-  {//non-linear
+  {
 
 
     if(ui->label_dialvalue->text() == "0")
@@ -3100,8 +3099,6 @@ void MainWindow::updateLabel()
 
         if(flag2==0)
         {
-            //vaccum
-            //normal
         int dacval;
 
         std::string col1, col2;
@@ -3163,7 +3160,15 @@ void MainWindow::updateLabel()
          }
          if(sp==1)
          {
+             l->writeDAC(0);
+             int avg1 = vac->convert(CHANNEL_1)*0.1894;
+             ui->label_vacactual->setText(QString::number(avg1));
              hhandler->pinch_valve_off();
+             avgfp=fp->convert(CHANNEL_0);
+             float value1 = ui->label_siloil->text().toInt();
+             float value2 = (((avgfp-fp0)/(fp1+fp2+fp3))*(55*(value1/100)))+45;
+             hhandler->vso_ontime((value2/(100*freq))/resolution);
+             hhandler->vso_period((1/freq)/resolution);
 
          }
 
@@ -3172,12 +3177,17 @@ void MainWindow::updateLabel()
     else {
         if(flag2==1)
         {
-            //swap
             l->writeDAC(0);
             int avg1 = vac->convert(CHANNEL_1)*0.1894;
             ui->label_vacactual->setText(QString::number(avg1));
 
             hhandler->pinch_valve_off();
+
+            avgfp=fp->convert(CHANNEL_0);
+            float value1 = ui->label_siloil->text().toInt();
+            float value2 = (((avgfp-fp0)/(fp1+fp2+fp3))*(55*(value1/100)))+45;
+            hhandler->vso_ontime((value2/(100*freq))/resolution);
+            hhandler->vso_period((1/freq)/resolution);
 
         }
     }
@@ -3192,7 +3202,7 @@ void MainWindow::updateLabel()
 
     }
 
-    //vitrectomy
+
     if(ui->label_dialvalue->text() == "3")
     {
 
@@ -3270,7 +3280,15 @@ void MainWindow::updateLabel()
         }
         if(sp==1)
         {
+            l->writeDAC(0);
+            int avg1 = vac->convert(CHANNEL_1)*0.1894;
+            ui->label_vacactual->setText(QString::number(avg1));
             hhandler->pinch_valve_off();
+            avgfp=fp->convert(CHANNEL_0);
+            float value1 = ui->label_siloil->text().toInt();
+            float value2 = (((avgfp-fp0)/(fp1+fp2+fp3))*(55*(value1/100)))+45;
+            hhandler->vso_ontime((value2/(100*freq))/resolution);
+            hhandler->vso_period((1/freq)/resolution);
         }
 
         hhandler->speaker_on(75,0,0,1);
@@ -3285,7 +3303,7 @@ void MainWindow::vitvalset()
     vit_value = ui->label_vitpreset->text().toInt();
 }
 
-//Interface with vitrectomy based on footpedal reading
+// Vitrectomy update
 void MainWindow::updateLabel2()
 {
     flag2=win2->flag2;
@@ -3344,36 +3362,36 @@ void MainWindow::updateLabel2()
 }
 
 
-//fp0
+//Footpedal dial value 0
 void MainWindow::receiveString0(QString val)
 {
     fp0=val.toDouble()*40.95;
-    //qDebug()<<fp0;
+
 }
 
-//fp1
+//Footpedal dial value 1
 void MainWindow::receiveString1(QString val)
 {
     fp1=val.toDouble()*40.95;
-    //qDebug()<<fp1;
+
 }
 
-//fp2
+//Footpedal dial value 2
 void MainWindow::receiveString2(QString val)
 {
     fp2=val.toDouble()*40.95;
-    //qDebug()<<fp2;
+
 }
 
-//fp3
+//Footpedal dial value 3
 void MainWindow::receiveString3(QString val)
 {
     fp3=val.toDouble()*40.95;
-    //qDebug()<<fp3;
+
 
 }
 
-//Backspace on keypad
+//Keypad
 void MainWindow::on_clickedbackspace()
 {
     if(ui->label_vacpreset->focusWidget()) {
@@ -3414,7 +3432,7 @@ void MainWindow::on_clickedbackspace()
 }
 
 
-// Transmit surgeon from settings window to main window
+// Transmit surgeon
 void MainWindow::updateText(const QString &text)
 {
     ui->comboBox_surgeonname->setCurrentText(text);
@@ -3433,11 +3451,11 @@ void MainWindow::updateText(const QString &text)
 //    //ui->label_3->setText(QString::number(bar));
 //}
 
-//ai on off
+// Air injector side pedal
 void MainWindow::ai_setvalue(int pin, int value)
 {
     ap=value;
-    //qDebug()<<"ai pedal"<<ap;
+
     if(ap==0)
     {
         ui->label_13->setStyleSheet("background-color: rgb(116, 184, 222);");
@@ -3450,11 +3468,11 @@ void MainWindow::ai_setvalue(int pin, int value)
         ui->pushButton_aionoff->setStyleSheet("image: url(:/new/prefix1/img/on.png);border:3px solid black;border-radius:40px;");
         ui->pushButton_aionoff->setText("ON");
 
-        //int flow=90+ (int)(preset* 1.5);
+
         int flow=105;
         hhandler->write_motor(0x01,0x03,flow);
 
-        // Define the lambda function with arguments and return value
+
         auto myFunction = [this]() -> int {
             hhandler->ai_on();
             int preset = ui->label_aipreset->text().toInt();
@@ -3516,11 +3534,11 @@ void MainWindow::ai_setvalue(int pin, int value)
 
 }
 
-//led1 on off
+// LED1 side pedal
 void MainWindow::led1_setvalue(int pin, int value)
 {
     lp=value;
-    //qDebug()<<"led1 pedal"<<lp;
+
     if(lp==0)
     {
         ui->label_27->setStyleSheet("font: 40pt ;color: rgb(0,0,0);");
@@ -3551,11 +3569,11 @@ void MainWindow::led1_setvalue(int pin, int value)
 
 
 
-//led2 on off
+// LED2 side pedal
 void MainWindow::led2_setvalue(int pin, int value)
 {
     lp2=value;
-    //qDebug()<<"led2 pedal"<<lp2;
+
     if(lp2==0)
     {
         ui->label_41->setStyleSheet("font: 40pt ;color: rgb(0,0,0);");
@@ -3584,11 +3602,11 @@ void MainWindow::led2_setvalue(int pin, int value)
 
 }
 
-//vitrectomy on off
+// Vitrectomy side pedal
 void MainWindow::vit_setvalue(int pin, int value)
 {
     vip=value;
-    //qDebug()<<"vit pedal"<<vip;
+
     if(vip==0)
     {
         ui->label_38->setStyleSheet("background-color: rgb(116, 184, 222);");
@@ -3632,7 +3650,7 @@ void MainWindow::vit_setvalue(int pin, int value)
     reverseOnOff2();
 }
 
-//diathermy power on off
+// Diathermy side pedal (transmit power)
 void MainWindow::dia_setvalue(int pin, int value)
 {
     if(dp==1 && value==1)
@@ -3684,11 +3702,11 @@ void MainWindow::dia_setvalue(int pin, int value)
 
 }
 
-//silicon oil on off
+// Silicon oil side pedal
 void MainWindow::siloil_setvalue(int pin, int value)
 {
     sp=value;
-    //qDebug()<<"silicon oil pedal"<<sp;
+
     if(sp==0)
     {
         ui->label_19->setStyleSheet("background-color: rgb(116, 184, 222);");
@@ -3751,7 +3769,6 @@ void MainWindow::siloil()
         ui->label_vacactual->setText(QString::number(avg1));
         hhandler->pinch_valve_off();
 
-
         if(ui->label_dialvalue->text() == "0")
         {
             hhandler->vso_off();
@@ -3761,14 +3778,13 @@ void MainWindow::siloil()
             avgfp=fp->convert(CHANNEL_0);
             float value1 = ui->label_siloil->text().toInt();
             float value2 = (((avgfp-fp0)/(fp1+fp2+fp3))*(55*(value1/100)))+45;
-//            qDebug()<<value2;
             hhandler->vso_ontime((value2/(100*freq))/resolution);
             hhandler->vso_period((1/freq)/resolution);
         }
     }
 }
 
-//export gpio pin
+// GPIO
 void MainWindow::exportGPIO(int pin) {
     std::ofstream exportFile("/sys/class/gpio/export");
     if (!exportFile.is_open()) {
@@ -3779,7 +3795,7 @@ void MainWindow::exportGPIO(int pin) {
     exportFile.close();
 }
 
-//set gpio pin direction
+// GPIO
 void MainWindow::setGPIODirection(int pin, const std::string& direction) {
     std::ofstream directionFile("/sys/class/gpio/gpio" + std::to_string(pin) + "/direction");
     if (!directionFile.is_open()) {
@@ -3790,7 +3806,7 @@ void MainWindow::setGPIODirection(int pin, const std::string& direction) {
     directionFile.close();
 }
 
-//write to gpio pin
+// GPIO
 void MainWindow::writeGPIO(int pin, int value) {
     std::ofstream valueFile("/sys/class/gpio/gpio" + std::to_string(pin) + "/value");
     if (!valueFile.is_open()) {
@@ -3830,8 +3846,6 @@ void MainWindow::configOnOff()
     query.bindValue(dp1,"dp1");
     query.bindValue(ap1,"ap1");
     query.bindValue(sp1,"sp1");
-
-    //qDebug()<<vip1<<lp1<<lp21<<dp1<<ap1<<sp1<<vp1<<vitp1;
 
     loadPresets();
 
@@ -3979,18 +3993,15 @@ void MainWindow::loadPresets()
             avgfp=fp->convert(CHANNEL_0);
             float value1 = ui->label_siloil->text().toInt();
             float value2 = (((avgfp-fp0)/(fp1+fp2+fp3))*(55*(value1/100)))+45;
-//            qDebug()<<value2;
             hhandler->vso_ontime((value2/(100*freq))/resolution);
             hhandler->vso_period((1/freq)/resolution);
         }
     }
 
-    //qDebug()<<vip<<lp<<lp2<<dp<<ap<<sp<<vp<<vitp;
-
-
 
 }
 
+// Save last surgeon details in database
 void MainWindow::onComboBoxIndexChanged(int index)
 {
     if(index != 0 && index != -1) {
@@ -4005,7 +4016,7 @@ void MainWindow::onComboBoxIndexChanged(int index)
 
     query.prepare("UPDATE maindb SET lastselected = :index");
     query.bindValue(":index", index);
-    //query.bindValue(":id", 1); // Replace 1 with the actual identifier value if needed
+
 
     if (!query.exec()) {
         qDebug() << "Error updating last selected index:";
@@ -4091,6 +4102,7 @@ QSqlDatabase::removeDatabase("QSQLITE");
 
 }
 
+//Silicon oil and vitrectomy inverted states
 void MainWindow::reverseOnOff()
 {
     if(sp==1)
@@ -4125,6 +4137,7 @@ void MainWindow::reverseOnOff()
     }
 }
 
+//Silicon oil and vitrectomy inverted states
 void MainWindow::reverseOnOff2()
 {
     if(vip==1)
@@ -4155,6 +4168,7 @@ void MainWindow::reverseOnOff2()
     }
 }
 
+//Set limits for label
 void MainWindow::updateLabelValue2(QLabel *label, int limit)
 {
 
@@ -4222,17 +4236,17 @@ void MainWindow::updateLabelValue2(QLabel *label, int limit)
 
 }
 
+// Display last saved surgeon from database
 void MainWindow::setLastSelectedValue()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName(PATH);
     db.open();
 
-    // Prepare and execute the query
+
     QSqlQuery query;
     query.exec("SELECT lastselected FROM maindb LIMIT 1");
 
-    // Check if we got a result
     while (query.next()) {
         int lastIndex = query.value(0).toInt();
         ui->comboBox_surgeonname->setCurrentIndex(lastIndex);
@@ -4243,9 +4257,10 @@ void MainWindow::setLastSelectedValue()
     QSqlDatabase::removeDatabase("QSQLITE");
 }
 
+// Coloring when machine is turned on
 void MainWindow::colorOn()
 {
-    //off
+
     if(vip==0)
     {
         ui->label_38->setStyleSheet("");
@@ -4255,7 +4270,6 @@ void MainWindow::colorOn()
         ui->label_vitpreset->lower();
         ui->label_vitactual->lower();
     }
-    //on
     else
     {
         ui->label_38->setStyleSheet("background-color: rgb(116, 184, 222);");

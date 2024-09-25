@@ -224,16 +224,15 @@ settingswindow::settingswindow(QWidget *parent) :
     ui->lineEdit_led2->clearFocus();
 
 
-    // for 0
     connect(ui->pushButton_zeroinc, &QPushButton::clicked, this, &settingswindow::zeroinc);
     connect(ui->pushButton_zerodec, &QPushButton::clicked, this, &settingswindow::zerodec);
-    // for 1
+
     connect(ui->pushButton_oneinc, &QPushButton::clicked, this, &settingswindow::oneinc);
     connect(ui->pushButton_onedec, &QPushButton::clicked, this, &settingswindow::onedec);
-    // for 2
+
     connect(ui->pushButton_twoinc, &QPushButton::clicked, this, &settingswindow::twoinc);
     connect(ui->pushButton_twodec, &QPushButton::clicked, this, &settingswindow::twodec);
-    // for 3
+
     connect(ui->pushButton_threeinc, &QPushButton::clicked, this, &settingswindow::threeinc);
     connect(ui->pushButton_threedec, &QPushButton::clicked, this, &settingswindow::threedec);
 
@@ -316,7 +315,7 @@ settingswindow::settingswindow(QWidget *parent) :
 
 }
 
-// Show keypad
+// Event handler
 bool settingswindow::eventFilter(QObject* object, QEvent* event)
 {
   if(object == ui->lineEdit_cutrate && event->type() == QEvent::MouseButtonPress) {
@@ -403,7 +402,7 @@ void settingswindow::updateLineEditValue(QLineEdit* label, int dig, int value, i
 }
 
 
-// Insert digit from keypad
+// Keypad
 void settingswindow::on_clicked(const QString& digit)
 {
 
@@ -498,7 +497,7 @@ if(ui->lineEdit_led2->focusWidget())
 
 }
 
-// Hide keypad
+// Keypad
 void settingswindow::on_clickedenter()
 {
     key->hide();
@@ -546,7 +545,7 @@ settingswindow::~settingswindow()
 
 }
 
-// Diathermy power maximum
+// Diathermy
 void settingswindow::on_dia_clicked()
 {
     QSqlDatabase mydb = QSqlDatabase::addDatabase("QSQLITE");
@@ -572,7 +571,7 @@ void settingswindow::on_dia_clicked()
 
 }
 
-// LED1 and LED2
+// LED1, LED2
 void settingswindow::on_led_clicked()
 {
 
@@ -598,7 +597,7 @@ void settingswindow::on_led_clicked()
 
 }
 
-// Vaccum (mm/hg) and mode
+// Irrigation aspiration
 void settingswindow::on_ia_clicked()
 {
     QSqlDatabase mydb = QSqlDatabase::addDatabase("QSQLITE");
@@ -623,7 +622,7 @@ void settingswindow::on_ia_clicked()
      QSqlDatabase::removeDatabase("QSQLITE");
 }
 
-// Cutrate (cuts/min), mode, cutter type
+// Vitrectomy cutter
 void settingswindow::on_vit_clicked()
 {
     QSqlDatabase mydb = QSqlDatabase::addDatabase("QSQLITE");
@@ -653,7 +652,7 @@ void settingswindow::on_vit_clicked()
 
 }
 
-// Go to surgery screen
+// Navigate to main screen
 void settingswindow::show_surgery_screen()
 {
     saveDatabaseFromList();
@@ -703,7 +702,6 @@ void settingswindow::on_saveforall_clicked()
     qry.bindValue(bl1,"fbottomleft");
     qry.bindValue(br1,"fbottomright");
 
-    //qDebug()<<tl1<<tr1<<bl1<<br1;
 
     db1.close();
     QSqlDatabase::removeDatabase("QSQLITE");
@@ -738,8 +736,6 @@ void settingswindow::on_save_clicked()
     qry.bindValue(bl1,"fbottomleft");
     qry.bindValue(br1,"fbottomright");
 
-
-    //qDebug()<<tl1<<tr1<<bl1<<br1;
 
     db1.close();
     QSqlDatabase::removeDatabase("QSQLITE");
@@ -881,9 +877,9 @@ mydb.close();
 QSqlDatabase::removeDatabase("QSQLITE");
 }
 
+// Update list widget in database
 void settingswindow::saveDatabaseFromList()
 {
-    // Step 1: Open the SQLite database connection
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName(PATH);
 
@@ -892,33 +888,28 @@ void settingswindow::saveDatabaseFromList()
         return;
     }
 
-    // Start transaction
     db.transaction();
 
     for (int i = 0; i < ui->listWidget->count(); ++i) {
             QListWidgetItem* item = ui->listWidget->item(i);
             QString newPrimaryKeyValue = item->text(); // Assuming text contains the new primary key value
 
-            // Prepare the query to update the primary key
             QSqlQuery query(db);
             query.prepare("UPDATE maindb SET surgeon = :new_value WHERE rowid = :rowid");
 
-            // Binding the new primary key value and row id
             query.bindValue(":new_value", newPrimaryKeyValue);
             query.bindValue(":rowid", i + 1);  // Assuming rowid matches the list widget index
 
             query.exec();
         }
 
-        // Commit transaction
         db.commit();
 
-    // Step 4: Close the database connection
     db.close();
     QSqlDatabase::removeDatabase("QSQLITE");
 }
 
-// Footpedal 0 (increase)
+// Footpedal dial 0 increase
 void settingswindow::zeroinc()
 {
     if(!clicktimer->isActive())
@@ -949,7 +940,7 @@ void settingswindow::zeroinc()
     }
 }
 
-//  Footpedal 0 (decrease)
+//  Footpedal dial 0 decrease
 void settingswindow::zerodec()
 {
     if(!clicktimer->isActive())
@@ -978,7 +969,7 @@ void settingswindow::zerodec()
        }
 }
 
-// Footpedal 1 (increase)
+// Footpedal dial 1 increase
 void settingswindow::oneinc()
 {
     if(!clicktimer->isActive())
@@ -1007,7 +998,7 @@ void settingswindow::oneinc()
     }
 }
 
-// Footpedal 2 (increase)
+// Footpedal dial 2 increase
 void settingswindow::twoinc()
 {
     if(!clicktimer->isActive())
@@ -1036,7 +1027,7 @@ void settingswindow::twoinc()
        }
 }
 
-// Footpedal 3 (increase)
+// Footpedal dial 3 increase
 void settingswindow::threeinc()
 {
     if(!clicktimer->isActive())
@@ -1065,7 +1056,7 @@ void settingswindow::threeinc()
        }
 }
 
-// Footpedal 1 (decrease)
+// Footpedal dial 1 decrease
 void settingswindow::onedec()
 {
     if(!clicktimer->isActive())
@@ -1094,7 +1085,7 @@ void settingswindow::onedec()
        }
 }
 
-// Footpedal 2 (decrease)
+// Footpedal dial 2 decrease
 void settingswindow::twodec()
 {
     if(!clicktimer->isActive())
@@ -1123,7 +1114,7 @@ void settingswindow::twodec()
       }
 }
 
-// Footpedal 3 (decrease)
+// Footpedal dial 3 decrease
 void settingswindow::threedec()
 {
     if(!clicktimer->isActive())
@@ -1236,7 +1227,7 @@ void settingswindow::on_tab_led_clicked()
 
 }
 
-// Irrigation/aspiration tab
+// Irrigation aspiration tab
 void settingswindow::on_tab_ia_clicked()
 {
     key->hide();
@@ -1284,7 +1275,7 @@ void settingswindow::on_tab_fp_clicked()
 
 }
 
-// Footpedal preset tab
+// Footpedal settings tab
 void settingswindow::on_tab_fppreset_clicked()
 {
 
@@ -1315,14 +1306,6 @@ void settingswindow::on_clickedtext(const QString& digit)
 // Update surgeon name (backspace)
 void settingswindow::on_clickedbackspacetext()
 {
-//  QString text= ui->lineEdit_5->text();
-
-//    // Remove the last letter
-//    if (ui->lineEdit_5->focusWidget())
-//    {
-//        text.chop(1);
-//       ui->lineEdit_5->setText(text);
-//    }
     ui->lineEdit_5->backspace();
 }
 
@@ -1331,12 +1314,8 @@ void settingswindow::on_clickedspace()
 {
 
   QString text= ui->lineEdit_5->text();
-
-   // Add a space to the end of the text
-   text.append(' ');
-
-   // Set the modified text back to the QTextEdit
-    ui->lineEdit_5->setText(text);
+  text.append(' ');
+  ui->lineEdit_5->setText(text);
 }
 
 // Update surgeon name (load in database)
@@ -1373,7 +1352,7 @@ void settingswindow::on_clickedentertext()
     text->hide();
 }
 
-//Backspace on keypad
+// Keypad
 void settingswindow::on_clickedbackspace()
 {
     if(ui->lineEdit_powmax->focusWidget()) {
@@ -1407,7 +1386,7 @@ void settingswindow::on_clickedbackspace()
 }
 
 
-// Set max cut rate for each vitrectomy cutter
+// Max cut rate for vit cutter
 void settingswindow::onCutterTypeChanged(int index)
 {
     switch (index) {
@@ -1470,7 +1449,6 @@ void settingswindow::comboBoxTL()
 
     gpiofp(961,tl1);
 
-    //qDebug()<<"top left 961"<<readGPIO(961);
 
 }
 
@@ -1480,7 +1458,6 @@ void settingswindow::comboBoxBR()
 
     gpiofp(962,br1);
 
-    //qDebug()<<"bottom right 962"<<readGPIO(962);
 
 }
 
@@ -1490,7 +1467,7 @@ void settingswindow::comboBoxBL()
 
     gpiofp(964,bl1);
 
-    //qDebug()<<"bottom left 964"<<readGPIO(964);
+
 }
 
 //top right pedal
@@ -1499,13 +1476,13 @@ void settingswindow::comboBoxTR()
 
     gpiofp(963,tr1);
 
-   //qDebug()<<"top right 963"<<readGPIO(963);
+
 }
 
 //state machine logic for connecting gpio pins to side pedals
 void settingswindow::gpiofp(int pin, QString pos)
 {
-    //qDebug()<<pin<<pos;
+
     if(pos=="Air Injector On/Off")
     {
         int value1 = readGPIO(pin);
@@ -1636,13 +1613,14 @@ void settingswindow::gpiofp(int pin, QString pos)
     }
 }
 
+//Sum of footpedal preset should be 100
 void settingswindow::fpsettings()
 {
     double sum=ui->lineEdit_zero->text().toDouble()+ui->lineEdit_one->text().toDouble()+ui->lineEdit_two->text().toDouble()+ui->lineEdit_three->text().toDouble();
     ui->label_110->setText(QString::number(sum));
 }
 
-//read gpio pin
+// GPIO
 int settingswindow::readGPIO(int pin)
 {
     QFile file(QString("/sys/class/gpio/gpio%1/value").arg(pin));
@@ -1656,6 +1634,7 @@ int settingswindow::readGPIO(int pin)
     return value.toInt();
 }
 
+//List widget contents
 void settingswindow::emitListContents() {
 
     QStringList items;
