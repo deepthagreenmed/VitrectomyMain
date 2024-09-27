@@ -3451,18 +3451,6 @@ void MainWindow::updateText(const QString &text)
     surgeonid=text;
 }
 
-//void MainWindow::pressureval()
-//{
-//    float sample=pres->convert();
-//    //ui->label->setText(QString::number(sample));
-//    float psi = static_cast<float>(0.007*sample-5.22);
-//    //qDebug()<<"Pressure"<<psi;
-//    //float psi = ((((float)sample - MIN_COUNT) * (100 - 0)) / (MAX_COUNT - MIN_COUNT)) + 0;
-//    //ui->label_2->setText(QString::number(psi));
-//    //float bar = static_cast<float>(0.0689476*psi);
-//    //ui->label_3->setText(QString::number(bar));
-//}
-
 // Air injector side pedal
 void MainWindow::ai_setvalue(int pin, int value)
 {
