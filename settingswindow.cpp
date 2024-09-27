@@ -1612,7 +1612,7 @@ void settingswindow::gpiofp(int pin, QString pos)
     }
 }
 
-//Sum of footpedal preset should be 100
+//Sum of footpedal setting should be 100
 void settingswindow::fpsettings()
 {
     double sum=ui->lineEdit_zero->text().toDouble()+ui->lineEdit_one->text().toDouble()+ui->lineEdit_two->text().toDouble()+ui->lineEdit_three->text().toDouble();
