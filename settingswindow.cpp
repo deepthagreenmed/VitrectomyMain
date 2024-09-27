@@ -1534,26 +1534,26 @@ void settingswindow::gpiofp(int pin, QString pos)
 
     if(pos=="LED2 On/Off")
     {
-        int value2 = readGPIO(pin);
-        if(value2==0 && flag_2==0 && state2==0)
+        int value6 = readGPIO(pin);
+        if(value6==0 && flag_6==0 && state6==0)
         {
-            state2=1;
+            state6=1;
         }
-        if(value2==1 && flag_2==0 && state2==1)
+        if(value6==1 && flag_6==0 && state6==1)
         {
-            flag_2=1;
-            state2=2;
+            flag_6=1;
+            state6=2;
             emit led2_pedal(pin,0);
         }
-        if(value2==0 && flag_2==1 && state2==2)
+        if(value6==0 && flag_6==1 && state6==2)
         {
-            state2=3;
+            state6=3;
         }
-        if(value2==1 && flag_2==1 && state2==3)
+        if(value6==1 && flag_6==1 && state6==3)
         {
             emit led2_pedal(pin,1);
-            flag_2=0;
-            state2=0;
+            flag_6=0;
+            state6=0;
         }
     }
     if(pos=="Vitrectomy On/Off")

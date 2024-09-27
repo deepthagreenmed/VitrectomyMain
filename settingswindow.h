@@ -149,6 +149,8 @@ private:
     int state4=0;
     int flag_5=0;
     int state5=0;
+    int flag_6=0;
+    int state6=0;
 
     QMetaObject::Connection connId;
 
