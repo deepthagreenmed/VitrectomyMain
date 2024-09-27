@@ -343,9 +343,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     pres=new sensor;
 
-//    QTimer *timerpres = new QTimer(this);
-//    connect(timerpres, &QTimer::timeout, this, &MainWindow::pressureval);
-//    timerpres->start(100); // milliseconds
 
     hhandler->vso_off();
 
@@ -397,7 +394,7 @@ MainWindow::MainWindow(QWidget *parent)
         int flow=105;
         hhandler->write_motor(0x01,0x03,flow);
 
-        // Define the lambda function with arguments and return value
+
         auto myFunction = [this]() -> int {
             hhandler->ai_on();
             int preset = ui->label_aipreset->text().toInt();
@@ -467,7 +464,7 @@ void MainWindow::setFPValues() {
 
     avgfp=fp->convert(CHANNEL_0);
 
-    // Update the UI and process pending events to avoid UI freezing
+
     QCoreApplication::processEvents();
 
     if(avgfp>=0 && avgfp<=fp0)
@@ -1198,7 +1195,6 @@ void MainWindow::led1_onoff()
 
             hhandler->buzz();
 
-
             lp=1;
 
         }
@@ -1215,7 +1211,6 @@ void MainWindow::led1_onoff()
 
 
             hhandler->buzz();
-
 
            lp=0;
         }
@@ -3568,7 +3563,7 @@ void MainWindow::led1_setvalue(int pin, int value)
 
         connect(ui->pushButton_led1inc, &QPushButton::clicked, this, &MainWindow::increaseLED1Value);
         connect(ui->pushButton_led1dec, &QPushButton::clicked, this, &MainWindow::decreaseLED1Value);
-        lp2=1;
+        lp=1;
 
     }
     else

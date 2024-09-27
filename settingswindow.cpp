@@ -284,20 +284,19 @@ settingswindow::settingswindow(QWidget *parent) :
 
 
 
-    // Connect the combo box's index changed signal to the slot
     connect(ui->comboBox_cuttertype, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &settingswindow::onCutterTypeChanged);
 
-    ui->comboBox_tl->setCurrentText("LED2 On/Off");
+    ui->comboBox_tl->setCurrentText("LED1 On/Off");
     ui->comboBox_tr->setCurrentText("Silicon Oil On/Off");
     ui->comboBox_bl->setCurrentText("Diathermy On/Off");
-    ui->comboBox_br->setCurrentText("Vitrectomy On/Off");
+    ui->comboBox_br->setCurrentText("LED2 On/Off");
     \
     timergpio=new QTimer;
     connId = QObject::connect(timergpio, &QTimer::timeout, [&]() {
-            gpiofp(961, "LED2 On/Off");
+            gpiofp(961, "LED1 On/Off");
             gpiofp(964, "Diathermy On/Off");
             gpiofp(963, "Silicon Oil On/Off");
-            gpiofp(962, "Vitrectomy On/Off");
+            gpiofp(962, "LED2 On/Off");
         });
     timergpio->start(100);
 
@@ -892,13 +891,13 @@ void settingswindow::saveDatabaseFromList()
 
     for (int i = 0; i < ui->listWidget->count(); ++i) {
             QListWidgetItem* item = ui->listWidget->item(i);
-            QString newPrimaryKeyValue = item->text(); // Assuming text contains the new primary key value
+            QString newPrimaryKeyValue = item->text();
 
             QSqlQuery query(db);
             query.prepare("UPDATE maindb SET surgeon = :new_value WHERE rowid = :rowid");
 
             query.bindValue(":new_value", newPrimaryKeyValue);
-            query.bindValue(":rowid", i + 1);  // Assuming rowid matches the list widget index
+            query.bindValue(":rowid", i + 1);
 
             query.exec();
         }
