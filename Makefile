@@ -17,7 +17,7 @@ CXX           = arm-xilinx-linux-gnueabi-g++  -mthumb -mfpu=neon -mfloat-abi=har
 DEFINES       = -DMAKE_TEST_LIB -DQT_DEPRECATED_WARNINGS -DQAPPLICATION_CLASS=QApplication -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe  -O2 -pipe -g -feliminate-unused-debug-types  --sysroot=/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi -O2 -Wall -Wextra -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe  -O2 -pipe -g -feliminate-unused-debug-types  --sysroot=/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi -O2 -std=gnu++11 -Wall -Wextra -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I. -I. -I. -I. -I. -I. -I. -I../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets -I../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui -I../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql -I../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtNetwork -I../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore -I. -I. -I../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++
+INCPATH       = -I. -I. -I. -I. -I. -I. -I. -I../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets -I../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui -I../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql -I../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtNetwork -I../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore -I. -I. -I../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++
 QMAKE         = /home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -37,10 +37,10 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = pro11.0.0
-DISTDIR = /home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain/.tmp/pro11.0.0
+DISTDIR = /home/amt-05/vitrectomy-17.9.24/VitrectomyMain/.tmp/pro11.0.0
 LINK          = arm-xilinx-linux-gnueabi-g++  -mthumb -mfpu=neon -mfloat-abi=hard -mcpu=cortex-a9 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi
 LFLAGS        = -Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed  -Wl,-z,relro,-z,now --sysroot=/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi -Wl,-O1
-LIBS          = $(SUBLIBS) -L/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain/./ -lfootpedal -lvaccum -lhwhandler -lltc2614 -lhscmann100pgsa5 /home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/libQt5Widgets.so /home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/libQt5Gui.so /home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/libQt5Sql.so /home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/libQt5Network.so /home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/libQt5Core.so -lGLESv2 -lpthread   
+LIBS          = $(SUBLIBS) -L/home/amt-05/vitrectomy-17.9.24/VitrectomyMain/./ -lfootpedal -lvaccum -lhwhandler -lltc2614 -lhscmann100pgsa5 /home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/libQt5Widgets.so /home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/libQt5Gui.so /home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/libQt5Sql.so /home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/libQt5Network.so /home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/libQt5Core.so -lGLESv2 -lpthread   
 AR            = arm-xilinx-linux-gnueabi-ar cqs
 RANLIB        = 
 SED           = sed
@@ -94,182 +94,182 @@ OBJECTS       = singleapplication.o \
 DIST          = README.md \
 		CHANGELOG.md \
 		Windows.md \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/spec_pre.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/unix.conf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/linux.conf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/sanitize.conf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/gcc-base.conf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/gcc-base-unix.conf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/g++-base.conf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/g++-unix.conf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/oe-device-extra.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/qdevice.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/device_config.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/qconfig.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3danimation.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3danimation_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dcore.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dcore_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dextras.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dextras_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dinput.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dinput_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dlogic.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dlogic_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquick.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquick_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickanimation.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickanimation_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickextras.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickextras_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickinput.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickinput_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickrender.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickrender_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickscene2d.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickscene2d_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3drender.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3drender_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_accessibility_support_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_bluetooth.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_bluetooth_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_bootstrap_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_charts.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_charts_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_concurrent.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_concurrent_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_core.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_core_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_dbus.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_dbus_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_designer.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_designer_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_designercomponents_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_devicediscovery_support_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_edid_support_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_egl_support_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_eglfsdeviceintegration_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_fb_support_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_fontdatabase_support_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_gui.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_gui_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_help.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_help_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_input_support_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_location.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_location_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_mqtt.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_mqtt_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimedia.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimedia_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimediagsttools_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimediawidgets.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimediawidgets_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_network.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_network_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_nfc.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_nfc_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_opengl.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_opengl_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_openglextensions.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_openglextensions_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_packetprotocol_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_positioning.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_positioning_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_positioningquick.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_positioningquick_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_printsupport.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_printsupport_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_publishsubscribe.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_publishsubscribe_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qml.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qml_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmldebug_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmldevtools_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmlmodels.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmlmodels_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmltest.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmltest_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmlworkerscript.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmlworkerscript_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quick.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quick_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickcontrols2.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickcontrols2_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickparticles_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickshapes_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quicktemplates2.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quicktemplates2_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickwidgets.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickwidgets_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_script.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_script_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_scripttools.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_scripttools_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_sensors.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_sensors_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serialbus.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serialbus_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serialport.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serialport_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_service_support_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serviceframework.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serviceframework_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_sql.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_sql_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_svg.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_svg_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_systeminfo.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_systeminfo_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_testlib.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_testlib_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_theme_support_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_uiplugin.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_uitools.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_uitools_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_webchannel.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_webchannel_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_websockets.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_websockets_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_widgets.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_widgets_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_x11extras.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_x11extras_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xkbcommon_support_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xml.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xml_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xmlpatterns.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xmlpatterns_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_zlib_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/qt_functions.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/qt_config.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++/qmake.conf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/spec_post.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/spec_pre.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/unix.conf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/linux.conf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/sanitize.conf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/gcc-base.conf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/gcc-base-unix.conf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/g++-base.conf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/g++-unix.conf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/oe-device-extra.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/qdevice.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/device_config.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/qconfig.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3danimation.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3danimation_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dcore.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dcore_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dextras.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dextras_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dinput.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dinput_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dlogic.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dlogic_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquick.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquick_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickanimation.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickanimation_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickextras.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickextras_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickinput.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickinput_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickrender.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickrender_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickscene2d.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickscene2d_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3drender.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3drender_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_accessibility_support_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_bluetooth.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_bluetooth_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_charts.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_charts_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_concurrent.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_concurrent_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_core.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_core_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_dbus.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_dbus_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_designer.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_designer_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_designercomponents_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_devicediscovery_support_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_edid_support_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_egl_support_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_eglfsdeviceintegration_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_fb_support_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_fontdatabase_support_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_gui.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_gui_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_help.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_help_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_input_support_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_location.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_location_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_mqtt.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_mqtt_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimedia.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimedia_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimediagsttools_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimediawidgets.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimediawidgets_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_network.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_network_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_nfc.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_nfc_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_opengl.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_opengl_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_openglextensions.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_openglextensions_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_packetprotocol_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_positioning.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_positioning_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_positioningquick.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_positioningquick_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_printsupport.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_printsupport_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_publishsubscribe.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_publishsubscribe_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qml.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qml_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmldebug_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmldevtools_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmlmodels.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmlmodels_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmltest.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmltest_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmlworkerscript.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmlworkerscript_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quick.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quick_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickcontrols2.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickcontrols2_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickparticles_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickshapes_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quicktemplates2.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quicktemplates2_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickwidgets.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickwidgets_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_script.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_script_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_scripttools.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_scripttools_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_sensors.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_sensors_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serialbus.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serialbus_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serialport.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serialport_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_service_support_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serviceframework.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serviceframework_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_sql.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_sql_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_svg.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_svg_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_systeminfo.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_systeminfo_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_testlib.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_testlib_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_theme_support_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_uiplugin.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_uitools.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_uitools_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_webchannel.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_webchannel_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_websockets.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_websockets_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_widgets.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_widgets_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_x11extras.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_x11extras_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xkbcommon_support_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xml.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xml_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xmlpatterns.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xmlpatterns_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_zlib_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/qt_functions.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/qt_config.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++/qmake.conf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/spec_post.prf \
 		.qmake.stash \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/exclusive_builds.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/toolchain.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/default_pre.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/exclusive_builds.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/toolchain.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/default_pre.prf \
 		singleapplication.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/resolve_config.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/default_post.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/warn_on.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/qt.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/resources_functions.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/resources.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/moc.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/unix/opengl.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/uic.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/unix/thread.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/qmake_use.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/file_copies.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/testcase_targets.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/exceptions.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/yacc.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/lex.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/resolve_config.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/default_post.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/warn_on.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/qt.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/resources_functions.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/resources.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/moc.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/unix/opengl.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/uic.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/unix/thread.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/qmake_use.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/file_copies.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/testcase_targets.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/exceptions.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/yacc.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/lex.prf \
 		pro1.pro SingleApplication \
 		singleapplication.h \
 		singleapplication_p.h \
@@ -298,364 +298,364 @@ TARGET        = pro1
 first: all
 ####### Build rules
 
-pro1: /home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain/./libfootpedal.a /home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain/./libvaccum.a /home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain/./libhwhandler.a /home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain/./libltc2614.a /home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain/./libhscmann100pgsa5.a ui_mainwindow.h ui_settingswindow.h ui_keypad.h ui_textkeypad.h $(OBJECTS)  
+pro1: /home/amt-05/vitrectomy-17.9.24/VitrectomyMain/./libfootpedal.a /home/amt-05/vitrectomy-17.9.24/VitrectomyMain/./libvaccum.a /home/amt-05/vitrectomy-17.9.24/VitrectomyMain/./libhwhandler.a /home/amt-05/vitrectomy-17.9.24/VitrectomyMain/./libltc2614.a /home/amt-05/vitrectomy-17.9.24/VitrectomyMain/./libhscmann100pgsa5.a ui_mainwindow.h ui_settingswindow.h ui_keypad.h ui_textkeypad.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
-Makefile: pro1.pro ../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++/qmake.conf ../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/spec_pre.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/unix.conf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/linux.conf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/sanitize.conf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/gcc-base.conf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/gcc-base-unix.conf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/g++-base.conf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/g++-unix.conf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/oe-device-extra.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/qdevice.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/device_config.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/qconfig.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3danimation.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3danimation_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dcore.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dcore_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dextras.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dextras_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dinput.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dinput_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dlogic.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dlogic_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquick.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquick_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickanimation.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickanimation_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickextras.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickextras_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickinput.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickinput_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickrender.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickrender_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickscene2d.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickscene2d_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3drender.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3drender_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_accessibility_support_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_bluetooth.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_bluetooth_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_bootstrap_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_charts.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_charts_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_concurrent.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_concurrent_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_core.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_core_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_dbus.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_dbus_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_designer.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_designer_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_designercomponents_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_devicediscovery_support_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_edid_support_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_egl_support_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_eglfsdeviceintegration_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_fb_support_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_fontdatabase_support_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_gui.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_gui_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_help.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_help_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_input_support_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_location.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_location_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_mqtt.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_mqtt_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimedia.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimedia_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimediagsttools_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimediawidgets.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimediawidgets_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_network.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_network_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_nfc.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_nfc_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_opengl.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_opengl_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_openglextensions.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_openglextensions_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_packetprotocol_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_positioning.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_positioning_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_positioningquick.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_positioningquick_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_printsupport.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_printsupport_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_publishsubscribe.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_publishsubscribe_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qml.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qml_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmldebug_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmldevtools_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmlmodels.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmlmodels_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmltest.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmltest_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmlworkerscript.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmlworkerscript_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quick.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quick_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickcontrols2.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickcontrols2_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickparticles_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickshapes_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quicktemplates2.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quicktemplates2_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickwidgets.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickwidgets_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_script.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_script_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_scripttools.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_scripttools_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_sensors.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_sensors_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serialbus.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serialbus_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serialport.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serialport_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_service_support_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serviceframework.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serviceframework_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_sql.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_sql_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_svg.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_svg_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_systeminfo.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_systeminfo_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_testlib.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_testlib_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_theme_support_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_uiplugin.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_uitools.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_uitools_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_webchannel.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_webchannel_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_websockets.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_websockets_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_widgets.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_widgets_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_x11extras.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_x11extras_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xkbcommon_support_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xml.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xml_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xmlpatterns.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xmlpatterns_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_zlib_private.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/qt_functions.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/qt_config.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++/qmake.conf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/spec_post.prf \
+Makefile: pro1.pro ../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++/qmake.conf ../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/spec_pre.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/unix.conf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/linux.conf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/sanitize.conf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/gcc-base.conf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/gcc-base-unix.conf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/g++-base.conf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/g++-unix.conf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/oe-device-extra.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/qdevice.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/device_config.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/qconfig.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3danimation.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3danimation_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dcore.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dcore_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dextras.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dextras_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dinput.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dinput_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dlogic.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dlogic_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquick.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquick_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickanimation.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickanimation_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickextras.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickextras_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickinput.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickinput_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickrender.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickrender_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickscene2d.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickscene2d_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3drender.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3drender_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_accessibility_support_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_bluetooth.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_bluetooth_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_charts.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_charts_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_concurrent.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_concurrent_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_core.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_core_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_dbus.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_dbus_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_designer.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_designer_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_designercomponents_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_devicediscovery_support_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_edid_support_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_egl_support_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_eglfsdeviceintegration_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_fb_support_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_fontdatabase_support_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_gui.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_gui_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_help.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_help_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_input_support_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_location.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_location_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_mqtt.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_mqtt_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimedia.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimedia_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimediagsttools_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimediawidgets.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimediawidgets_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_network.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_network_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_nfc.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_nfc_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_opengl.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_opengl_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_openglextensions.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_openglextensions_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_packetprotocol_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_positioning.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_positioning_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_positioningquick.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_positioningquick_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_printsupport.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_printsupport_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_publishsubscribe.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_publishsubscribe_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qml.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qml_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmldebug_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmldevtools_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmlmodels.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmlmodels_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmltest.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmltest_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmlworkerscript.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmlworkerscript_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quick.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quick_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickcontrols2.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickcontrols2_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickparticles_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickshapes_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quicktemplates2.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quicktemplates2_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickwidgets.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickwidgets_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_script.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_script_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_scripttools.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_scripttools_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_sensors.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_sensors_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serialbus.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serialbus_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serialport.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serialport_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_service_support_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serviceframework.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serviceframework_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_sql.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_sql_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_svg.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_svg_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_systeminfo.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_systeminfo_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_testlib.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_testlib_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_theme_support_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_uiplugin.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_uitools.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_uitools_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_webchannel.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_webchannel_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_websockets.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_websockets_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_widgets.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_widgets_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_x11extras.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_x11extras_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xkbcommon_support_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xml.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xml_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xmlpatterns.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xmlpatterns_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_zlib_private.pri \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/qt_functions.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/qt_config.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++/qmake.conf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/spec_post.prf \
 		.qmake.stash \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/exclusive_builds.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/toolchain.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/default_pre.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/exclusive_builds.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/toolchain.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/default_pre.prf \
 		singleapplication.pri \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/resolve_config.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/default_post.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/warn_on.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/qt.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/resources_functions.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/resources.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/moc.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/unix/opengl.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/uic.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/unix/thread.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/qmake_use.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/file_copies.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/testcase_targets.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/exceptions.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/yacc.prf \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/lex.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/resolve_config.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/default_post.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/warn_on.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/qt.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/resources_functions.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/resources.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/moc.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/unix/opengl.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/uic.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/unix/thread.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/qmake_use.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/file_copies.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/testcase_targets.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/exceptions.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/yacc.prf \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/lex.prf \
 		pro1.pro \
 		img.qrc
 	$(QMAKE) -o Makefile pro1.pro
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/spec_pre.prf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/unix.conf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/linux.conf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/sanitize.conf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/gcc-base.conf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/gcc-base-unix.conf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/g++-base.conf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/g++-unix.conf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/oe-device-extra.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/qdevice.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/device_config.prf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/qconfig.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3danimation.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3danimation_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dcore.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dcore_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dextras.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dextras_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dinput.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dinput_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dlogic.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dlogic_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquick.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquick_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickanimation.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickanimation_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickextras.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickextras_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickinput.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickinput_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickrender.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickrender_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickscene2d.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickscene2d_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3drender.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3drender_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_accessibility_support_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_bluetooth.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_bluetooth_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_bootstrap_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_charts.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_charts_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_concurrent.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_concurrent_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_core.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_core_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_dbus.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_dbus_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_designer.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_designer_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_designercomponents_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_devicediscovery_support_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_edid_support_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_egl_support_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_eglfsdeviceintegration_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_fb_support_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_fontdatabase_support_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_gui.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_gui_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_help.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_help_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_input_support_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_location.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_location_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_mqtt.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_mqtt_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimedia.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimedia_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimediagsttools_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimediawidgets.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimediawidgets_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_network.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_network_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_nfc.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_nfc_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_opengl.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_opengl_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_openglextensions.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_openglextensions_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_packetprotocol_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_platformcompositor_support_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_positioning.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_positioning_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_positioningquick.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_positioningquick_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_printsupport.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_printsupport_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_publishsubscribe.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_publishsubscribe_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qml.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qml_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmldebug_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmldevtools_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmlmodels.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmlmodels_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmltest.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmltest_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmlworkerscript.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmlworkerscript_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quick.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quick_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickcontrols2.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickcontrols2_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickparticles_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickshapes_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quicktemplates2.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quicktemplates2_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickwidgets.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickwidgets_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_script.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_script_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_scripttools.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_scripttools_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_sensors.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_sensors_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serialbus.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serialbus_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serialport.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serialport_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_service_support_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serviceframework.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serviceframework_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_sql.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_sql_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_svg.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_svg_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_systeminfo.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_systeminfo_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_testlib.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_testlib_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_theme_support_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_uiplugin.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_uitools.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_uitools_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_webchannel.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_webchannel_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_websockets.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_websockets_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_widgets.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_widgets_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_x11extras.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_x11extras_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xkbcommon_support_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xml.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xml_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xmlpatterns.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xmlpatterns_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_zlib_private.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/qt_functions.prf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/qt_config.prf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++/qmake.conf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/spec_post.prf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/spec_pre.prf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/unix.conf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/linux.conf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/sanitize.conf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/gcc-base.conf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/gcc-base-unix.conf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/g++-base.conf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/common/g++-unix.conf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/oe-device-extra.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/qdevice.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/device_config.prf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/qconfig.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3danimation.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3danimation_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dcore.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dcore_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dextras.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dextras_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dinput.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dinput_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dlogic.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dlogic_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquick.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquick_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickanimation.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickanimation_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickextras.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickextras_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickinput.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickinput_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickrender.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickrender_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickscene2d.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3dquickscene2d_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3drender.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_3drender_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_accessibility_support_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_bluetooth.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_bluetooth_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_bootstrap_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_charts.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_charts_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_concurrent.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_concurrent_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_core.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_core_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_dbus.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_dbus_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_designer.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_designer_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_designercomponents_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_devicediscovery_support_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_edid_support_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_egl_support_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_eglfsdeviceintegration_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_fb_support_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_fontdatabase_support_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_gui.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_gui_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_help.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_help_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_input_support_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_location.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_location_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_mqtt.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_mqtt_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimedia.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimedia_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimediagsttools_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimediawidgets.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_multimediawidgets_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_network.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_network_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_nfc.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_nfc_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_opengl.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_opengl_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_openglextensions.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_openglextensions_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_packetprotocol_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_platformcompositor_support_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_positioning.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_positioning_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_positioningquick.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_positioningquick_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_printsupport.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_printsupport_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_publishsubscribe.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_publishsubscribe_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qml.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qml_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmldebug_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmldevtools_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmlmodels.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmlmodels_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmltest.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmltest_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmlworkerscript.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qmlworkerscript_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quick.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quick_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickcontrols2.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickcontrols2_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickparticles_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickshapes_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quicktemplates2.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quicktemplates2_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickwidgets.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_quickwidgets_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_script.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_script_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_scripttools.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_scripttools_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_sensors.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_sensors_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serialbus.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serialbus_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serialport.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serialport_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_service_support_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serviceframework.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_serviceframework_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_sql.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_sql_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_svg.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_svg_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_systeminfo.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_systeminfo_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_testlib.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_testlib_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_theme_support_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_uiplugin.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_uitools.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_uitools_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_webchannel.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_webchannel_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_websockets.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_websockets_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_widgets.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_widgets_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_x11extras.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_x11extras_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xkbcommon_support_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xml.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xml_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xmlpatterns.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_xmlpatterns_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/modules/qt_lib_zlib_private.pri:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/qt_functions.prf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/qt_config.prf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++/qmake.conf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/spec_post.prf:
 .qmake.stash:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/exclusive_builds.prf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/toolchain.prf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/default_pre.prf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/exclusive_builds.prf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/toolchain.prf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/default_pre.prf:
 singleapplication.pri:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/resolve_config.prf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/default_post.prf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/warn_on.prf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/qt.prf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/resources_functions.prf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/resources.prf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/moc.prf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/unix/opengl.prf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/uic.prf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/unix/thread.prf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/qmake_use.prf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/file_copies.prf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/testcase_targets.prf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/exceptions.prf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/yacc.prf:
-../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/lex.prf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/resolve_config.prf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/default_post.prf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/warn_on.prf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/qt.prf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/resources_functions.prf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/resources.prf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/moc.prf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/unix/opengl.prf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/uic.prf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/unix/thread.prf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/qmake_use.prf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/file_copies.prf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/testcase_targets.prf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/exceptions.prf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/yacc.prf:
+../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/lex.prf:
 pro1.pro:
 img.qrc:
 qmake: FORCE
@@ -673,7 +673,7 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents img.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents ../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/data/dummy.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents SingleApplication singleapplication.h singleapplication_p.h footpedal.h hwhandler.h led.h ltc2614.h mainwindow.h sensor.h settingswindow.h keypad.h textkeypad.h vaccum.h $(DISTDIR)/
 	$(COPY_FILE) --parents singleapplication.cpp singleapplication_p.cpp led.cpp main.cpp mainwindow.cpp settingswindow.cpp keypad.cpp textkeypad.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui settingswindow.ui keypad.ui textkeypad.ui $(DISTDIR)/
@@ -704,7 +704,7 @@ compiler_rcc_make_all: qrc_img.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) qrc_img.cpp
 qrc_img.cpp: img.qrc \
-		../../../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/rcc \
+		../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/rcc \
 		Settimg\ 3.png \
 		Rectangle\ 15.png \
 		newdoc\ 1.png \
@@ -828,207 +828,207 @@ qrc_img.cpp: img.qrc \
 compiler_moc_predefs_make_all: moc_predefs.h
 compiler_moc_predefs_clean:
 	-$(DEL_FILE) moc_predefs.h
-moc_predefs.h: ../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/data/dummy.cpp
-	arm-xilinx-linux-gnueabi-g++  -mthumb -mfpu=neon -mfloat-abi=hard -mcpu=cortex-a9 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi -pipe  -O2 -pipe -g -feliminate-unused-debug-types  --sysroot=/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi -O2 -std=gnu++11 -Wall -Wextra -dM -E -o moc_predefs.h ../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/data/dummy.cpp
+moc_predefs.h: ../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/data/dummy.cpp
+	arm-xilinx-linux-gnueabi-g++  -mthumb -mfpu=neon -mfloat-abi=hard -mcpu=cortex-a9 -fstack-protector-strong  -O2 -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi -pipe  -O2 -pipe -g -feliminate-unused-debug-types  --sysroot=/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi -O2 -std=gnu++11 -Wall -Wextra -dM -E -o moc_predefs.h ../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/features/data/dummy.cpp
 
 compiler_moc_header_make_all: moc_singleapplication.cpp moc_singleapplication_p.cpp moc_footpedal.cpp moc_hwhandler.cpp moc_ltc2614.cpp moc_mainwindow.cpp moc_sensor.cpp moc_settingswindow.cpp moc_keypad.cpp moc_textkeypad.cpp moc_vaccum.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_singleapplication.cpp moc_singleapplication_p.cpp moc_footpedal.cpp moc_hwhandler.cpp moc_ltc2614.cpp moc_mainwindow.cpp moc_sensor.cpp moc_settingswindow.cpp moc_keypad.cpp moc_textkeypad.cpp moc_vaccum.cpp
 moc_singleapplication.cpp: singleapplication.h \
 		moc_predefs.h \
-		../../../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc
-	/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc $(DEFINES) --include /home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain/moc_predefs.h -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++ -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtNetwork -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0 -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/arm-xilinx-linux-gnueabi -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/backward -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include-fixed -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include singleapplication.h -o moc_singleapplication.cpp
+		../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc
+	/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc $(DEFINES) --include /home/amt-05/vitrectomy-17.9.24/VitrectomyMain/moc_predefs.h -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++ -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtNetwork -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0 -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/arm-xilinx-linux-gnueabi -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/backward -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include-fixed -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include singleapplication.h -o moc_singleapplication.cpp
 
 moc_singleapplication_p.cpp: singleapplication_p.h \
 		singleapplication.h \
 		moc_predefs.h \
-		../../../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc
-	/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc $(DEFINES) --include /home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain/moc_predefs.h -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++ -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtNetwork -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0 -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/arm-xilinx-linux-gnueabi -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/backward -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include-fixed -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include singleapplication_p.h -o moc_singleapplication_p.cpp
+		../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc
+	/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc $(DEFINES) --include /home/amt-05/vitrectomy-17.9.24/VitrectomyMain/moc_predefs.h -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++ -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtNetwork -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0 -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/arm-xilinx-linux-gnueabi -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/backward -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include-fixed -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include singleapplication_p.h -o moc_singleapplication_p.cpp
 
 moc_footpedal.cpp: footpedal.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QObject \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qobject.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTimer \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qtimer.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QObject \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qobject.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTimer \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qtimer.h \
 		moc_predefs.h \
-		../../../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc
-	/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc $(DEFINES) --include /home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain/moc_predefs.h -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++ -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtNetwork -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0 -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/arm-xilinx-linux-gnueabi -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/backward -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include-fixed -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include footpedal.h -o moc_footpedal.cpp
+		../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc
+	/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc $(DEFINES) --include /home/amt-05/vitrectomy-17.9.24/VitrectomyMain/moc_predefs.h -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++ -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtNetwork -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0 -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/arm-xilinx-linux-gnueabi -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/backward -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include-fixed -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include footpedal.h -o moc_footpedal.cpp
 
 moc_hwhandler.cpp: hwhandler.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QThread \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qthread.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QDebug \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdebug.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QFile \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qfile.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QCoreApplication \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qcoreapplication.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QEventLoop \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qeventloop.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTime \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdatetime.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QThread \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qthread.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QDebug \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdebug.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QFile \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qfile.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QCoreApplication \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qcoreapplication.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QEventLoop \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qeventloop.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTime \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdatetime.h \
 		moc_predefs.h \
-		../../../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc
-	/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc $(DEFINES) --include /home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain/moc_predefs.h -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++ -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtNetwork -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0 -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/arm-xilinx-linux-gnueabi -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/backward -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include-fixed -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include hwhandler.h -o moc_hwhandler.cpp
+		../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc
+	/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc $(DEFINES) --include /home/amt-05/vitrectomy-17.9.24/VitrectomyMain/moc_predefs.h -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++ -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtNetwork -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0 -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/arm-xilinx-linux-gnueabi -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/backward -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include-fixed -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include hwhandler.h -o moc_hwhandler.cpp
 
 moc_ltc2614.cpp: ltc2614.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QObject \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qobject.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QObject \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qobject.h \
 		moc_predefs.h \
-		../../../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc
-	/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc $(DEFINES) --include /home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain/moc_predefs.h -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++ -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtNetwork -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0 -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/arm-xilinx-linux-gnueabi -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/backward -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include-fixed -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include ltc2614.h -o moc_ltc2614.cpp
+		../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc
+	/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc $(DEFINES) --include /home/amt-05/vitrectomy-17.9.24/VitrectomyMain/moc_predefs.h -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++ -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtNetwork -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0 -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/arm-xilinx-linux-gnueabi -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/backward -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include-fixed -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include ltc2614.h -o moc_ltc2614.cpp
 
 moc_mainwindow.cpp: mainwindow.h \
 		vaccum.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QObject \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qobject.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QVector \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qvector.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTimer \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qtimer.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QObject \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qobject.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QVector \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qvector.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTimer \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qtimer.h \
 		keypad.h \
 		hwhandler.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QThread \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qthread.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QDebug \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdebug.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QFile \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qfile.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QCoreApplication \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qcoreapplication.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QEventLoop \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qeventloop.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTime \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdatetime.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QWidget \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qwidget.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/QMouseEvent \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/qevent.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QThread \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qthread.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QDebug \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdebug.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QFile \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qfile.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QCoreApplication \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qcoreapplication.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QEventLoop \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qeventloop.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTime \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdatetime.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QWidget \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qwidget.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/QMouseEvent \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/qevent.h \
 		settingswindow.h \
 		footpedal.h \
 		textkeypad.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QDialog \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qdialog.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/QSqlDatabase \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/qsqldatabase.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QMainWindow \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qmainwindow.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QLineEdit \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlineedit.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QListWidget \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlistwidget.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QString \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qstring.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QDialog \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qdialog.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/QSqlDatabase \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/qsqldatabase.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QMainWindow \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qmainwindow.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QLineEdit \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlineedit.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QListWidget \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlistwidget.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QString \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qstring.h \
 		led.h \
 		ltc2614.h \
 		sensor.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QLabel \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlabel.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QPropertyAnimation \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qpropertyanimation.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QMessageBox \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qmessagebox.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QProcess \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qprocess.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QComboBox \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qcombobox.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QLabel \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlabel.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QPropertyAnimation \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qpropertyanimation.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QMessageBox \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qmessagebox.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QProcess \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qprocess.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QComboBox \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qcombobox.h \
 		moc_predefs.h \
-		../../../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc
-	/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc $(DEFINES) --include /home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain/moc_predefs.h -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++ -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtNetwork -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0 -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/arm-xilinx-linux-gnueabi -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/backward -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include-fixed -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include mainwindow.h -o moc_mainwindow.cpp
+		../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc
+	/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc $(DEFINES) --include /home/amt-05/vitrectomy-17.9.24/VitrectomyMain/moc_predefs.h -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++ -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtNetwork -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0 -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/arm-xilinx-linux-gnueabi -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/backward -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include-fixed -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include mainwindow.h -o moc_mainwindow.cpp
 
 moc_sensor.cpp: sensor.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QObject \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qobject.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QDebug \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdebug.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QObject \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qobject.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QDebug \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdebug.h \
 		moc_predefs.h \
-		../../../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc
-	/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc $(DEFINES) --include /home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain/moc_predefs.h -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++ -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtNetwork -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0 -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/arm-xilinx-linux-gnueabi -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/backward -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include-fixed -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include sensor.h -o moc_sensor.cpp
+		../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc
+	/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc $(DEFINES) --include /home/amt-05/vitrectomy-17.9.24/VitrectomyMain/moc_predefs.h -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++ -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtNetwork -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0 -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/arm-xilinx-linux-gnueabi -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/backward -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include-fixed -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include sensor.h -o moc_sensor.cpp
 
 moc_settingswindow.cpp: settingswindow.h \
 		footpedal.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QObject \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qobject.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTimer \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qtimer.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QObject \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qobject.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTimer \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qtimer.h \
 		keypad.h \
 		hwhandler.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QThread \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qthread.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QDebug \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdebug.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QFile \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qfile.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QCoreApplication \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qcoreapplication.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QEventLoop \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qeventloop.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTime \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdatetime.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QWidget \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qwidget.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/QMouseEvent \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/qevent.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QThread \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qthread.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QDebug \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdebug.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QFile \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qfile.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QCoreApplication \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qcoreapplication.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QEventLoop \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qeventloop.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTime \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdatetime.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QWidget \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qwidget.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/QMouseEvent \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/qevent.h \
 		textkeypad.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QDialog \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qdialog.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/QSqlDatabase \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/qsqldatabase.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QMainWindow \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qmainwindow.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QLineEdit \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlineedit.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QListWidget \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlistwidget.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QString \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qstring.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QDialog \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qdialog.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/QSqlDatabase \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/qsqldatabase.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QMainWindow \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qmainwindow.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QLineEdit \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlineedit.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QListWidget \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlistwidget.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QString \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qstring.h \
 		moc_predefs.h \
-		../../../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc
-	/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc $(DEFINES) --include /home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain/moc_predefs.h -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++ -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtNetwork -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0 -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/arm-xilinx-linux-gnueabi -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/backward -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include-fixed -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include settingswindow.h -o moc_settingswindow.cpp
+		../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc
+	/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc $(DEFINES) --include /home/amt-05/vitrectomy-17.9.24/VitrectomyMain/moc_predefs.h -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++ -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtNetwork -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0 -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/arm-xilinx-linux-gnueabi -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/backward -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include-fixed -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include settingswindow.h -o moc_settingswindow.cpp
 
 moc_keypad.cpp: keypad.h \
 		hwhandler.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QThread \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qthread.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QDebug \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdebug.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QFile \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qfile.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QCoreApplication \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qcoreapplication.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QEventLoop \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qeventloop.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTime \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdatetime.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QWidget \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qwidget.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/QMouseEvent \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/qevent.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTimer \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qtimer.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QThread \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qthread.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QDebug \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdebug.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QFile \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qfile.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QCoreApplication \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qcoreapplication.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QEventLoop \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qeventloop.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTime \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdatetime.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QWidget \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qwidget.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/QMouseEvent \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/qevent.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTimer \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qtimer.h \
 		moc_predefs.h \
-		../../../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc
-	/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc $(DEFINES) --include /home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain/moc_predefs.h -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++ -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtNetwork -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0 -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/arm-xilinx-linux-gnueabi -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/backward -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include-fixed -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include keypad.h -o moc_keypad.cpp
+		../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc
+	/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc $(DEFINES) --include /home/amt-05/vitrectomy-17.9.24/VitrectomyMain/moc_predefs.h -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++ -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtNetwork -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0 -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/arm-xilinx-linux-gnueabi -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/backward -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include-fixed -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include keypad.h -o moc_keypad.cpp
 
 moc_textkeypad.cpp: textkeypad.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QDialog \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qdialog.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTimer \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qtimer.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QDialog \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qdialog.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTimer \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qtimer.h \
 		moc_predefs.h \
-		../../../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc
-	/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc $(DEFINES) --include /home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain/moc_predefs.h -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++ -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtNetwork -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0 -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/arm-xilinx-linux-gnueabi -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/backward -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include-fixed -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include textkeypad.h -o moc_textkeypad.cpp
+		../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc
+	/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc $(DEFINES) --include /home/amt-05/vitrectomy-17.9.24/VitrectomyMain/moc_predefs.h -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++ -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtNetwork -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0 -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/arm-xilinx-linux-gnueabi -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/backward -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include-fixed -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include textkeypad.h -o moc_textkeypad.cpp
 
 moc_vaccum.cpp: vaccum.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QObject \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qobject.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QVector \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qvector.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTimer \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qtimer.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QObject \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qobject.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QVector \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qvector.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTimer \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qtimer.h \
 		moc_predefs.h \
-		../../../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc
-	/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc $(DEFINES) --include /home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain/moc_predefs.h -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++ -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/greenmed/Qtworkspace/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtNetwork -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0 -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/arm-xilinx-linux-gnueabi -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/backward -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include-fixed -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include vaccum.h -o moc_vaccum.cpp
+		../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc
+	/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/moc $(DEFINES) --include /home/amt-05/vitrectomy-17.9.24/VitrectomyMain/moc_predefs.h -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/mkspecs/linux-oe-g++ -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/vitrectomy-17.9.24/VitrectomyMain -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtNetwork -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0 -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/arm-xilinx-linux-gnueabi -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/c++/12.2.0/backward -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/lib/arm-xilinx-linux-gnueabi/12.2.0/include -I/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/lib/arm-xilinx-linux-gnueabi/gcc/arm-xilinx-linux-gnueabi/12.2.0/include-fixed -I/home/amt-05/xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include vaccum.h -o moc_vaccum.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -1038,19 +1038,19 @@ compiler_uic_make_all: ui_mainwindow.h ui_settingswindow.h ui_keypad.h ui_textke
 compiler_uic_clean:
 	-$(DEL_FILE) ui_mainwindow.h ui_settingswindow.h ui_keypad.h ui_textkeypad.h
 ui_mainwindow.h: mainwindow.ui \
-		../../../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/uic
+		../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/uic
 	/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/uic mainwindow.ui -o ui_mainwindow.h
 
 ui_settingswindow.h: settingswindow.ui \
-		../../../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/uic
+		../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/uic
 	/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/uic settingswindow.ui -o ui_settingswindow.h
 
 ui_keypad.h: keypad.ui \
-		../../../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/uic
+		../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/uic
 	/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/uic keypad.ui -o ui_keypad.h
 
 ui_textkeypad.h: textkeypad.ui \
-		../../../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/uic
+		../../xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/uic
 	/home/amt-05/xsdk-2023.1/sysroots/x86_64-petalinux-linux/usr/bin/uic textkeypad.ui -o ui_textkeypad.h
 
 compiler_yacc_decl_make_all:
@@ -1076,239 +1076,239 @@ led.o: led.cpp led.h
 
 main.o: main.cpp mainwindow.h \
 		vaccum.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QObject \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qobject.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QVector \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qvector.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTimer \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qtimer.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QObject \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qobject.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QVector \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qvector.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTimer \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qtimer.h \
 		keypad.h \
 		hwhandler.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QThread \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qthread.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QDebug \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdebug.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QFile \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qfile.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QCoreApplication \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qcoreapplication.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QEventLoop \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qeventloop.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTime \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdatetime.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QWidget \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qwidget.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/QMouseEvent \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/qevent.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QThread \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qthread.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QDebug \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdebug.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QFile \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qfile.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QCoreApplication \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qcoreapplication.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QEventLoop \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qeventloop.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTime \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdatetime.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QWidget \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qwidget.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/QMouseEvent \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/qevent.h \
 		settingswindow.h \
 		footpedal.h \
 		textkeypad.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QDialog \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qdialog.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/QSqlDatabase \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/qsqldatabase.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QMainWindow \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qmainwindow.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QLineEdit \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlineedit.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QListWidget \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlistwidget.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QString \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qstring.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QDialog \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qdialog.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/QSqlDatabase \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/qsqldatabase.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QMainWindow \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qmainwindow.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QLineEdit \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlineedit.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QListWidget \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlistwidget.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QString \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qstring.h \
 		led.h \
 		ltc2614.h \
 		sensor.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QLabel \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlabel.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QPropertyAnimation \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qpropertyanimation.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QMessageBox \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qmessagebox.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QProcess \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qprocess.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QComboBox \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qcombobox.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QApplication \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qapplication.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QLabel \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlabel.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QPropertyAnimation \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qpropertyanimation.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QMessageBox \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qmessagebox.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QProcess \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qprocess.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QComboBox \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qcombobox.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QApplication \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qapplication.h \
 		singleapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 mainwindow.o: mainwindow.cpp mainwindow.h \
 		vaccum.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QObject \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qobject.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QVector \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qvector.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTimer \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qtimer.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QObject \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qobject.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QVector \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qvector.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTimer \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qtimer.h \
 		keypad.h \
 		hwhandler.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QThread \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qthread.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QDebug \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdebug.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QFile \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qfile.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QCoreApplication \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qcoreapplication.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QEventLoop \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qeventloop.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTime \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdatetime.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QWidget \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qwidget.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/QMouseEvent \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/qevent.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QThread \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qthread.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QDebug \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdebug.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QFile \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qfile.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QCoreApplication \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qcoreapplication.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QEventLoop \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qeventloop.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTime \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdatetime.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QWidget \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qwidget.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/QMouseEvent \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/qevent.h \
 		settingswindow.h \
 		footpedal.h \
 		textkeypad.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QDialog \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qdialog.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/QSqlDatabase \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/qsqldatabase.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QMainWindow \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qmainwindow.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QLineEdit \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlineedit.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QListWidget \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlistwidget.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QString \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qstring.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QDialog \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qdialog.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/QSqlDatabase \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/qsqldatabase.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QMainWindow \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qmainwindow.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QLineEdit \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlineedit.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QListWidget \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlistwidget.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QString \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qstring.h \
 		led.h \
 		ltc2614.h \
 		sensor.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QLabel \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlabel.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QPropertyAnimation \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qpropertyanimation.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QMessageBox \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qmessagebox.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QProcess \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qprocess.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QComboBox \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qcombobox.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QLabel \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlabel.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QPropertyAnimation \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qpropertyanimation.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QMessageBox \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qmessagebox.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QProcess \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qprocess.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QComboBox \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qcombobox.h \
 		ui_mainwindow.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/QSqlQuery \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/qsqlquery.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/QSqlRecord \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/qsqlrecord.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QtDebug \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QStyleFactory \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qstylefactory.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QDateTime \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QRegExp \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qregexp.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/QRegExpValidator \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/qvalidator.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QLoggingCategory \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qloggingcategory.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QScroller \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qscroller.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QListView \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlistview.h
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/QSqlQuery \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/qsqlquery.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/QSqlRecord \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/qsqlrecord.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QtDebug \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QStyleFactory \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qstylefactory.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QDateTime \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QRegExp \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qregexp.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/QRegExpValidator \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/qvalidator.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QLoggingCategory \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qloggingcategory.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QScroller \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qscroller.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QListView \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlistview.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
 
 settingswindow.o: settingswindow.cpp settingswindow.h \
 		footpedal.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QObject \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qobject.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTimer \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qtimer.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QObject \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qobject.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTimer \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qtimer.h \
 		keypad.h \
 		hwhandler.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QThread \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qthread.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QDebug \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdebug.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QFile \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qfile.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QCoreApplication \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qcoreapplication.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QEventLoop \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qeventloop.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTime \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdatetime.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QWidget \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qwidget.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/QMouseEvent \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/qevent.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QThread \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qthread.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QDebug \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdebug.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QFile \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qfile.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QCoreApplication \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qcoreapplication.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QEventLoop \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qeventloop.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTime \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdatetime.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QWidget \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qwidget.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/QMouseEvent \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/qevent.h \
 		textkeypad.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QDialog \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qdialog.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/QSqlDatabase \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/qsqldatabase.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QMainWindow \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qmainwindow.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QLineEdit \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlineedit.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QListWidget \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlistwidget.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QString \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qstring.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QDialog \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qdialog.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/QSqlDatabase \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/qsqldatabase.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QMainWindow \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qmainwindow.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QLineEdit \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlineedit.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QListWidget \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlistwidget.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QString \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qstring.h \
 		ui_settingswindow.h \
 		mainwindow.h \
 		vaccum.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QVector \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qvector.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QVector \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qvector.h \
 		led.h \
 		ltc2614.h \
 		sensor.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QLabel \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlabel.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QPropertyAnimation \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qpropertyanimation.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QMessageBox \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qmessagebox.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QProcess \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qprocess.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QComboBox \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qcombobox.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/QSqlQuery \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/qsqlquery.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QtDebug \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QProgressBar \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qprogressbar.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/QIcon \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/qicon.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QStyleFactory \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qstylefactory.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QScrollBar \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qscrollbar.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QLoggingCategory \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qloggingcategory.h
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QLabel \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qlabel.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QPropertyAnimation \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qpropertyanimation.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QMessageBox \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qmessagebox.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QProcess \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qprocess.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QComboBox \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qcombobox.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/QSqlQuery \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtSql/qsqlquery.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QtDebug \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QProgressBar \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qprogressbar.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/QIcon \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/qicon.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QStyleFactory \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qstylefactory.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QScrollBar \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qscrollbar.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QLoggingCategory \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qloggingcategory.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o settingswindow.o settingswindow.cpp
 
 keypad.o: keypad.cpp keypad.h \
 		hwhandler.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QThread \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qthread.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QDebug \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdebug.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QFile \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qfile.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QCoreApplication \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qcoreapplication.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QEventLoop \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qeventloop.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTime \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdatetime.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QWidget \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qwidget.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/QMouseEvent \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/qevent.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTimer \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qtimer.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QThread \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qthread.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QDebug \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdebug.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QFile \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qfile.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QCoreApplication \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qcoreapplication.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QEventLoop \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qeventloop.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTime \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qdatetime.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QWidget \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qwidget.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/QMouseEvent \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtGui/qevent.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTimer \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qtimer.h \
 		ui_keypad.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o keypad.o keypad.cpp
 
 textkeypad.o: textkeypad.cpp textkeypad.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QDialog \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qdialog.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTimer \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qtimer.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QDialog \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qdialog.h \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/QTimer \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtCore/qtimer.h \
 		ui_textkeypad.h \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QPushButton \
-		../../../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qpushbutton.h
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/QPushButton \
+		../../xsdk-2023.1/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/usr/include/QtWidgets/qpushbutton.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o textkeypad.o textkeypad.cpp
 
 qrc_img.o: qrc_img.cpp 

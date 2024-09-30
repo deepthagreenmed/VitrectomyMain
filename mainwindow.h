@@ -208,10 +208,8 @@ private:
     int beep_1to2=0;
     int beep_2to3=0;
 
-
     int flag=0;
     int flag2=0;
-    int flag3=0;
 
     bool safety_flag0=false;
     bool safety_flag1=false;
